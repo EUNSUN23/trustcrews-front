@@ -12,7 +12,6 @@ on:
       - main
 jobs:
   build-deploy-preview:
-    if: github.repository == 'EUNSUN23/trustcrews-front-forked'
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
