@@ -48,13 +48,15 @@ export type PostInfoSummary = {
   updateDate: string;
 };
 
+export const DEFAULT_SEARCH_POST_PARAM: SearchPostParams = {
+  techStacks: [],
+  position: '0',
+  keyword: '',
+  page: 0,
+};
+
 export const getPostList = async (
-  params: SearchPostParams = {
-    techStacks: [],
-    position: '0',
-    page: 0,
-    keyword: '',
-  },
+  params: SearchPostParams = DEFAULT_SEARCH_POST_PARAM,
 ): Promise<PageResponseBody<PostInfoSummary[]>> => {
   const queryParams = createQueryParams(params);
   return await request('GET', `/api/post/public/list?${queryParams}`);

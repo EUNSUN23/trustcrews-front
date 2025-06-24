@@ -1,6 +1,9 @@
 import { MetadataRoute } from 'next';
-import { DEFAULT_SEARCH_POST_PARAM } from '@/providers/data/InitialPostsDataProvider';
-import { getPostList, PostInfoSummary } from '@/features/posts/api/getPostList';
+import {
+  DEFAULT_SEARCH_POST_PARAM,
+  getPostList,
+  PostInfoSummary,
+} from '@/features/posts/api/getPostList';
 import { PageResponseBody } from '@/shared/types/responseBody';
 
 const DOMAIN = process.env.NEXT_PUBLIC_URL;
