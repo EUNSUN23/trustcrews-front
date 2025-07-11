@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import corsMiddleware from '@/corsMiddleware';
+import apiMiddleware from '@/apiMiddleware';
 import { COOKIE } from '@/constants/cookie';
 
 const isAuthorizedRequest = (request: NextRequest) => {
@@ -17,7 +17,7 @@ const isAuthorizedRequest = (request: NextRequest) => {
 
 export default function middleware(request: NextRequest) {
   if (request.nextUrl.pathname.startsWith('/api'))
-    return corsMiddleware(request);
+    return apiMiddleware(request);
 
   if (!isAuthorizedRequest(request))
     return NextResponse.redirect(new URL('/login', request.url));
