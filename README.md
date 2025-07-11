@@ -38,7 +38,7 @@ src
 ├── shared
 ├── store
 ├── types
-├── corsMiddleware.ts
+├── apiMiddleware.ts
 └── middleware.ts
 ```
 
@@ -46,8 +46,8 @@ src
 - **`lib`** : 프로젝트 라이브러리 소스 <br/>
 - **`constants`**, **`hooks`**, **`store`**, **`types`**, **`providers`** : 프로젝트에서 사용하는 constant, hook, store,  type, provider <br/>
 - **`features`** : 애플리케이션 핵심 기능 <br/>
-- **`corsmiddleware.ts`** : 라우트핸들러 요청 미들웨어
-- **`middleware.ts`** : 앱라우터 요청 미들웨어
+- **`apiMiddleware.ts`** : 라우트핸들러 요청을 처리하는 미들웨어
+- **`middleware.ts`** : 앱라우터 요청을 처리하는 미들웨어
 
 <br/>
 
