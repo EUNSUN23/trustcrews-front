@@ -23,6 +23,7 @@ const AvatarVariants = cva(
 
 interface AvatarProps extends ImageProps, VariantProps<typeof AvatarVariants> {
   alt: string;
+  src: string;
 }
 
 const Avatar = ({ src, size, alt, ...props }: AvatarProps) => {
@@ -66,7 +67,7 @@ const Avatar = ({ src, size, alt, ...props }: AvatarProps) => {
             className={cn('rounded-full', props.className)}
             loading={props.loading}
             placeholder='blur'
-            blurDataURL={`${process.env.NEXT_PUBLIC_URL}/images/defaultAvatar.png`}
+            blurDataURL='/images/defaultAvatar.png'
           />
         </div>
       ) : (
