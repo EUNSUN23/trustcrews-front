@@ -66,7 +66,7 @@ const Avatar = ({ src, size, alt, ...props }: AvatarProps) => {
             className={cn('rounded-full', props.className)}
             loading={props.loading}
             placeholder='blur'
-            blurDataURL='/images/defaultAvatar.png'
+            blurDataURL={`${process.env.NEXT_PUBLIC_URL}/images/defaultAvatar.png`}
           />
         </div>
       ) : (
