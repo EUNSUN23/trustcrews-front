@@ -65,7 +65,7 @@
 
 ### 멤버
 
-[EUNSUN23](https://github.com/EUNSUN23) (2023.11 ~ ), [moa1128](https://github.com/orgs/oneMonthProject/people/moa1128) (2023.11 ~ 2024.01)
+[EUNSUN23](https://github.com/EUNSUN23), [moa1128](https://github.com/orgs/oneMonthProject/people/moa1128)(2023.11 ~ 2024.01)
 
 <br/>
 
