@@ -7,8 +7,9 @@
   **책임감 있는** 사이드 프로젝트 운영을 돕습니다.
 
 <br/>
+<br/>
 
-# Front-end
+# Frontend Info
 
 <br/>
 
@@ -77,4 +78,59 @@ npm i
 ```
 npm run dev
 ```
+
+<br/>
+<br/>
+
+# Site Overview
+
+<aside>
+
+<br/>
+
+#### 📌 자세한 가이드는 사이트 첫 페이지의 이용안내를 참고해주세요.
+
+<br/>
+
+</aside>
+
+## 팀 프로젝트 찾기
+
+<br/>
+
+> ### 기술스택 / 포지션 / 제목 검색을 통해 팀 프로젝트 모집글을 찾을 수 있습니다.
+
+![img_find_prj.📌](assets/img_find_prj.png)
+
+<br/>
+
+## 팀 프로젝트 개설 & 모집
+
+<br/>
+
+> ### 프로젝트를 개설하고, 멤버를 모집할 수 있습니다.
+
+![img_cr_prj.png](assets/img_cr_prj.png)
+
+<br/>
+
+## 팀 프로젝트 관리
+
+<br/>
+
+> ### 프로젝트의 할일과 멤버, 설정을 관리할 수 있습니다.
+
+![img_mng_task.png](assets/img_mng_task.png)
+
+![img_mng_crews.png](assets/img_mng_crews.png)
+
+![img_mng_alrt.png](assets/img_mng_alrt.png)
+
+![img_mng_prj1.png](assets/img_mng_prj1.png)
+![img_mng_prj2.png](assets/img_mng_prj2.png)
+
+<br/>
+<br/>
+
+
 
