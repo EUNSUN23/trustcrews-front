@@ -5,6 +5,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 import cn from '@/shared/styles/cn';
 import calcImageSizes from '@/lib/calcImageSizes';
 import { ApplicationError } from '@/shared/utils/ApplicationError';
+import placeholderDataUrl from '@/constants/placeholderDataUrl';
 
 const AvatarVariants = cva(
   `relative inline-block rounded-full ring-2 ring-white`,
@@ -66,8 +67,7 @@ const Avatar = ({ src, size, alt, ...props }: AvatarProps) => {
             }}
             className={cn('rounded-full', props.className)}
             loading={props.loading}
-            placeholder='blur'
-            blurDataURL='/images/defaultAvatar.png'
+            placeholder={placeholderDataUrl}
           />
         </div>
       ) : (

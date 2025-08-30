@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import calcImageSizes from '@/lib/calcImageSizes';
+import placeholderDataUrl from '@/constants/placeholderDataUrl';
 
 interface TechStackImageProps {
   stackName: string;
@@ -18,6 +19,7 @@ const TechStackImage = ({ stackName }: TechStackImageProps) => {
         alt={stackName}
         fill
         sizes={calcImageSizes('24px', '28px', '32px')}
+        placeholder={placeholderDataUrl}
       />
     </div>
   );
