@@ -45,7 +45,7 @@ const CheckNicknameButton = ({
   return (
     <Button
       size='md'
-      className='ml-2 h-fit font-normal'
+      className='ml-2 font-normal'
       onClick={handleClickButton}
       disabled={isChecked}
     >

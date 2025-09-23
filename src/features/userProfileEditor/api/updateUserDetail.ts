@@ -25,7 +25,7 @@ export const userInfoInputSchema = z.object({
     .bigint()
     .or(z.number())
     .nullable()
-    .refine((val) => val, { message: '직무를 선택해주세요.' }),
+    .refine((val) => val, { message: '포지션을 선택해주세요.' }),
   techStackIds: z
     .array(z.bigint().or(z.number()))
     .min(1, { message: '관심스택을 선택해주세요.' })

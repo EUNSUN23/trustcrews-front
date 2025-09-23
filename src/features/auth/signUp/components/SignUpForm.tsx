@@ -18,7 +18,7 @@ const SignUpForm = () => {
       <SignUpNicknameControl />
       <Suspense
         fallback={
-          <SelectSkeleton label='직무' placeholder='직무를 선택해주세요' />
+          <SelectSkeleton label='포지션' placeholder='포지션을 선택해주세요' />
         }
       >
         <SignUpPositionControl />

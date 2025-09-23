@@ -16,13 +16,20 @@ const UpdatePositionControl = () => {
 
   return (
     <Field>
-      <Label className='block text-gray-700 mobile:text-sm'>직무</Label>
+      <Label className='block text-gray-700 mobile:text-sm'>
+        포지션
+        <span className='text-red-500 required-dot ml-1.5 align-middle'>*</span>
+      </Label>
       <FieldQueryBoundary
         suspenseFallback={
-          <SelectSkeleton placeholder='직무를 선택해 주세요.' />
+          <SelectSkeleton placeholder='포지션을 선택해 주세요.' />
         }
       >
-        <PositionSelect positionId={positionId} onChange={handleChangeSelect} />
+        <PositionSelect
+          positionId={positionId}
+          onChange={handleChangeSelect}
+          required
+        />
       </FieldQueryBoundary>
     </Field>
   );

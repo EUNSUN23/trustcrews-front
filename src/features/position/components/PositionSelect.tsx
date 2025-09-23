@@ -9,7 +9,7 @@ type PositionSelectProps = {
 };
 
 const DEFAULT_POSITION_SELECT = {
-  name: '직무',
+  name: '포지션',
   value: '',
 };
 
@@ -37,7 +37,7 @@ const PositionSelect = ({
       value={selected || DEFAULT_POSITION_SELECT}
       setValue={(item) => onChange(item.value)}
       items={positionList}
-      placeholder='직무를 선택해주세요.'
+      placeholder='포지션을 선택해주세요.'
       required={required}
     />
   );
