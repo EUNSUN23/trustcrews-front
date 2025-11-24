@@ -1,3 +1,5 @@
+'use client';
+
 import ProjectInformation from '@/features/postDetail/postInfo/components/ProjectInformation';
 import ApplySection from '@/features/postDetail/applyProject/contents/ApplySection';
 import { usePostDetail } from '@/features/postDetail/postInfo/api/getPostDetail';
@@ -8,10 +10,11 @@ import PostTitle from '@/features/postDetail/postInfo/components/PostTitle';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
 
 type PostDetailProps = {
+  isAuthorized: boolean;
   postId: string;
 };
 
-const PostDetail = ({ postId }: PostDetailProps) => {
+const PostDetail = ({ isAuthorized, postId }: PostDetailProps) => {
   const { data: postRes } = usePostDetail(numStrToBigInt(postId));
 
   const postInfo = postRes.data;
@@ -28,7 +31,7 @@ const PostDetail = ({ postId }: PostDetailProps) => {
         <ProjectInformation projectInfo={projectInfo} />
       </article>
       <PostIntroduction content={postInfo.content} />
-      <ApplySection postInfo={postInfo} />
+      <ApplySection isAuthorized={isAuthorized} postInfo={postInfo} />
     </article>
   );
 };

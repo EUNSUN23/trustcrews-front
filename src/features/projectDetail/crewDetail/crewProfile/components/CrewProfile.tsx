@@ -9,13 +9,10 @@ import { crewIdState } from '@/store/projectDetail/crew/CrewIdStateStore';
 import { useRecoilValue } from 'recoil';
 import CrewOutButton from '@/features/projectDetail/crewDetail/crewOut/components/CrewOutButton';
 import CrewFwButton from '@/features/projectDetail/crewDetail/crewFW/components/CrewFWButton';
-import { bigIntToString } from '@/shared/utils/stringUtils';
 import { TechStack } from '@/types/data/techStack';
 import PMAuthBadge from '@/features/pmAuth/components/PMAuthBadge';
-import { authStateStore } from '@/store/AuthStateStore';
 
 const CrewProfile = () => {
-  const { userId: currentUserId } = useRecoilValue(authStateStore);
   const crewId = useRecoilValue(crewIdState);
   const {
     data: { data: crewInfo },
@@ -23,7 +20,6 @@ const CrewProfile = () => {
 
   const {
     user: {
-      userId: crewUserId,
       trustGrade: { name: trustGradeName },
       trustScore,
       nickname,
@@ -32,9 +28,8 @@ const CrewProfile = () => {
     },
     position,
     crewPMAuth,
+    isCurrentUser,
   } = crewInfo;
-
-  const isCrewCurrentUser = currentUserId === bigIntToString(crewUserId);
 
   return (
     <div className='flex mobile:flex-col mobile:space-y-6 mobile:mt-4 px-1 py-4 mx-auto items-center justify-center'>
@@ -55,7 +50,7 @@ const CrewProfile = () => {
             />
           </li>
         </ul>
-        {isCrewCurrentUser ? (
+        {isCurrentUser ? (
           <CrewOutButton crewInfo={crewInfo} />
         ) : (
           <CrewFwButton crewInfo={crewInfo} />

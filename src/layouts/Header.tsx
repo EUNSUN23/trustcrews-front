@@ -7,9 +7,6 @@ import UserMenuSkeleton from '@/features/auth/userMenu/components/UserMenuSkelet
 import { IoCreateOutline } from '@react-icons/all-files/io5/IoCreateOutline';
 import dynamic from 'next/dynamic';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';
-import { AuthState, authStateStore } from '@/store/AuthStateStore';
-import useSyncAuthState from '@/hooks/useSyncAuthState';
-import { useRecoilValue } from 'recoil';
 import calcImageSizes from '@/lib/calcImageSizes';
 
 const UserMenu = dynamic(
@@ -21,13 +18,10 @@ const UserMenu = dynamic(
 );
 
 type HeaderProps = {
-  serverAuthState: AuthState;
+  isAuthorized: boolean;
 };
 
-const Header = ({ serverAuthState }: HeaderProps) => {
-  const { isAuthSync } = useSyncAuthState(serverAuthState);
-  const { isAuthorized } = useRecoilValue(authStateStore);
-
+const Header = ({ isAuthorized }: HeaderProps) => {
   return (
     <header className='flex flex-col'>
       <div className='flex items-center justify-between h-[80px] mobile:h-[65px] my-1'>
@@ -65,25 +59,21 @@ const Header = ({ serverAuthState }: HeaderProps) => {
             </div>
           </Link>
           <div>
-            {isAuthSync ? (
-              isAuthorized ? (
-                <FieldQueryBoundary
-                  isThrowingAllowed={false}
-                  suspenseFallback={<UserMenuSkeleton />}
-                >
-                  <UserMenu />
-                </FieldQueryBoundary>
-              ) : (
-                <Link
-                  aria-label='로그인 페이지'
-                  href='/login'
-                  className='mx-2 tablet:text-[20px] mobile:text-[16px] text-black100 font-semibold'
-                >
-                  로그인
-                </Link>
-              )
+            {isAuthorized ? (
+              <FieldQueryBoundary
+                isThrowingAllowed={false}
+                suspenseFallback={<UserMenuSkeleton />}
+              >
+                <UserMenu />
+              </FieldQueryBoundary>
             ) : (
-              <UserMenuSkeleton />
+              <Link
+                aria-label='로그인 페이지'
+                href='/login'
+                className='mx-2 tablet:text-[20px] mobile:text-[16px] text-black100 font-semibold'
+              >
+                로그인
+              </Link>
             )}
           </div>
         </div>

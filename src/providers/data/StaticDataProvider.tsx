@@ -9,7 +9,7 @@ import { techCategoryQueryOptions } from '@/features/techStack/api/getTechStackC
 import { techStackMappingsQueryOptions } from '@/features/techStack/api/getTechStackMappings';
 import { techListQueryOptions } from '@/features/techStack/api/getTechStackList';
 
-const StaticOptionDataProvider = ({ children }: { children: ReactNode }) => {
+const StaticDataProvider = ({ children }: { children: ReactNode }) => {
   const queryClient = new QueryClient();
 
   queryClient.prefetchQuery(positionQueryOptions());
@@ -32,4 +32,4 @@ const StaticOptionDataProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export default StaticOptionDataProvider;
+export default StaticDataProvider;

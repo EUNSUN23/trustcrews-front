@@ -10,8 +10,14 @@ import { PostDetailData } from '@/features/postDetail/postInfo/api/getPostDetail
 import { projectApplyPositionState } from '@/store/postDetail/applyProject/ApplyPositionStateStore';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
 import { DEFAULT_POSITION_OPTION } from '@/features/position/constants/defaultPositionOption';
+import { useRouter } from 'next/navigation';
 
-const ApplySection = ({ postInfo }: { postInfo: PostDetailData }) => {
+type ApplySectionProps = {
+  isAuthorized: boolean;
+  postInfo: PostDetailData;
+};
+const ApplySection = ({ isAuthorized, postInfo }: ApplySectionProps) => {
+  const router = useRouter();
   const { setSuccessSnackbar, setErrorSnackbar, setInfoSnackbar } =
     useSnackbar();
   const resetRecruitPositionState = useResetRecoilState(
@@ -35,6 +41,11 @@ const ApplySection = ({ postInfo }: { postInfo: PostDetailData }) => {
   });
 
   const handleClickApplyButton = () => {
+    if (!isAuthorized) {
+      router.push('/login');
+      return;
+    }
+
     if (recruitPosition === DEFAULT_POSITION_OPTION.value) {
       setInfoSnackbar('포지션을 선택해 주세요.');
       return;

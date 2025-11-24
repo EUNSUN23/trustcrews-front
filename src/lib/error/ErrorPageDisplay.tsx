@@ -1,10 +1,7 @@
-import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Button from '@/shared/ui/Button';
 import { HttpError } from '@/shared/utils/HttpError';
 import { HttpStatusCode } from 'axios';
-import { useResetRecoilState } from 'recoil';
-import { authStateStore } from '@/store/AuthStateStore';
 
 type ErrorPageDisplayProps = {
   error: Error & { digest?: string };
@@ -12,19 +9,6 @@ type ErrorPageDisplayProps = {
 };
 
 const ErrorPageDisplay = ({ error, reset }: ErrorPageDisplayProps) => {
-  const resetAuthState = useResetRecoilState(authStateStore);
-
-  useEffect(() => {
-    // todo - sentry 연결
-    console.error(error);
-
-    if (
-      error instanceof HttpError &&
-      error.status === HttpStatusCode.Unauthorized
-    )
-      resetAuthState();
-  }, [error, resetAuthState]);
-
   const router = useRouter();
 
   const handleClickGoHomeButton = () => {

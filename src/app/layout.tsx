@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Snackbar from '@/shared/ui/Snackbar';
-import StaticOptionDataProvider from '@/providers/data/StaticOptionDataProvider';
 import Header from '@/layouts/Header';
 import { ReactNode } from 'react';
-import RootProvider from '@/providers/RootProvider';
-import AuthStateProvider from '@/providers/AuthStateProvider';
+import ClientProvider from '@/providers/ClientProvider';
+import { checkIsAuthorized } from '@/lib/checkIsAuthorized';
 
 export const metadata: Metadata = {
   title: 'TRUSTCREWS | 책임감 있는 사이드 프로젝트 팀, 팀원을 구하는 방법',
@@ -14,19 +13,18 @@ export const metadata: Metadata = {
 };
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
+  const isAuthorized = checkIsAuthorized();
   return (
     <html lang='en'>
       <body className='w-full'>
-        <RootProvider>
+        <ClientProvider>
           <div className='responsiveContainer'>
-            <AuthStateProvider>
-              {(authState) => <Header serverAuthState={authState} />}
-            </AuthStateProvider>
-            <StaticOptionDataProvider>{children}</StaticOptionDataProvider>
+            <Header isAuthorized={isAuthorized} />
+            {children}
           </div>
           <div id='modal' className='absolute top-0 w-full'></div>
           <Snackbar />
-        </RootProvider>
+        </ClientProvider>
       </body>
     </html>
   );

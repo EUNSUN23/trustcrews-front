@@ -30,6 +30,7 @@ export type ProjectCrewProfileInfo = {
   crewPMAuth: ProjectAuthMap;
   position: Position;
   status: CrewStatusKey;
+  isCurrentUser: boolean;
 };
 
 export const getCrewDetail = async (

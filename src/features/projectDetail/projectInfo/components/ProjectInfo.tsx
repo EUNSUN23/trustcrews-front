@@ -44,13 +44,6 @@ const ProjectInfo = () => {
       </div>
     </section>
   );
-
-  // if (isDataError)
-  //   return (
-  //     <ErroredSection className='w-full min-h-[200px] flex mobile:flex-col items-center justify-center tablet:mt-[40px] mobile:mt-[10px] text-3xl mobile:text-[24px]'>
-  //       ⚠️ 데이터 조회에 실패했습니다.
-  //     </ErroredSection>
-  //   );
 };
 
 export default ProjectInfo;

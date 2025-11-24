@@ -1,17 +1,19 @@
 import Guide from '@/features/guide/components/Guide';
 import MainBoard from '@/layouts/MainBoard';
-import AuthStateProvider from '@/providers/AuthStateProvider';
+import StaticDataProvider from '@/providers/data/StaticDataProvider';
+import { checkIsAuthorized } from '@/lib/checkIsAuthorized';
 
 const RootPage = () => {
+  const isAuthorized = checkIsAuthorized();
   return (
     <>
       <aside>
         <Guide />
       </aside>
       <main className='mt-10 mobile:mt-2'>
-        <AuthStateProvider>
-          {(authState) => <MainBoard serverAuthState={authState} />}
-        </AuthStateProvider>
+        <StaticDataProvider>
+          <MainBoard isAuthorized={isAuthorized} />
+        </StaticDataProvider>
       </main>
     </>
   );

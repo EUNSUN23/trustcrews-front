@@ -3,8 +3,6 @@ import { ReactNode, Suspense } from 'react';
 import { ErrorBoundaryPropsWithRender } from 'react-error-boundary/dist/declarations/src/types';
 import { HttpError } from '@/shared/utils/HttpError';
 import { HttpStatusCode } from 'axios';
-import { useResetRecoilState } from 'recoil';
-import { authStateStore } from '@/store/AuthStateStore';
 
 interface SuspenseQueryErrorBoundaryProps extends ErrorBoundaryPropsWithRender {
   suspenseFallback: ReactNode;
@@ -20,8 +18,6 @@ const ComposedBoundary = ({
   reset,
   isThrowingAllowed = true,
 }: SuspenseQueryErrorBoundaryProps) => {
-  const resetAuthState = useResetRecoilState(authStateStore);
-
   const willThrowError = (error: unknown) => {
     return (
       isThrowingAllowed &&
@@ -41,8 +37,7 @@ const ComposedBoundary = ({
           error instanceof HttpError &&
           error.status === HttpStatusCode.Unauthorized
         )
-          resetAuthState();
-        if (willThrowError(error)) throw error;
+          if (willThrowError(error)) throw error;
       }}
       onReset={reset}
       fallbackRender={fallbackRender}

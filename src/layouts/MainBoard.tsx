@@ -1,6 +1,6 @@
 'use client';
 
-import { useRecoilState, useRecoilValue, useResetRecoilState } from 'recoil';
+import { useRecoilState, useResetRecoilState } from 'recoil';
 import {
   activeMainBoardTabStore,
   MAIN_BOARD_TABS,
@@ -13,8 +13,6 @@ import MyProjects from '@/features/myProjects/components/MyProjects';
 import Posts from '@/features/posts/components/Posts';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';
 import PostsSkeleton from '@/features/posts/components/PostsSkeleton';
-import { AuthState, authStateStore } from '@/store/AuthStateStore';
-import useSyncAuthState from '@/hooks/useSyncAuthState';
 import { clsx } from 'clsx';
 
 const {
@@ -23,10 +21,10 @@ const {
 } = MAIN_BOARD_TABS;
 
 type MainBoardProps = {
-  serverAuthState: AuthState;
+  isAuthorized: boolean;
 };
 
-const MainBoard = ({ serverAuthState }: MainBoardProps) => {
+const MainBoard = ({ isAuthorized }: MainBoardProps) => {
   const resetActiveBoardTab = useResetRecoilState(activeMainBoardTabStore);
   const [activeMainBoardTab, setActiveMainBoardTab] = useRecoilState(
     activeMainBoardTabStore,
@@ -39,9 +37,6 @@ const MainBoard = ({ serverAuthState }: MainBoardProps) => {
   const handleClickMainBoardTab = (tabName: string) => {
     setActiveMainBoardTab(tabName);
   };
-
-  const { isAuthSync } = useSyncAuthState(serverAuthState);
-  const { isAuthorized } = useRecoilValue(authStateStore);
 
   return (
     <>
@@ -82,18 +77,14 @@ const MainBoard = ({ serverAuthState }: MainBoardProps) => {
                   <CardListSkeleton itemCount={ITEM_COUNT_PER_PAGE.CARDS} />
                 }
               >
-                {isAuthSync ? (
-                  isAuthorized ? (
-                    <MyProjects />
-                  ) : (
-                    <div className='mt-12 mobile:mt-6 flex items-center justify-center w-full h-[260px] bg-ground100 text-center rounded-md my-5'>
-                      <p className='py-10 mobile:text-2xl tablet:text-3xl pc:text-4xl font-medium text-grey900 px-3'>
-                        로그인이 필요합니다.
-                      </p>
-                    </div>
-                  )
+                {isAuthorized ? (
+                  <MyProjects />
                 ) : (
-                  <CardListSkeleton itemCount={ITEM_COUNT_PER_PAGE.CARDS} />
+                  <div className='mt-12 mobile:mt-6 flex items-center justify-center w-full h-[260px] bg-ground100 text-center rounded-md my-5'>
+                    <p className='py-10 mobile:text-2xl tablet:text-3xl pc:text-4xl font-medium text-grey900 px-3'>
+                      로그인이 필요합니다.
+                    </p>
+                  </div>
                 )}
               </FieldQueryBoundary>
             </>
