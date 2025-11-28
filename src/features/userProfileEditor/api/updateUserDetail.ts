@@ -6,7 +6,7 @@ import { USER_DETAIL_INFO_QUERY_KEY } from '@/features/userProfile/api/getUserDe
 import { ResponseBody } from '@/shared/types/responseBody';
 import { ApiResult } from '@/shared/types/apiResult';
 import NEXT_PUBLIC_URL from '@/constants/api/nextPublicUrl';
-import { POST_LIST_QUERY_KEY } from '@/features/posts/api/getPostList';
+import { POST_LIST_QUERY_KEY } from '@/features/post/api/getPostList';
 
 const nicknameRegex: RegExp = /^[a-zA-Z0-9]{6,10}$/;
 const MAX_FILE_SIZE = 5 * 1024 * 1024;

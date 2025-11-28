@@ -1,6 +1,6 @@
 import Select from '@/shared/ui/Select';
 import { ProjectAuthMap } from '@/types/data/projectDetail/projectAuth';
-import { usePMAuthList } from '@/features/pmAuth/api/getPMAuthList';
+import { usePMAuthList } from '@/features/projectMngAuth/api/getPMAuthList';
 
 type CrewAuthSelectItem = {
   name: ProjectAuthMap['name'];

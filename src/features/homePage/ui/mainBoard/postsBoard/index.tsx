@@ -1,0 +1,36 @@
+'use client';
+
+import PostsTitleFilter from '@/features/homePage/ui/mainBoard/postsBoard/PostsTitleFilter';
+import PostsPositionFilter from '@/features/homePage/ui/mainBoard/postsBoard/PostsPositionFilter';
+import PostList from './postList';
+import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';
+import CardListSkeleton from '@/shared/ui/skeleton/CardListSkeleton';
+import PostsTechStackFilter from '@/features/homePage/ui/mainBoard/postsBoard/postsTechStackFilter';
+
+const PostsBoard = () => {
+  return (
+    <section className='flex flex-col space-y-5'>
+      <h2 className='sr-only'>팀 프로젝트</h2>
+      <section
+        aria-label='게시글 검색'
+        className='mt-6 flex justify-start mobile:block mobile:space-y-5'
+      >
+        <div className='flex justify-start space-x-5 mr-auto'>
+          <PostsTechStackFilter />
+          <PostsPositionFilter />
+        </div>
+        <PostsTitleFilter />
+      </section>
+      <section className='mt-6 mobile:mt-2'>
+        <FieldQueryBoundary
+          errorFallbackSize='lg'
+          suspenseFallback={<CardListSkeleton itemCount={8} />}
+        >
+          <PostList />
+        </FieldQueryBoundary>
+      </section>
+    </section>
+  );
+};
+
+export default PostsBoard;

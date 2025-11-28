@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import {
   getPostDetail,
   PostDetailData,
-} from '@/features/postDetail/postInfo/api/getPostDetail';
+} from '@/features/post/api/getPostDetail';
 import { ReactNode } from 'react';
 import Nav from '@/shared/ui/Nav';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';

@@ -1,7 +1,7 @@
 import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { ITEM_COUNT_PER_PAGE } from '@/constants/pagination';
-import { ProjectInfoSummary } from '@/features/projectDetail/projectInfo/api/getProjectInfoSummary';
+import { ProjectInfoSummary } from '@/features/project/api/getProjectInfoSummary';
 import { PageResponseBody } from '@/shared/types/responseBody';
 import sortByStartDate from '@/shared/utils/sortByStartDate';
 

@@ -10,10 +10,10 @@ import SelectSkeleton from '@/shared/ui/skeleton/SelectSkeleton';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
 import { projectManageAuthStateStore } from '@/store/projectDetail/config/pmAuth/ProjectManageAuthStateStore';
 import {
-  UpdatePMAuthConfigInput,
-  updatePMAuthConfigInputSchema,
+  UpdateProjectMngAuthInput,
+  updateProjectMngAuthInputSchema,
   useUpdatePMAuthConfig,
-} from '@/features/projectDetail/config/api/pmAuth/updatePMAuthConfig';
+} from '@/features/projectMngAuth/api/updateProjectMngAuth';
 import PMAuthSelector from '@/features/pmAuth/components/PMAuthSelector';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';
 import { ProjectCrew } from '@/types/data/projectDetail/crew/projectCrew';
@@ -44,12 +44,12 @@ const PMAuthEditor = ({ crew }: CrewAuthRowProps) => {
   );
 
   const handleClickSaveButton = () => {
-    const data: UpdatePMAuthConfigInput = {
+    const data: UpdateProjectMngAuthInput = {
       crewPMAuth: auth.value,
     };
 
     try {
-      updatePMAuthConfigInputSchema.parse(data);
+      updateProjectMngAuthInputSchema.parse(data);
     } catch (e) {
       if (e instanceof ZodError) setErrorSnackbar(e.errors[0].message);
       return;

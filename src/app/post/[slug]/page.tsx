@@ -1,4 +1,4 @@
-import PostDetail from '@/features/postDetail/PostDetail';
+import PostPage from '@/app/post/[slug]/_components/PostPage';
 import { checkIsAuthorized } from '@/lib/checkIsAuthorized';
 
 const PostPage = ({
@@ -6,7 +6,7 @@ const PostPage = ({
 }: {
   params: { slug: string };
 }) => {
-  return <PostDetail isAuthorized={checkIsAuthorized()} postId={postId} />;
+  return <PostPage isAuthorized={checkIsAuthorized()} postId={postId} />;
 };
 
 export default PostPage;

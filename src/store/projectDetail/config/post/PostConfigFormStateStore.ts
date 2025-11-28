@@ -1,5 +1,5 @@
 import { atom, DefaultValue, selector, selectorFamily } from 'recoil';
-import { UpdatePostConfigInput } from '@/features/projectDetail/config/api/post/updatePostConfig';
+import { UpdatePostConfigInput } from '@/features/post/api/generalConfig/updatePostConfig';
 
 interface UpdatePostConfigFormData
   extends Omit<UpdatePostConfigInput, 'positionIds'> {
