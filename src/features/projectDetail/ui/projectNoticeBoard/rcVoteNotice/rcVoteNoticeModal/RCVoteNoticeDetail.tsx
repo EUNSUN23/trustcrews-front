@@ -1,6 +1,6 @@
 import Avatar from '@/shared/ui/Avatar';
-import TechStackImage from '@/features/techStack/components/TechStackImage';
-import TrustGradeBadge from '@/features/trustGrade/components/TrustGradeBadge';
+import TechStackImage from '@/features/techStack/ui/TechStackImage';
+import TrustGradeBadge from '@/features/trustGrade/ui/TrustGradeBadge';
 import RCVoteNoticeDetailSkeleton from '@/features/projectDetail/ui/projectNoticeBoard/rcVoteNotice/rcVoteNoticeModal/RCVoteNoticeDetailSkeleton';
 import VoteStatusBadge from '@/features/projectVote/ui/VoteStatusBadge';
 import RCTargetProjectHistory from '@/features/projectDetail/ui/projectNoticeBoard/rcVoteNotice/rcVoteNoticeModal/RCTargetProjectHistory';
@@ -17,7 +17,7 @@ import { rcVoteNoticeModalState } from '@/store/projectDetail/notice/rcVoteNotic
 import { ZodError } from 'zod';
 import Loader from '@/shared/ui/Loader';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
-import { TechStack } from '@/types/data/techStack';
+import { TechStack } from '@/features/techStack/types/techStack';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';
 
 const {

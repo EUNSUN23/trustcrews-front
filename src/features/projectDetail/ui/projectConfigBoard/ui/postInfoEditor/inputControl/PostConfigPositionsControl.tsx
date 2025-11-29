@@ -1,5 +1,5 @@
 import { useRecoilState } from 'recoil';
-import MultiPositionSelect from '@/features/position/components/MultiPositionSelect';
+import MultiPositionSelect from '@/features/position/ui/MultiPositionSelect';
 import { postConfigFormFieldSelector } from '@/store/projectDetail/config/post/PostConfigFormStateStore';
 import SelectSkeleton from '@/shared/ui/skeleton/SelectSkeleton';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';

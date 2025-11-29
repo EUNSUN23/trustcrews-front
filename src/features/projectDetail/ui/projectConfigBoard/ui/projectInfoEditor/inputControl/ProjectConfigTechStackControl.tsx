@@ -1,4 +1,4 @@
-import TechStackSelect from '@/features/techStack/components/TechStackSelect';
+import TechStackSelect from '@/features/techStack/ui/TechStackSelect';
 import { useRecoilState } from 'recoil';
 import Row from '@/shared/ui/Row';
 import { projectConfigFormFieldSelector } from '@/store/projectDetail/config/project/ProjectConfigFormStateStore';

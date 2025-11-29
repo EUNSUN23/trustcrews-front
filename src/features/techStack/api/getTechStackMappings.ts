@@ -1,7 +1,7 @@
 import { ResponseBody } from '@/shared/types/responseBody';
 import { request } from '@/lib/clientApi/request';
 import { queryOptions, useSuspenseQuery } from '@tanstack/react-query';
-import { TechStack } from '@/types/data/techStack';
+import { TechStack } from '@/features/techStack/types/techStack';
 
 export interface TechStackMapping extends TechStack {
   categories: string[];

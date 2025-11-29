@@ -3,8 +3,8 @@ import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { ProjectInfoSummary } from '@/features/project/api/getProjectInfoSummary';
 import { PageResponseBody } from '@/shared/types/responseBody';
-import { TrustGrade } from '@/types/data/trustGrade';
-import { Position } from '@/types/data/position';
+import { TrustGrade } from '@/features/trustGrade/types/trustGrade';
+import { Position } from '@/features/position/types/position';
 import { TechStackMapping } from '@/features/techStack/api/getTechStackMappings';
 
 export interface SearchPostParams {

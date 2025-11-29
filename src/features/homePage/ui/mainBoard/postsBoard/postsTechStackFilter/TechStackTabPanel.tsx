@@ -1,4 +1,4 @@
-import TechStackImage from '@/features/techStack/components/TechStackImage';
+import TechStackImage from '@/features/techStack/ui/TechStackImage';
 import { MouseEvent } from 'react';
 import {
   TechStackMapping,

@@ -1,4 +1,4 @@
-import PositionSelect from '@/features/position/components/PositionSelect';
+import PositionSelect from '@/features/position/ui/PositionSelect';
 import { userInfoFormFieldSelector } from '@/store/useProfileEditor/UserInfoFormStateStore';
 import { useRecoilState } from 'recoil';
 import { Field, Label } from '@headlessui/react';

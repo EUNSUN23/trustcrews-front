@@ -1,7 +1,7 @@
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { bigIntToString } from '@/shared/utils/stringUtils';
 import { ResponseBody } from '@/shared/types/responseBody';
-import { TechStack } from '@/types/data/techStack';
+import { TechStack } from '@/features/techStack/types/techStack';
 import { request } from '@/lib/clientApi/request';
 
 export type ProjectConfigData = {

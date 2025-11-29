@@ -2,9 +2,9 @@ import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { bigIntToString } from '@/shared/utils/stringUtils';
 import { ResponseBody } from '@/shared/types/responseBody';
-import { Position } from '@/types/data/position';
-import { TrustGrade } from '@/types/data/trustGrade';
-import { TechStack } from '@/types/data/techStack';
+import { Position } from '@/features/position/types/position';
+import { TrustGrade } from '@/features/trustGrade/types/trustGrade';
+import { TechStack } from '@/features/techStack/types/techStack';
 import { ProjectAuthMap } from '@/features/projectMngAuth/types/projectAuth';
 import { CrewStatusKey } from '@/features/crews/types/crewStatusKey';
 

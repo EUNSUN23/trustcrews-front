@@ -2,7 +2,7 @@ import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { bigIntToString } from '@/shared/utils/stringUtils';
 import { ResponseBody } from '@/shared/types/responseBody';
-import { Position } from '@/types/data/position';
+import { Position } from '@/features/position/types/position';
 
 export type PostDetailData = {
   postId: bigint;

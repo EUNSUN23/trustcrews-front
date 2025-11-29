@@ -1,4 +1,4 @@
-import TechStackSelect from '@/features/techStack/components/TechStackSelect';
+import TechStackSelect from '@/features/techStack/ui/TechStackSelect';
 import { signUpFormFieldSelector } from '@/store/signup/SignUpFormStateStore';
 import { useRecoilState } from 'recoil';
 import { Field, Label } from '@headlessui/react';

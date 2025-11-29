@@ -1,4 +1,4 @@
-import { Position } from '@/types/data/position';
+import { Position } from '@/features/position/types/position';
 import { ResponseBody } from '@/shared/types/responseBody';
 import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';

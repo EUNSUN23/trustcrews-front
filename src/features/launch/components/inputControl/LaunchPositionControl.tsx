@@ -2,7 +2,7 @@ import { useRecoilState } from 'recoil';
 import Row from '@/shared/ui/Row';
 import { postFormFieldSelector } from '@/store/launch/PostFormStateStore';
 import SelectSkeleton from '@/shared/ui/skeleton/SelectSkeleton';
-import MultiPositionSelect from '@/features/position/components/MultiPositionSelect';
+import MultiPositionSelect from '@/features/position/ui/MultiPositionSelect';
 import { Field, Label } from '@headlessui/react';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';
 

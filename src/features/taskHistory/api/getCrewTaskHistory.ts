@@ -2,7 +2,7 @@ import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { ITEM_COUNT_PER_PAGE, PAGE_RANGE } from '@/constants/pagination';
 import { PageResponseBody } from '@/shared/types/responseBody';
-import { TaskPointType } from '@/types/data/taskPointType';
+import { TaskPointType } from '@/features/taskHistory/types/taskPointType';
 import { CrewStatusKey } from '@/features/crews/types/crewStatusKey';
 
 export interface CrewTaskHistory {

@@ -1,9 +1,9 @@
 import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { ResponseBody } from '@/shared/types/responseBody';
-import { TrustGradeName } from '@/types/data/trustGrade';
-import { Position } from '@/types/data/position';
-import { TechStack } from '@/types/data/techStack';
+import { TrustGradeName } from '@/features/trustGrade/types/trustGrade';
+import { Position } from '@/features/position/types/position';
+import { TechStack } from '@/features/techStack/types/techStack';
 
 export type UserProfileInfo = {
   userId: bigint | null;

@@ -1,5 +1,5 @@
 import { ProjectAuthMap } from '@/features/projectMngAuth/types/projectAuth';
-import { Position } from '@/types/data/position';
+import { Position } from '@/features/position/types/position';
 
 export type ProjectCrew = {
   crewId: bigint;

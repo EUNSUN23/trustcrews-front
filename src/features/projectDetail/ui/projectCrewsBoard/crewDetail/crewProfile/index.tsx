@@ -2,14 +2,14 @@
 
 import Avatar from '@/shared/ui/Avatar';
 import Badge from '@/shared/ui/Badge';
-import TechStackImage from '@/features/techStack/components/TechStackImage';
-import TrustGradeBadge from '@/features/trustGrade/components/TrustGradeBadge';
+import TechStackImage from '@/features/techStack/ui/TechStackImage';
+import TrustGradeBadge from '@/features/trustGrade/ui/TrustGradeBadge';
 import { useCrewDetail } from '@/features/crews/api/getCrewDetail';
 import { crewIdState } from '@/store/projectDetail/crew/CrewIdStateStore';
 import { useRecoilValue } from 'recoil';
 import CrewOutButton from '@/features/projectDetail/ui/projectCrewsBoard/crewDetail/crewProfile/CrewOutButton';
 import CrewFwButton from '@/features/projectDetail/ui/projectCrewsBoard/crewDetail/crewProfile/CrewFWButton';
-import { TechStack } from '@/types/data/techStack';
+import { TechStack } from '@/features/techStack/types/techStack';
 import PMAuthBadge from '@/features/projectMngAuth/ui/PMAuthBadge';
 
 const CrewProfile = () => {

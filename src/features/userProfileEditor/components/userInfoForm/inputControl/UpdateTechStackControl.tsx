@@ -1,4 +1,4 @@
-import TechStackSelect from '@/features/techStack/components/TechStackSelect';
+import TechStackSelect from '@/features/techStack/ui/TechStackSelect';
 import { useRecoilState } from 'recoil';
 import { userInfoFormFieldSelector } from '@/store/useProfileEditor/UserInfoFormStateStore';
 import { Field, Label } from '@headlessui/react';
