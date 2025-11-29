@@ -7,11 +7,11 @@ import {
   projectIdState,
 } from '@/store/projectDetail/ProjectIdStateStore';
 import dynamic from 'next/dynamic';
-import ProjectDetailSkeleton from '@/features/projectPage/ui/projectDetail/ProjectDetailSkeleton';
+import ProjectDetailContainerSkeleton from '@/features/projectDetail/ui/ProjectDetailContainerSkeleton';
 
 const ProjectDetail = dynamic(
-  () => import('@/features/projectPage/ui/projectDetail'),
-  { ssr: false, loading: () => <ProjectDetailSkeleton /> },
+  () => import('@/features/projectDetail/ui/ProjectDetailContainer'),
+  { ssr: false, loading: () => <ProjectDetailContainerSkeleton /> },
 );
 
 const ProjectPage = ({
@@ -26,7 +26,8 @@ const ProjectPage = ({
     setCurrentProjectId(projectId);
   }, [setCurrentProjectId, projectId]);
 
-  if (currentProjectId === DEFAULT_PROJECT_ID) return <ProjectDetailSkeleton />;
+  if (currentProjectId === DEFAULT_PROJECT_ID)
+    return <ProjectDetailContainerSkeleton />;
 
   return <ProjectDetail />;
 };

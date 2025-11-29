@@ -1,6 +1,6 @@
-import { CreateMilestoneInput } from '@/features/projectDetail/job/api/milestone/createMilestone';
+import { CreateMilestoneInput } from '@/features/milestone/api/createMilestone';
 import { atom, DefaultValue, selectorFamily } from 'recoil';
-import { UpdateMilestoneInput } from '@/features/projectDetail/job/api/milestone/updateMilestone';
+import { UpdateMilestoneInput } from '@/features/milestone/api/updateMilestone';
 import { ModalState } from '@/shared/types/modalState';
 
 export const milestoneAddModalStateStore = atom<ModalState>({

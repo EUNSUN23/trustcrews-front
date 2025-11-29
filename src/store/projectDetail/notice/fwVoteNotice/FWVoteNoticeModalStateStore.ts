@@ -1,5 +1,5 @@
 import { atom } from 'recoil';
-import { FWVoteBaseParams } from '@/features/projectDetail/vote/api/forceWithdrawVote';
+import { FWVoteBaseParams } from '@/features/projectVote/api/forceWithdrawVote';
 import { ModalState } from '@/shared/types/modalState';
 
 export interface FWNoticeModalState
