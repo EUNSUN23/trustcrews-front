@@ -1,6 +1,6 @@
 import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';
-import { MilestoneInfo } from '@/types/data/projectDetail/job/milestone';
+import { MilestoneInfo } from '@/features/milestone/constants/milestone';
 import { ResponseBody } from '@/shared/types/responseBody';
 import sortByStartDate from '@/shared/utils/sortByStartDate';
 

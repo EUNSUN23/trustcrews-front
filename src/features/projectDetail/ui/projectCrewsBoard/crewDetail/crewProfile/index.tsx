@@ -10,7 +10,7 @@ import { useRecoilValue } from 'recoil';
 import CrewOutButton from '@/features/projectDetail/ui/projectCrewsBoard/crewDetail/crewProfile/CrewOutButton';
 import CrewFwButton from '@/features/projectDetail/ui/projectCrewsBoard/crewDetail/crewProfile/CrewFWButton';
 import { TechStack } from '@/types/data/techStack';
-import PMAuthBadge from '@/features/pmAuth/components/PMAuthBadge';
+import PMAuthBadge from '@/features/projectMngAuth/ui/PMAuthBadge';
 
 const CrewProfile = () => {
   const crewId = useRecoilValue(crewIdState);

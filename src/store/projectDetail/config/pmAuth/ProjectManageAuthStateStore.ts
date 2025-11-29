@@ -1,5 +1,5 @@
 import { atom } from 'recoil';
-import { ProjectAuthMap } from '@/types/data/projectDetail/projectAuth';
+import { ProjectAuthMap } from '@/features/projectMngAuth/types/projectAuth';
 
 interface ProjectManageAuthState extends Omit<ProjectAuthMap, 'code'> {
   code: string;

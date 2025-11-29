@@ -1,12 +1,12 @@
 import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';
-import { ProjectAuthMap } from '@/types/data/projectDetail/projectAuth';
+import { ProjectAuthMap } from '@/features/projectMngAuth/types/projectAuth';
 import { bigIntToString } from '@/shared/utils/stringUtils';
 import { ResponseBody } from '@/shared/types/responseBody';
 import {
   FWVoteReason,
   VoteData,
-} from '@/types/data/projectDetail/projectVote/projectVote';
+} from '@/features/projectVote/types/projectVote';
 
 export type FWVoteNoticeDetailData = VoteData & {
   reason: FWVoteReason;

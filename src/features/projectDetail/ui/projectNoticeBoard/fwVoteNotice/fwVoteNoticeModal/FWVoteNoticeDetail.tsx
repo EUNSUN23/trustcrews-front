@@ -1,11 +1,11 @@
 import Avatar from '@/shared/ui/Avatar';
 import Badge from '@/shared/ui/Badge';
-import PMAuthBadge from '@/features/pmAuth/components/PMAuthBadge';
+import PMAuthBadge from '@/features/projectMngAuth/ui/PMAuthBadge';
 import VoteStatusBadge from '@/features/projectVote/ui/VoteStatusBadge';
 import { useRecoilValue } from 'recoil';
 import FWVoteNoticeDetailSkeleton from '@/features/projectDetail/ui/projectNoticeBoard/fwVoteNotice/fwVoteNoticeModal/FWVoteNoticeDetailSkeleton';
 import VoteBar from '@/features/projectVote/ui/VoteBar';
-import { VOTE_OPTIONS } from '@/constants/data/projectDetail/vote/voteOptions';
+import { VOTE_OPTIONS } from '@/features/projectVote/constants/voteOptions';
 import useSnackbar from '@/shared/hooks/useSnackbar';
 import { useFWVoteNotice } from '@/features/projectNotice/api/fwVoteNotice/getFWVoteNotice';
 import { fwNoticeModalState } from '@/store/projectDetail/notice/fwVoteNotice/FWVoteNoticeModalStateStore';

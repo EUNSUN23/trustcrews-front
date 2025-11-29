@@ -1,4 +1,4 @@
-import { ProjectHistoryStatus } from '@/types/data/projectHistory/projectHistoryStatus';
+import { ProjectHistoryStatus } from '@/features/projectHistory/types/projectHistoryStatus';
 
 export type ProjectHistoryData = {
   userProjectHistoryId: bigint;

@@ -3,9 +3,9 @@ import { BiUser } from '@react-icons/all-files/bi/BiUser';
 import { BiCheck } from '@react-icons/all-files/bi/BiCheck';
 import { BiUndo } from '@react-icons/all-files/bi/BiUndo';
 import { BiX } from '@react-icons/all-files/bi/BiX';
-import { ProjectHistoryData } from '@/types/data/projectHistory/projectHistory';
-import { ProjectHistoryStatus } from '@/types/data/projectHistory/projectHistoryStatus';
-import { PROJECT_HISTORY_STATUS } from '@/constants/data/projectHistory/projectHistoryStatus';
+import { ProjectHistoryData } from '@/features/projectHistory/types/projectHistory';
+import { ProjectHistoryStatus } from '@/features/projectHistory/types/projectHistoryStatus';
+import { PROJECT_HISTORY_STATUS } from '@/features/projectHistory/constants/projectHistoryStatus';
 import { cva } from 'class-variance-authority';
 
 const {

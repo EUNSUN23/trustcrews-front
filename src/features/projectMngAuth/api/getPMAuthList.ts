@@ -1,5 +1,5 @@
 import { request } from '@/lib/clientApi/request';
-import { ProjectAuthMap } from '@/types/data/projectDetail/projectAuth';
+import { ProjectAuthMap } from '@/features/projectMngAuth/types/projectAuth';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { PageResponseBody } from '@/shared/types/responseBody';
 

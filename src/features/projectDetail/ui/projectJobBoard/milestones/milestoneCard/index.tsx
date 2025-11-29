@@ -4,7 +4,7 @@ import { MouseEvent } from 'react';
 import MilestoneCardMenu from '@/features/projectDetail/ui/projectJobBoard/milestones/milestoneCard/MilestoneCardMenu';
 import { useRecoilState } from 'recoil';
 import { activeMilestoneStateStore } from '@/store/projectDetail/job/milestone/ActiveMilestoneStateStore';
-import { MilestoneInfo } from '@/types/data/projectDetail/job/milestone';
+import { MilestoneInfo } from '@/features/milestone/constants/milestone';
 import { clsx } from 'clsx';
 import { bigIntToString, numStrToBigInt } from '@/shared/utils/stringUtils';
 

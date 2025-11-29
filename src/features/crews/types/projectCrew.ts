@@ -1,4 +1,4 @@
-import { ProjectAuthMap } from '@/types/data/projectDetail/projectAuth';
+import { ProjectAuthMap } from '@/features/projectMngAuth/types/projectAuth';
 import { Position } from '@/types/data/position';
 
 export type ProjectCrew = {

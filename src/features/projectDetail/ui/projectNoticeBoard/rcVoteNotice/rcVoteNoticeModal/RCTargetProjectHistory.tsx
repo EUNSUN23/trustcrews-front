@@ -3,7 +3,7 @@ import Button from '@/shared/ui/Button';
 import CommonPagination from '@/shared/ui/CommonPagination';
 import { useProjectHistory } from '@/features/projectHistory/api/getProjectHistory';
 import { ITEM_COUNT_PER_PAGE, PAGE_RANGE } from '@/constants/pagination';
-import ProjectHistoryItem from '@/features/projectHistory/components/ProjectHistoryItem';
+import ProjectHistoryItem from '@/features/projectHistory/ui/ProjectHistoryItem';
 
 type RCTargetProjectHistoryProps = {
   applicantUserId: bigint;

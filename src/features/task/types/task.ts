@@ -1,4 +1,4 @@
-import { TASK_STATUS } from '@/constants/data/projectDetail/job/task/taskStatus';
+import { TASK_STATUS } from '@/features/task/constants/taskStatus';
 
 export type TaskStatusKey = keyof typeof TASK_STATUS;
 export type TaskStatus = (typeof TASK_STATUS)[TaskStatusKey];

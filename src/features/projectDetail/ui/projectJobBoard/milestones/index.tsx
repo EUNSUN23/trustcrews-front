@@ -1,6 +1,6 @@
 'use client';
 
-import { MilestoneInfo } from '@/types/data/projectDetail/job/milestone';
+import { MilestoneInfo } from '@/features/milestone/constants/milestone';
 import { useRecoilValue } from 'recoil';
 import { activeMilestoneStateStore } from '@/store/projectDetail/job/milestone/ActiveMilestoneStateStore';
 import { useEffect, useRef, useState } from 'react';

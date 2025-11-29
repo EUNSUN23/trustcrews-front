@@ -1,6 +1,6 @@
 import { atom } from 'recoil';
-import { NOTICE_TABS } from '@/constants/data/projectDetail/notice/noticeTabs';
-import {NoticeTab} from "@/types/data/projectDetail/notice/noticeTab";
+import { NOTICE_TABS } from '@/features/projectNotice/constants/noticeTabs';
+import { NoticeTab } from '@/features/projectNotice/types/noticeTab';
 
 const { NTAB001: RCVOTE_NOTICE_TAB } = NOTICE_TABS;
 

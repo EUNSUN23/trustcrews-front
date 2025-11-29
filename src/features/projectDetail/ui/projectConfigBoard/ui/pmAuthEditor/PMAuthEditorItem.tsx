@@ -14,9 +14,9 @@ import {
   updateProjectMngAuthInputSchema,
   useUpdatePMAuthConfig,
 } from '@/features/projectMngAuth/api/updateProjectMngAuth';
-import PMAuthSelector from '@/features/pmAuth/components/PMAuthSelector';
+import PMAuthSelector from '@/features/projectMngAuth/ui/PMAuthSelector';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';
-import { ProjectCrew } from '@/types/data/projectDetail/crew/projectCrew';
+import { ProjectCrew } from '@/features/crews/types/projectCrew';
 
 type CrewAuthRowProps = {
   crew: ProjectCrew;

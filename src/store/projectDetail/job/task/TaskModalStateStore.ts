@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { v4 } from 'uuid';
 import { CreateTaskInput } from '@/features/task/api/createTask';
 import { UpdateTaskInput } from '@/features/task/api/updateTask';
-import { TASK_STATUS } from '@/constants/data/projectDetail/job/task/taskStatus';
+import { TASK_STATUS } from '@/features/task/constants/taskStatus';
 import { ModalState } from '@/shared/types/modalState';
 
 const {

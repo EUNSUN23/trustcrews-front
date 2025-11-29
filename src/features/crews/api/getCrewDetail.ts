@@ -5,8 +5,8 @@ import { ResponseBody } from '@/shared/types/responseBody';
 import { Position } from '@/types/data/position';
 import { TrustGrade } from '@/types/data/trustGrade';
 import { TechStack } from '@/types/data/techStack';
-import { ProjectAuthMap } from '@/types/data/projectDetail/projectAuth';
-import { CrewStatusKey } from '@/types/data/projectDetail/crew/crewStatusKey';
+import { ProjectAuthMap } from '@/features/projectMngAuth/types/projectAuth';
+import { CrewStatusKey } from '@/features/crews/types/crewStatusKey';
 
 interface ProjectCrewUserDetail {
   userId: bigint;

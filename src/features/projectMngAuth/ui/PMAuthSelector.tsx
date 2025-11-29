@@ -1,5 +1,5 @@
 import Select from '@/shared/ui/Select';
-import { ProjectAuthMap } from '@/types/data/projectDetail/projectAuth';
+import { ProjectAuthMap } from '@/features/projectMngAuth/types/projectAuth';
 import { usePMAuthList } from '@/features/projectMngAuth/api/getPMAuthList';
 
 type CrewAuthSelectItem = {

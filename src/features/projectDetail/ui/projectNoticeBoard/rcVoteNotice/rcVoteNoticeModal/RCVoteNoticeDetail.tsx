@@ -5,7 +5,7 @@ import RCVoteNoticeDetailSkeleton from '@/features/projectDetail/ui/projectNotic
 import VoteStatusBadge from '@/features/projectVote/ui/VoteStatusBadge';
 import RCTargetProjectHistory from '@/features/projectDetail/ui/projectNoticeBoard/rcVoteNotice/rcVoteNoticeModal/RCTargetProjectHistory';
 import VoteBar from '@/features/projectVote/ui/VoteBar';
-import { VOTE_OPTIONS } from '@/constants/data/projectDetail/vote/voteOptions';
+import { VOTE_OPTIONS } from '@/features/projectVote/constants/voteOptions';
 import {
   recruitVoteAnswerInputSchema,
   useRecruitVote,

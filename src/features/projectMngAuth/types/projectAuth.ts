@@ -1,4 +1,4 @@
-import { PM_AUTH_CODE } from '@/features/pmAuth/constants/pmAuthCode';
+import { PM_AUTH_CODE } from '@/features/projectMngAuth/constants/pmAuthCode';
 
 export type ProjectAuthCode = (typeof PM_AUTH_CODE)[keyof typeof PM_AUTH_CODE];
 

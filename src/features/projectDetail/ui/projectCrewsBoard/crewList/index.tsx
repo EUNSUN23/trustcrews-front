@@ -11,9 +11,9 @@ import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
 import { useProjectCrewList } from '@/features/crews/api/getProjectCrewList';
 import Avatar from '@/shared/ui/Avatar';
 import Badge from '@/shared/ui/Badge';
-import PMAuthBadge from '@/features/pmAuth/components/PMAuthBadge';
+import PMAuthBadge from '@/features/projectMngAuth/ui/PMAuthBadge';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
-import { ProjectCrew } from '@/types/data/projectDetail/crew/projectCrew';
+import { ProjectCrew } from '@/features/crews/types/projectCrew';
 
 const {
   CREWS: {

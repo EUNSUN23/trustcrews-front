@@ -1,7 +1,7 @@
 import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';
-import { TASK_STATUS } from '@/constants/data/projectDetail/job/task/taskStatus';
-import { TaskStatus } from '@/types/data/projectDetail/job/task';
+import { TASK_STATUS } from '@/features/task/constants/taskStatus';
+import { TaskStatus } from '@/features/task/types/task';
 import { bigIntToString } from '@/shared/utils/stringUtils';
 import { ITEM_COUNT_PER_PAGE } from '@/constants/pagination';
 import { PageResponseBody } from '@/shared/types/responseBody';

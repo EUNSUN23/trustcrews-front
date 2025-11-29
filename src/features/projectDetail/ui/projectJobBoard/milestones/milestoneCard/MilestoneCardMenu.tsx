@@ -20,7 +20,7 @@ import {
 import { cva } from 'class-variance-authority';
 import { projectManageAuthStateStore } from '@/store/projectDetail/config/pmAuth/ProjectManageAuthStateStore';
 import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
-import { MilestoneInfo } from '@/types/data/projectDetail/job/milestone';
+import { MilestoneInfo } from '@/features/milestone/constants/milestone';
 import { bigIntToString, numStrToBigInt } from '@/shared/utils/stringUtils';
 
 type MilestoneCardMenuProps = {

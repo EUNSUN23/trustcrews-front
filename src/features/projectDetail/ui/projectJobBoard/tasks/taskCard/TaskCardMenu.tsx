@@ -17,7 +17,7 @@ import {
   taskModFormStateStore,
   taskModModalStateStore,
 } from '@/store/projectDetail/job/task/TaskModalStateStore';
-import { TASK_STATUS } from '@/constants/data/projectDetail/job/task/taskStatus';
+import { TASK_STATUS } from '@/features/task/constants/taskStatus';
 import { projectManageAuthStateStore } from '@/store/projectDetail/config/pmAuth/ProjectManageAuthStateStore';
 import { cva } from 'class-variance-authority';
 import { TaskItem } from '@/features/task/api/getTaskList';
