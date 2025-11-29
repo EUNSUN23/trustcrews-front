@@ -1,7 +1,7 @@
 import InputStyleSkeleton from '@/shared/ui/skeleton/InputStyleSkeleton';
-import ConfigLayout from '@/features/projectDetail/ui/projectConfigBoard/ui/ConfigLayout';
-import ConfigSummaryLayout from '@/features/projectDetail/ui/projectConfigBoard/ui/ConfigSummaryLayout';
-import ConfigContentsLayout from '@/features/projectDetail/ui/projectConfigBoard/ui/ConfigContentsLayout';
+import ConfigLayout from '@/features/projectDetail/ui/projectConfigBoard/ConfigLayout';
+import ConfigSummaryLayout from '@/features/projectDetail/ui/projectConfigBoard/ConfigSummaryLayout';
+import ConfigContentsLayout from '@/features/projectDetail/ui/projectConfigBoard/ConfigContentsLayout';
 
 const ProjectConfigFormSkeleton = () => {
   return (

@@ -1,23 +1,23 @@
-import PostConfigPositionsControl from '@/features/projectDetail/ui/projectConfigBoard/ui/postInfoEditor/inputControl/PostConfigPositionsControl';
-import PostConfigContactControl from '@/features/projectDetail/ui/projectConfigBoard/ui/postInfoEditor/inputControl/PostConfigContactControl';
-import PostConfigContentControl from '@/features/projectDetail/ui/projectConfigBoard/ui/postInfoEditor/inputControl/PostConfigContentControl';
-import ProjectPostInfoSaveButton from '@/features/projectDetail/ui/projectConfigBoard/ui/postInfoEditor/PostConfigSaveButton';
-import PostConfigRecruitStatusControl from '@/features/projectDetail/ui/projectConfigBoard/ui/postInfoEditor/inputControl/PostConfigRecruitStatusControl';
+import PostConfigPositionsControl from '@/features/projectDetail/ui/projectConfigBoard/postInfoEditor/inputControl/PostConfigPositionsControl';
+import PostConfigContactControl from '@/features/projectDetail/ui/projectConfigBoard/postInfoEditor/inputControl/PostConfigContactControl';
+import PostConfigContentControl from '@/features/projectDetail/ui/projectConfigBoard/postInfoEditor/inputControl/PostConfigContentControl';
+import ProjectPostInfoSaveButton from '@/features/projectDetail/ui/projectConfigBoard/postInfoEditor/PostConfigSaveButton';
+import PostConfigRecruitStatusControl from '@/features/projectDetail/ui/projectConfigBoard/postInfoEditor/inputControl/PostConfigRecruitStatusControl';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
-import PostConfigResetButton from '@/features/projectDetail/ui/projectConfigBoard/ui/postInfoEditor/PostConfigResetButton';
-import ConfigLayout from '@/features/projectDetail/ui/projectConfigBoard/ui/ConfigLayout';
-import ConfigSummaryLayout from '@/features/projectDetail/ui/projectConfigBoard/ui/ConfigSummaryLayout';
-import ConfigContentsLayout from '@/features/projectDetail/ui/projectConfigBoard/ui/ConfigContentsLayout';
+import PostConfigResetButton from '@/features/projectDetail/ui/projectConfigBoard/postInfoEditor/PostConfigResetButton';
+import ConfigLayout from '@/features/projectDetail/ui/projectConfigBoard/ConfigLayout';
+import ConfigSummaryLayout from '@/features/projectDetail/ui/projectConfigBoard/ConfigSummaryLayout';
+import ConfigContentsLayout from '@/features/projectDetail/ui/projectConfigBoard/ConfigContentsLayout';
 import { bigIntToString, numStrToBigInt } from '@/shared/utils/stringUtils';
-import PostConfigTitleControl from '@/features/projectDetail/ui/projectConfigBoard/ui/postInfoEditor/inputControl/PostConfigTitleControl';
+import PostConfigTitleControl from '@/features/projectDetail/ui/projectConfigBoard/postInfoEditor/inputControl/PostConfigTitleControl';
 import { usePostConfig } from '@/features/post/api/generalConfig/getPostConfig';
 import { useEffect } from 'react';
 import {
   postConfigFormLoadingSelector,
   postConfigFormStateStore,
 } from '@/store/projectDetail/config/post/PostConfigFormStateStore';
-import PostConfigFormSkeleton from '@/features/projectDetail/ui/projectConfigBoard/ui/postInfoEditor/PostConfigFormSkeleton';
+import PostConfigFormSkeleton from '@/features/projectDetail/ui/projectConfigBoard/postInfoEditor/PostConfigFormSkeleton';
 
 const PostConfigForm = () => {
   const isFormLoading = useRecoilValue(postConfigFormLoadingSelector);

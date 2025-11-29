@@ -1,9 +1,9 @@
-import ProjectConfigFormSkeleton from '@/features/projectDetail/ui/projectConfigBoard/ui/projectInfoEditor/ProjectConfigFormSkeleton';
-import PMAuthEditorSkeleton from '@/features/projectDetail/ui/projectConfigBoard/ui/pmAuthEditor/PMAuthEditorSkeleton';
-import ConfigSummaryLayout from '@/features/projectDetail/ui/projectConfigBoard/ui/ConfigSummaryLayout';
-import ConfigLayout from '@/features/projectDetail/ui/projectConfigBoard/ui/ConfigLayout';
+import ProjectConfigFormSkeleton from '@/features/projectDetail/ui/projectConfigBoard/projectInfoEditor/ProjectConfigFormSkeleton';
+import PMAuthEditorSkeleton from '@/features/projectDetail/ui/projectConfigBoard/pmAuthEditor/PMAuthEditorSkeleton';
+import ConfigSummaryLayout from '@/features/projectDetail/ui/projectConfigBoard/ConfigSummaryLayout';
+import ConfigLayout from '@/features/projectDetail/ui/projectConfigBoard/ConfigLayout';
 import ButtonSkeleton from '@/shared/ui/skeleton/ButtonSkeleton';
-import PostConfigFormSkeleton from '@/features/projectDetail/ui/projectConfigBoard/ui/postInfoEditor/PostConfigFormSkeleton';
+import PostConfigFormSkeleton from '@/features/projectDetail/ui/projectConfigBoard/postInfoEditor/PostConfigFormSkeleton';
 
 const ProjectConfigBoardSkeleton = () => {
   return (

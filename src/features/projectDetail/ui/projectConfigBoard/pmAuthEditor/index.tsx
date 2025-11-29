@@ -1,6 +1,6 @@
 import { useRecoilValue } from 'recoil';
 import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
-import PMAuthEditorItem from '@/features/projectDetail/ui/projectConfigBoard/ui/pmAuthEditor/PMAuthEditorItem';
+import PMAuthEditorItem from '@/features/projectDetail/ui/projectConfigBoard/pmAuthEditor/PMAuthEditorItem';
 import { useProjectCrewList } from '@/features/crews/api/getProjectCrewList';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
 

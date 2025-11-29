@@ -1,5 +1,5 @@
-import ConfigSummaryLayout from '@/features/projectDetail/ui/projectConfigBoard/ui/ConfigSummaryLayout';
-import ConfigLayout from '@/features/projectDetail/ui/projectConfigBoard/ui/ConfigLayout';
+import ConfigSummaryLayout from '@/features/projectDetail/ui/projectConfigBoard/ConfigSummaryLayout';
+import ConfigLayout from '@/features/projectDetail/ui/projectConfigBoard/ConfigLayout';
 import Button from '@/shared/ui/Button';
 import { useRecoilValue } from 'recoil';
 import { useRouter } from 'next/navigation';

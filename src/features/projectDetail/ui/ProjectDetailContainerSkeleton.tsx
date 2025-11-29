@@ -8,7 +8,7 @@ import {
 import ProjectJobBoardSkeleton from '@/features/projectDetail/ui/projectJobBoard/ProjectJobBoardSkeleton';
 import CrewListSkeleton from '@/features/projectDetail/ui/projectCrewsBoard/crewList/CrewListSkeleton';
 import { ProjectNoticeBoardSkeleton } from '@/features/projectDetail/ui/projectNoticeBoard/ProjectNoticeBoardSkeleton';
-import ProjectConfigBoardSkeleton from '@/features/projectDetail/ui/projectConfigBoard/ui/ProjectConfigBoardSkeleton';
+import ProjectConfigBoardSkeleton from '@/features/projectDetail/ui/projectConfigBoard/ProjectConfigBoardSkeleton';
 import { ApplicationError } from '@/shared/utils/ApplicationError';
 import { ReactNode } from 'react';
 

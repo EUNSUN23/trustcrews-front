@@ -20,8 +20,8 @@ import CrewListSkeleton from '@/features/projectDetail/ui/projectCrewsBoard/crew
 import { ProjectCrewDetailBoard } from '@/features/projectDetail/ui/projectCrewsBoard/crewDetail';
 import { ProjectNoticeBoard } from '@/features/projectDetail/ui/projectNoticeBoard';
 import { ProjectNoticeBoardSkeleton } from '@/features/projectDetail/ui/projectNoticeBoard/ProjectNoticeBoardSkeleton';
-import ProjectConfigBoard from '@/features/projectDetail/ui/projectConfigBoard/ui';
-import ProjectConfigBoardSkeleton from '@/features/projectDetail/ui/projectConfigBoard/ui/ProjectConfigBoardSkeleton';
+import ProjectConfigBoard from '@/features/projectDetail/ui/projectConfigBoard';
+import ProjectConfigBoardSkeleton from '@/features/projectDetail/ui/projectConfigBoard/ProjectConfigBoardSkeleton';
 import { ApplicationError } from '@/shared/utils/ApplicationError';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';
 import ProjectDetailContainerSkeleton from '@/features/projectDetail/ui/ProjectDetailContainerSkeleton';

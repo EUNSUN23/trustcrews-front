@@ -1,22 +1,22 @@
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
 import { bigIntToString, numStrToBigInt } from '@/shared/utils/stringUtils';
-import ResetProjectConfigButton from '@/features/projectDetail/ui/projectConfigBoard/ui/projectInfoEditor/ResetProjectConfigButton';
-import ProjectConfigTechStackControl from '@/features/projectDetail/ui/projectConfigBoard/ui/projectInfoEditor/inputControl/ProjectConfigTechStackControl';
-import SaveProjectConfigButton from '@/features/projectDetail/ui/projectConfigBoard/ui/projectInfoEditor/SaveProjectConfigButton';
-import ConfigLayout from '@/features/projectDetail/ui/projectConfigBoard/ui/ConfigLayout';
-import ConfigSummaryLayout from '@/features/projectDetail/ui/projectConfigBoard/ui/ConfigSummaryLayout';
-import ConfigContentsLayout from '@/features/projectDetail/ui/projectConfigBoard/ui/ConfigContentsLayout';
-import ProjectConfigNameControl from '@/features/projectDetail/ui/projectConfigBoard/ui/projectInfoEditor/inputControl/ProjectConfigNameControl';
-import ProjectConfigSubjectControl from '@/features/projectDetail/ui/projectConfigBoard/ui/projectInfoEditor/inputControl/ProjectConfigSubjectControl';
-import ProjectConfigDateControl from '@/features/projectDetail/ui/projectConfigBoard/ui/projectInfoEditor/inputControl/ProjectConfigDateControl';
+import ResetProjectConfigButton from '@/features/projectDetail/ui/projectConfigBoard/projectInfoEditor/ResetProjectConfigButton';
+import ProjectConfigTechStackControl from '@/features/projectDetail/ui/projectConfigBoard/projectInfoEditor/inputControl/ProjectConfigTechStackControl';
+import SaveProjectConfigButton from '@/features/projectDetail/ui/projectConfigBoard/projectInfoEditor/SaveProjectConfigButton';
+import ConfigLayout from '@/features/projectDetail/ui/projectConfigBoard/ConfigLayout';
+import ConfigSummaryLayout from '@/features/projectDetail/ui/projectConfigBoard/ConfigSummaryLayout';
+import ConfigContentsLayout from '@/features/projectDetail/ui/projectConfigBoard/ConfigContentsLayout';
+import ProjectConfigNameControl from '@/features/projectDetail/ui/projectConfigBoard/projectInfoEditor/inputControl/ProjectConfigNameControl';
+import ProjectConfigSubjectControl from '@/features/projectDetail/ui/projectConfigBoard/projectInfoEditor/inputControl/ProjectConfigSubjectControl';
+import ProjectConfigDateControl from '@/features/projectDetail/ui/projectConfigBoard/projectInfoEditor/inputControl/ProjectConfigDateControl';
 import { useProjectConfig } from '@/features/project/api/generalConfig/getProjectConfig';
 import { useEffect } from 'react';
 import {
   projectConfigFormLoadingSelector,
   projectConfigFormStateStore,
 } from '@/store/projectDetail/config/project/ProjectConfigFormStateStore';
-import ProjectConfigFormSkeleton from '@/features/projectDetail/ui/projectConfigBoard/ui/projectInfoEditor/ProjectConfigFormSkeleton';
+import ProjectConfigFormSkeleton from '@/features/projectDetail/ui/projectConfigBoard/projectInfoEditor/ProjectConfigFormSkeleton';
 
 const ProjectConfigForm = () => {
   const isFormLoading = useRecoilValue(projectConfigFormLoadingSelector);
