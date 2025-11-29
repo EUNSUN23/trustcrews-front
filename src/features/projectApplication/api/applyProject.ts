@@ -2,7 +2,7 @@ import { request } from '@/lib/clientApi/request';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { ResponseBody } from '@/shared/types/responseBody';
 import { ApiResult } from '@/shared/types/apiResult';
-import { MY_PROJECT_APPLIES_QUERY_KEY } from '@/features/myProjectApplies/api/getMyProjectApplies';
+import { MY_PROJECT_APPLIES_QUERY_KEY } from '@/features/projectApplication/api/getMyProjectApplies';
 
 export const applyProject = async (
   projectId: bigint | number,

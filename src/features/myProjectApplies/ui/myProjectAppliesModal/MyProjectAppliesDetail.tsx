@@ -4,8 +4,8 @@ import { useRef } from 'react';
 import Loader from '@/shared/ui/Loader';
 import useIntersectionObserver from '@/shared/hooks/useIntersectionObserver';
 import Badge from '@/shared/ui/Badge';
-import { useMyProjectApplies } from '@/features/myProjectApplies/api/getMyProjectApplies';
-import { ProjectApplyStatusBadge } from '@/features/myProjectApplies/components/ProjectApplyStatusBadge';
+import { useMyProjectApplies } from '@/features/projectApplication/api/getMyProjectApplies';
+import { ProjectApplyStatusBadge } from '@/features/projectApplication/ui/ProjectApplyStatusBadge';
 
 const MyProjectAppliesDetail = () => {
   const bottomRef = useRef<HTMLLIElement | null>(null);

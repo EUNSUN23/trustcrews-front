@@ -6,7 +6,7 @@ import Modal from '@/shared/ui/Modal';
 import MyProjectAppliesDetail from './MyProjectAppliesDetail';
 import useModalPortalElement from '@/shared/hooks/useModalPortalElement';
 import { myProjectAppliesModalStateStore } from '@/store/myProjectApplies/MyProjectAppliesModalStateStore';
-import MyProjectAppliesDetailSkeleton from '@/features/myProjectApplies/components/modal/MyProjectAppliesDetailSkeleton';
+import MyProjectAppliesDetailSkeleton from '@/features/myProjectApplies/ui/myProjectAppliesModal/MyProjectAppliesDetailSkeleton';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';
 
 const MyProjectAppliesModal = () => {

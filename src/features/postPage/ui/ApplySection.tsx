@@ -5,7 +5,7 @@ import useSnackbar from '@/shared/hooks/useSnackbar';
 import { useRecoilValue, useResetRecoilState } from 'recoil';
 import ApplyPositionDropdown from '@/features/postPage/ui/ApplyPositionDropdown';
 import { useEffect } from 'react';
-import { useApplyProject } from '@/features/applyProject/api/applyProject';
+import { useApplyProject } from '@/features/projectApplication/api/applyProject';
 import { PostDetailData } from '@/features/post/api/getPostDetail';
 import { projectApplyPositionState } from '@/store/postDetail/applyProject/ApplyPositionStateStore';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';

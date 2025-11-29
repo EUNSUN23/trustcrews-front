@@ -1,6 +1,6 @@
 import Button from '@/shared/ui/Button';
 import { useSetRecoilState } from 'recoil';
-import MyProjectAppliesModal from '@/features/myProjectApplies/components/modal/MyProjectAppliesModal';
+import MyProjectAppliesModal from '@/features/myProjectApplies/ui/myProjectAppliesModal';
 import { myProjectAppliesModalStateStore } from '@/store/myProjectApplies/MyProjectAppliesModalStateStore';
 
 const MyProjectApplies = () => {
