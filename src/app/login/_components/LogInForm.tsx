@@ -29,11 +29,7 @@ const LoginForm = () => {
       const invalidateProjectNotice = queryClient.invalidateQueries({
         queryKey: [MY_PROJECT_APPLIES_QUERY_KEY],
       });
-      await Promise.all([
-        invalidateMyProjectList,
-        invalidateProjectNotice,
-        // invalidateUserInfo,
-      ]);
+      await Promise.all([invalidateMyProjectList, invalidateProjectNotice]);
       router.replace('/');
       router.refresh();
 

@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Snackbar from '@/shared/ui/Snackbar';
-import Header from '@/layouts/Header';
+import Header from '@/app/_components/Header';
 import { ReactNode } from 'react';
 import ClientProvider from '@/providers/ClientProvider';
-import { checkIsAuthorized } from '@/lib/checkIsAuthorized';
 
 export const metadata: Metadata = {
   title: 'TRUSTCREWS | 책임감 있는 사이드 프로젝트 팀, 팀원을 구하는 방법',

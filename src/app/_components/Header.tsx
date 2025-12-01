@@ -1,12 +1,10 @@
-// 'use client';
-
 import Image from 'next/image';
-import logo from '../../public/images/logo.png';
+import logo from '../../../public/images/logo.png';
 import Link from 'next/link';
-import UserMenuContainerSkeleton from '@/features/auth/userMenu/components/UserMenuContainerSkeleton';
+import UserMenuContainerSkeleton from '@/features/userMenu/ui/UserMenuContainerSkeleton';
 import { IoCreateOutline } from '@react-icons/all-files/io5/IoCreateOutline';
 import calcImageSizes from '@/lib/calcImageSizes';
-import { UserMenuContainer } from '@/features/auth/userMenu/components/UserMenuContainer';
+import { UserMenuContainer } from '@/features/userMenu/ui/UserMenuContainer';
 import { Suspense } from 'react';
 import { checkIsAuthorized } from '@/lib/checkIsAuthorized';
 
@@ -17,7 +15,7 @@ const Header = () => {
       <div className='flex items-center justify-between h-[80px] mobile:h-[65px] my-1'>
         <div id='top-navigation-wrap'>
           <Link
-            href='/'
+            href='/public'
             aria-label='trustcrews 홈페이지'
             className='inline-block relative pc:w-[200px] pc:h-[60px] tablet:w-[150px] tablet:h-[50px] mobile:w-[120px] mobile:h-[40px]'
           >

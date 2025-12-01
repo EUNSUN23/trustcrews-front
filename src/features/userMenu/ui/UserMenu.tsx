@@ -16,7 +16,7 @@ import { useLogout } from '@/features/auth/logout/api/logout';
 import { useResetRecoilState } from 'recoil';
 import { activeMainBoardTabStore } from '@/store/ActiveMainBoardTabStateStore';
 import useSnackbar from '@/shared/hooks/useSnackbar';
-import { SimpleUserInfo } from '@/features/auth/userMenu/api/getSimpleUserInfo';
+import { SimpleUserInfo } from '@/features/user/api/getSimpleUserInfo';
 import { clsx } from 'clsx';
 import useDesktopMediaQuery from '@/hooks/mediaQuery/useDesktopMediaQuery';
 import useIsClient from '@/shared/hooks/useIsClient';

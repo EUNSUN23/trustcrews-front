@@ -1,5 +1,5 @@
 import Input from '@/shared/ui/Input';
-import CheckNicknameButton from '@/features/checkNickname/components/CheckNicknameButton';
+import CheckNicknameButton from '@/features/auth/checkNickname/ui/CheckNicknameButton';
 import { useRecoilState } from 'recoil';
 import { ChangeEvent, useEffect, useRef } from 'react';
 import { signUpFormFieldSelector } from '@/store/signup/SignUpFormStateStore';
