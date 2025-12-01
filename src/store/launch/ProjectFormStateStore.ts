@@ -1,5 +1,5 @@
 import { atom, DefaultValue, selectorFamily } from 'recoil';
-import { CreateProjectInput } from '@/features/launch/api/createProject';
+import { CreateProjectInput } from '@/features/project/api/createProject';
 
 interface ProjectFormState extends Omit<CreateProjectInput, 'technologyIds'> {
   technologyIds: string[];

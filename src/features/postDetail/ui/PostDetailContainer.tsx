@@ -1,12 +1,12 @@
 'use client';
 
-import ProjectInformation from '@/features/postPage/ui/ProjectInformation';
-import ApplySection from '@/features/postPage/ui/ApplySection';
+import ProjectInformation from '@/features/postDetail/ui/ProjectInformation';
+import ApplySection from '@/features/postDetail/ui/ApplySection';
 import { usePostDetail } from '@/features/post/api/getPostDetail';
 import { useProjectSummaryInfo } from '@/features/project/api/getProjectInfoSummary';
-import PostInformation from '@/features/postPage/ui/PostInformation';
-import PostIntroduction from '@/features/postPage/ui/PostIntroduction';
-import PostTitle from '@/features/postPage/ui/PostTitle';
+import PostInformation from '@/features/postDetail/ui/PostInformation';
+import PostIntroduction from '@/features/postDetail/ui/PostIntroduction';
+import PostTitle from '@/features/postDetail/ui/PostTitle';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
 
 type PostDetailProps = {
@@ -14,7 +14,7 @@ type PostDetailProps = {
   postId: string;
 };
 
-const PostPage = ({ isAuthorized, postId }: PostDetailProps) => {
+const PostDetailContainer = ({ isAuthorized, postId }: PostDetailProps) => {
   const { data: postRes } = usePostDetail(numStrToBigInt(postId));
 
   const postInfo = postRes.data;
@@ -36,4 +36,4 @@ const PostPage = ({ isAuthorized, postId }: PostDetailProps) => {
   );
 };
 
-export default PostPage;
+export default PostDetailContainer;

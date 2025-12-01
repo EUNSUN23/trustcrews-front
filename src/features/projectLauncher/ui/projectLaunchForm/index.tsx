@@ -1,21 +1,21 @@
-import RowWide from '@/shared/ui/RowWide';
-import Button from '@/shared/ui/Button';
 import { useRouter } from 'next/navigation';
 import { useResetRecoilState } from 'recoil';
-import { useEffect } from 'react';
-import LaunchPostTitleControl from '@/features/launch/components/inputControl/LaunchPostTitleControl';
-import LaunchProjectNameControl from '@/features/launch/components/inputControl/LaunchProjectNameControl';
-import LaunchProjectSubjectControl from '@/features/launch/components/inputControl/LaunchProjectSubjectControl';
-import LaunchPositionControl from '@/features/launch/components/inputControl/LaunchPositionControl';
-import LaunchProjectDateControl from '@/features/launch/components/inputControl/LaunchProjectDateControl';
-import LaunchTechStackControl from '@/features/launch/components/inputControl/LaunchTechStackControl';
-import LaunchContactControl from '@/features/launch/components/inputControl/LaunchContactControl';
-import LaunchPostContentControl from '@/features/launch/components/inputControl/LaunchPostContentControl';
 import { postFormStateStore } from '@/store/launch/PostFormStateStore';
 import { projectFormStateStore } from '@/store/launch/ProjectFormStateStore';
-import LaunchButton from '@/features/launch/components/LaunchButton';
+import { useEffect } from 'react';
+import LaunchPostTitleControl from '@/features/projectLauncher/ui/projectLaunchForm/LaunchPostTitleControl';
+import LaunchProjectNameControl from '@/features/projectLauncher/ui/projectLaunchForm/LaunchProjectNameControl';
+import LaunchProjectSubjectControl from '@/features/projectLauncher/ui/projectLaunchForm/LaunchProjectSubjectControl';
+import LaunchPositionControl from '@/features/projectLauncher/ui/projectLaunchForm/LaunchPositionControl';
+import LaunchProjectDateControl from '@/features/projectLauncher/ui/projectLaunchForm/LaunchProjectDateControl';
+import LaunchTechStackControl from '@/features/projectLauncher/ui/projectLaunchForm/LaunchTechStackControl';
+import LaunchContactControl from '@/features/projectLauncher/ui/projectLaunchForm/LaunchContactControl';
+import LaunchPostContentControl from '@/features/projectLauncher/ui/projectLaunchForm/LaunchPostContentControl';
+import RowWide from '@/shared/ui/RowWide';
+import Button from '@/shared/ui/Button';
+import LaunchButton from '@/features/projectLauncher/ui/projectLaunchForm/LaunchButton';
 
-const LaunchForm = () => {
+export const ProjectLaunchForm = () => {
   const router = useRouter();
   const resetPostFormState = useResetRecoilState(postFormStateStore);
   const resetProjectFormState = useResetRecoilState(projectFormStateStore);
@@ -56,5 +56,3 @@ const LaunchForm = () => {
     </div>
   );
 };
-
-export default LaunchForm;

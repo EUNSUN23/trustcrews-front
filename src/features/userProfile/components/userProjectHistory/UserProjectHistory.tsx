@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import CommonPagination from '@/shared/ui/CommonPagination';
 import { ITEM_COUNT_PER_PAGE, PAGE_RANGE } from '@/constants/pagination';
-import { useMyProjectHistory } from '@/features/userProfile/api/getMyProjectHistory';
+import { useMyProjectHistory } from '@/features/projectHistory/api/getMyProjectHistory';
 import ProjectHistoryItem from '@/features/projectHistory/ui/ProjectHistoryItem';
 
 const UserProjectHistory = () => {

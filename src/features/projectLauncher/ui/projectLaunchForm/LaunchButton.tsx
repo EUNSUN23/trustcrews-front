@@ -4,11 +4,11 @@ import { projectFormStateStore } from '@/store/launch/ProjectFormStateStore';
 import { postFormStateStore } from '@/store/launch/PostFormStateStore';
 import { ZodError } from 'zod';
 import useSnackbar from '@/shared/hooks/useSnackbar';
-import { useLaunch } from '@/features/launch/api/launch';
+import { useLaunchProject } from '@/features/projectLauncher/api/launchProject';
 import { useRouter } from 'next/navigation';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
-import { createPostInputSchema } from '@/features/launch/api/createPost';
-import { createProjectInputSchema } from '@/features/launch/api/createProject';
+import { createPostInputSchema } from '@/features/post/api/createPost';
+import { createProjectInputSchema } from '@/features/project/api/createProject';
 
 const LaunchButton = () => {
   const router = useRouter();
@@ -19,15 +19,16 @@ const LaunchButton = () => {
   const postForm = useRecoilValue(postFormStateStore);
   const projectForm = useRecoilValue(projectFormStateStore);
 
-  const { mutate: createPostWithProject, isPending: isCreating } = useLaunch({
-    onSuccess: async (res) => {
-      setSuccessSnackbar(res.message);
-      resetPostFormState();
-      resetProjectFormState();
-      router.replace('/');
-    },
-    onError: (error) => setErrorSnackbar(error.message),
-  });
+  const { mutate: createPostWithProject, isPending: isCreating } =
+    useLaunchProject({
+      onSuccess: async (res) => {
+        setSuccessSnackbar(res.message);
+        resetPostFormState();
+        resetProjectFormState();
+        router.replace('/');
+      },
+      onError: (error) => setErrorSnackbar(error.message),
+    });
 
   const handleClickSaveButton = async () => {
     const postData = {

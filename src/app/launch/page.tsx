@@ -1,9 +1,9 @@
 'use client';
 
-import LaunchForm from '@/features/launch/components/LaunchForm';
+import { ProjectLaunchForm } from '@/features/projectLauncher/ui/projectLaunchForm';
 
 const LaunchPage = () => {
-  return <LaunchForm />;
+  return <ProjectLaunchForm />;
 };
 
 export default LaunchPage;

@@ -4,14 +4,14 @@ import {
   CreatePostInput,
   CreatePostRes,
   useCreatePost,
-} from '@/features/launch/api/createPost';
+} from '@/features/post/api/createPost';
 import {
   CreateProjectInput,
   CreateProjectRes,
   useCreateProject,
-} from '@/features/launch/api/createProject';
+} from '@/features/project/api/createProject';
 
-export const useLaunch = ({
+export const useLaunchProject = ({
   onSuccess,
   onError,
 }: {
