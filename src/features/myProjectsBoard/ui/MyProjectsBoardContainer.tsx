@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import ProjectCard from './ProjectCard';
+import ProjectCard from '../../project/ui/ProjectCard';
 import CommonPagination from '@/shared/ui/CommonPagination';
 import { ITEM_COUNT_PER_PAGE, PAGE_RANGE } from '@/constants/pagination';
 import { useMyProjects } from '@/features/project/api/getMyProjects';
@@ -37,7 +37,7 @@ const MyProjectsBoard = () => {
             key={v.projectId}
             className='flex-col w-[280px] max-h-[330px] rounded-xl border-2 shadow-lg mobile:bg-white mobile:w-full mobile:mt-2'
           >
-            <ProjectCard projectPost={v} />
+            <ProjectCard data={v} />
           </li>
         ))}
       </ul>

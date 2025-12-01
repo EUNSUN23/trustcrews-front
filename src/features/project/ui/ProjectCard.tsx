@@ -5,10 +5,10 @@ import { FaPlusCircle } from '@react-icons/all-files/fa/FaPlusCircle';
 import { ProjectInfoSummary } from '@/features/project/api/getProjectInfoSummary';
 
 interface ProjectCardProps {
-  projectPost: ProjectInfoSummary;
+  data: ProjectInfoSummary;
 }
 
-const ProjectCard = ({ projectPost }: ProjectCardProps) => {
+const ProjectCard = ({ data }: ProjectCardProps) => {
   const {
     projectId,
     projectName,
@@ -16,7 +16,7 @@ const ProjectCard = ({ projectPost }: ProjectCardProps) => {
     startDate,
     endDate,
     technologyStacks,
-  } = projectPost;
+  } = data;
 
   return (
     <article className='p-4'>

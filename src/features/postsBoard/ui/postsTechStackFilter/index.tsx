@@ -6,10 +6,10 @@ import { BsChevronDown } from '@react-icons/all-files/bs/BsChevronDown';
 import { TechStackMapping } from '@/features/techStack/api/getTechStackMappings';
 import useDropdownState from '@/shared/hooks/useDropdownState';
 import { selectedTechStackState } from '@/store/posts/filter/TechStackFilterStateStore';
-import TechStackTab from '@/features/homePage/ui/mainBoard/postsBoard/postsTechStackFilter/TechStackTab';
-import TechStackTabPanel from '@/features/homePage/ui/mainBoard/postsBoard/postsTechStackFilter/TechStackTabPanel';
-import TechStackFilterResult from '@/features/homePage/ui/mainBoard/postsBoard/postsTechStackFilter/TechStackFilterResult';
-import TechStackResetButton from '@/features/homePage/ui/mainBoard/postsBoard/postsTechStackFilter/TechStackResetButton';
+import TechStackTab from '@/features/postsBoard/ui/postsTechStackFilter/TechStackTab';
+import TechStackTabPanel from '@/features/postsBoard/ui/postsTechStackFilter/TechStackTabPanel';
+import TechStackFilterResult from '@/features/postsBoard/ui/postsTechStackFilter/TechStackFilterResult';
+import TechStackResetButton from '@/features/postsBoard/ui/postsTechStackFilter/TechStackResetButton';
 
 const getSelectedTechStackText = (selectedTechStacks: TechStackMapping[]) => {
   if (selectedTechStacks.length > 0) {

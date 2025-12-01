@@ -1,4 +1,4 @@
-import Guide from '@/features/homePage/ui/guide';
+import Guide from '@/app/(home)/_components/GuideContainer';
 import MainBoard from '@/features/homePage/ui/mainBoard';
 import StaticDataProvider from '@/providers/data/StaticDataProvider';
 import { checkIsAuthorized } from '@/lib/checkIsAuthorized';

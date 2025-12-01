@@ -1,9 +1,9 @@
-import PostsTechStackFilterSkeleton from '@/features/homePage/ui/mainBoard/postsBoard/postsTechStackFilter/PostsTechStackFilterSkeleton';
+import PostsTechStackFilterSkeleton from '@/features/postsBoard/ui/postsTechStackFilter/PostsTechStackFilterSkeleton';
 import CardListSkeleton from '@/shared/ui/skeleton/CardListSkeleton';
 import Skeleton from '@/shared/ui/skeleton/Skeleton';
-import PostsPositionFilterSkeleton from '@/features/homePage/ui/mainBoard/postsBoard/PostsPositionFilterSkeleton';
+import PostsPositionFilterSkeleton from '@/features/postsBoard/ui/postPositionFilter/PostsPositionFilterSkeleton';
 
-const PostsBoardSkeleton = () => {
+const PostsBoardContainerSkeleton = () => {
   return (
     <section className='flex flex-col space-y-5'>
       <h2 className='sr-only'>팀 프로젝트</h2>
@@ -24,4 +24,4 @@ const PostsBoardSkeleton = () => {
   );
 };
 
-export default PostsBoardSkeleton;
+export default PostsBoardContainerSkeleton;

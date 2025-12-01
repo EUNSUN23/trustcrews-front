@@ -9,11 +9,11 @@ import MyProjectApplies from '@/features/myProjectApplies/ui';
 import { useEffect } from 'react';
 import CardListSkeleton from '@/shared/ui/skeleton/CardListSkeleton';
 import { ITEM_COUNT_PER_PAGE } from '@/constants/pagination';
-import MyProjectsBoard from './myProjectsBoard';
-import PostsBoard from './postsBoard';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';
-import PostsBoardSkeleton from '@/features/homePage/ui/mainBoard/postsBoard/PostsBoardSkeleton';
+import PostsBoardContainerSkeleton from '@/features/postsBoard/ui/PostsBoardContainerSkeleton';
 import { clsx } from 'clsx';
+import MyProjectsBoard from '@/features/myProjectsBoard/ui/MyProjectsBoardContainer';
+import PostsBoard from '@/features/postsBoard/ui/PostsBoardContainer';
 
 const {
   BM_TAB001: { code: POSTS_TAB },
@@ -99,7 +99,7 @@ const MainBoard = ({ isAuthorized }: MainBoardProps) => {
           {activeMainBoardTab === POSTS_TAB && (
             <FieldQueryBoundary
               errorFallbackSize='lg'
-              suspenseFallback={<PostsBoardSkeleton />}
+              suspenseFallback={<PostsBoardContainerSkeleton />}
             >
               <PostsBoard />
             </FieldQueryBoundary>
