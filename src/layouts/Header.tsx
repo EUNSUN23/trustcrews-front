@@ -1,27 +1,17 @@
-'use client';
+// 'use client';
 
 import Image from 'next/image';
 import logo from '../../public/images/logo.png';
 import Link from 'next/link';
-import UserMenuSkeleton from '@/features/auth/userMenu/components/UserMenuSkeleton';
+import UserMenuContainerSkeleton from '@/features/auth/userMenu/components/UserMenuContainerSkeleton';
 import { IoCreateOutline } from '@react-icons/all-files/io5/IoCreateOutline';
-import dynamic from 'next/dynamic';
-import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';
 import calcImageSizes from '@/lib/calcImageSizes';
+import { UserMenuContainer } from '@/features/auth/userMenu/components/UserMenuContainer';
+import { Suspense } from 'react';
+import { checkIsAuthorized } from '@/lib/checkIsAuthorized';
 
-const UserMenu = dynamic(
-  () => import('@/features/auth/userMenu/components/UserMenu'),
-  {
-    ssr: false,
-    loading: () => <UserMenuSkeleton />,
-  },
-);
-
-type HeaderProps = {
-  isAuthorized: boolean;
-};
-
-const Header = ({ isAuthorized }: HeaderProps) => {
+const Header = () => {
+  const isAuthorized = checkIsAuthorized();
   return (
     <header className='flex flex-col'>
       <div className='flex items-center justify-between h-[80px] mobile:h-[65px] my-1'>
@@ -60,12 +50,9 @@ const Header = ({ isAuthorized }: HeaderProps) => {
           </Link>
           <div>
             {isAuthorized ? (
-              <FieldQueryBoundary
-                isThrowingAllowed={false}
-                suspenseFallback={<UserMenuSkeleton />}
-              >
-                <UserMenu />
-              </FieldQueryBoundary>
+              <Suspense fallback={<UserMenuContainerSkeleton />}>
+                <UserMenuContainer />
+              </Suspense>
             ) : (
               <Link
                 aria-label='로그인 페이지'

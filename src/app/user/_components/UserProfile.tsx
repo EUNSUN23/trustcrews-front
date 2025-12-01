@@ -4,15 +4,16 @@ import { useRouter } from 'next/navigation';
 import Avatar from '@/features/user/ui/Avatar';
 import Button from '@/shared/ui/Button';
 import TechStackBadge from '@/features/techStack/ui/TechStackBadge';
-import { useUserDetailInfo } from '@/features/user/api/getUserDetailInfo';
+import { UserDetailInfo } from '@/features/user/api/getUserDetailInfo';
 
-const UserProfile = () => {
+type UserProfileProps = {
+  data: UserDetailInfo;
+};
+
+const UserProfile = ({ data }: UserProfileProps) => {
   const router = useRouter();
-  const {
-    data: { data: profileInfo },
-  } = useUserDetailInfo();
 
-  const { nickname, profileImgSrc, position, techStacks, intro } = profileInfo;
+  const { nickname, profileImgSrc, position, techStacks, intro } = data;
 
   return (
     <div className='rounded-lg border-2 border-gray-200 bg-white mt-3 mobile:mt-2 px-2'>

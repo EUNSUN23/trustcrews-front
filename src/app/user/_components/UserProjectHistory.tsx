@@ -3,16 +3,17 @@
 import { useState } from 'react';
 import CommonPagination from '@/shared/ui/CommonPagination';
 import { ITEM_COUNT_PER_PAGE, PAGE_RANGE } from '@/constants/pagination';
-import { useMyProjectHistory } from '@/features/projectHistory/api/getMyProjectHistory';
 import ProjectHistoryItem from '@/features/projectHistory/ui/ProjectHistoryItem';
+import { ProjectHistoryData } from '@/features/projectHistory/types/projectHistory';
+import { Paged } from '@/shared/types/responseBody';
 
-const UserProjectHistory = () => {
+type UserProjectHistoryProps = {
+  data: Paged<ProjectHistoryData[]>;
+};
+
+const UserProjectHistory = ({ data }: UserProjectHistoryProps) => {
   const [pageNumber, setPageNumber] = useState(0);
-  const {
-    data: {
-      data: { content, totalPages },
-    },
-  } = useMyProjectHistory(pageNumber);
+  const { content, totalPages } = data;
 
   return (
     <div className='p-3 mobile:p-0 mobile:pt-3 space-y-5'>

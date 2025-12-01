@@ -1,6 +1,6 @@
 import Skeleton from '@/shared/ui/skeleton/Skeleton';
 
-const UserMenuSkeleton = () => {
+const UserMenuContainerSkeleton = () => {
   return (
     <ul className='flex items-center'>
       <li className='mx-2'>
@@ -10,4 +10,4 @@ const UserMenuSkeleton = () => {
   );
 };
 
-export default UserMenuSkeleton;
+export default UserMenuContainerSkeleton;

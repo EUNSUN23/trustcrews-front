@@ -8,7 +8,6 @@ import { useQueryClient } from '@tanstack/react-query';
 import { ZodError } from 'zod';
 import { loginInputSchema, useLogin } from '@/features/auth/login/api/logIn';
 import useSnackbar from '@/shared/hooks/useSnackbar';
-import { SIMPLE_USER_INFO_QUERY_KEY } from '@/features/auth/userMenu/api/getSimpleUserInfo';
 import { MY_PROJECTS_QUERY_KEY } from '@/features/project/api/getMyProjects';
 import { MY_PROJECT_APPLIES_QUERY_KEY } from '@/features/projectApplication/api/getMyProjectApplies';
 
@@ -24,9 +23,6 @@ const LoginForm = () => {
     onSuccess: async (res) => {
       const { message } = res;
 
-      const invalidateUserInfo = queryClient.invalidateQueries({
-        queryKey: [SIMPLE_USER_INFO_QUERY_KEY],
-      });
       const invalidateMyProjectList = queryClient.invalidateQueries({
         queryKey: [MY_PROJECTS_QUERY_KEY],
       });
@@ -36,7 +32,7 @@ const LoginForm = () => {
       await Promise.all([
         invalidateMyProjectList,
         invalidateProjectNotice,
-        invalidateUserInfo,
+        // invalidateUserInfo,
       ]);
       router.replace('/');
       router.refresh();

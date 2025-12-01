@@ -1,13 +1,12 @@
 import TrustGradeBadge from '@/features/trustGrade/ui/TrustGradeBadge';
-import { useUserDetailInfo } from '@/features/user/api/getUserDetailInfo';
+import { TrustGradeName } from '@/features/trustGrade/types/trustGrade';
 
-const UserTrustScore = () => {
-  const {
-    data: {
-      data: { trustScore, trustGrade },
-    },
-  } = useUserDetailInfo();
+type UserTrustScoreProps = {
+  trustGrade: TrustGradeName;
+  trustScore: number;
+};
 
+const UserTrustScore = ({ trustGrade, trustScore }: UserTrustScoreProps) => {
   return (
     <div className='p-3 mobile:p-0 mobile:pt-3 space-y-5'>
       <h3 className='tablet:text-[26px] mobile:text-lg font-semibold text-greyDarkBlue mt-10 mb-8 mobile:my-5'>
@@ -18,7 +17,7 @@ const UserTrustScore = () => {
           <p>신뢰 등급</p>
           <TrustGradeBadge
             badgeStyle='text'
-            trustGrade={trustGrade.trustGradeName}
+            trustGrade={trustGrade}
             size='md'
           />
         </div>

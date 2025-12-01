@@ -13,13 +13,12 @@ export const metadata: Metadata = {
 };
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
-  const isAuthorized = checkIsAuthorized();
   return (
     <html lang='en'>
       <body className='w-full'>
         <ClientProvider>
           <div className='responsiveContainer'>
-            <Header isAuthorized={isAuthorized} />
+            <Header />
             {children}
           </div>
           <div id='modal' className='absolute top-0 w-full'></div>

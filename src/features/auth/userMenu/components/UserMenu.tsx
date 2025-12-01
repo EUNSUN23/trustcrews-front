@@ -16,16 +16,22 @@ import { useLogout } from '@/features/auth/logout/api/logout';
 import { useResetRecoilState } from 'recoil';
 import { activeMainBoardTabStore } from '@/store/ActiveMainBoardTabStateStore';
 import useSnackbar from '@/shared/hooks/useSnackbar';
-import { useSimpleUserInfo } from '@/features/auth/userMenu/api/getSimpleUserInfo';
+import { SimpleUserInfo } from '@/features/auth/userMenu/api/getSimpleUserInfo';
 import { clsx } from 'clsx';
 import useDesktopMediaQuery from '@/hooks/mediaQuery/useDesktopMediaQuery';
+import useIsClient from '@/shared/hooks/useIsClient';
+import Skeleton from '@/shared/ui/skeleton/Skeleton';
 
-const UserMenu = () => {
+type UserMenuProps = {
+  data: SimpleUserInfo;
+};
+
+const UserMenu = ({ data }: UserMenuProps) => {
+  const isClient = useIsClient();
   const isDesktop = useDesktopMediaQuery();
-
-  const router = useRouter();
   const resetActiveBoardTab = useResetRecoilState(activeMainBoardTabStore);
   const { setInfoSnackbar, setErrorSnackbar } = useSnackbar();
+  const router = useRouter();
 
   const { mutate: logout } = useLogout({
     onSuccess: ({ message }) => {
@@ -39,15 +45,11 @@ const UserMenu = () => {
     },
   });
 
-  const {
-    data: {
-      data: { nickname, profileImgSrc },
-    },
-  } = useSimpleUserInfo();
-
   const handleClickLogout = () => {
     logout();
   };
+
+  const { nickname, profileImgSrc } = data;
 
   return (
     <div className='flex items-center mx-2 space-x-2'>
@@ -58,8 +60,12 @@ const UserMenu = () => {
           alt='사용자 아바타 이미지'
           loading='eager'
         />
-        {isDesktop && (
-          <span className='text-grey90 leading-loose'>{nickname}</span>
+        {isClient ? (
+          isDesktop && (
+            <span className='text-grey90 leading-loose'>{nickname}</span>
+          )
+        ) : (
+          <Skeleton text={nickname} />
         )}
       </div>
       <Menu as='div' className='relative flex text-center'>

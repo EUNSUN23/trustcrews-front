@@ -1,9 +1,9 @@
-import { useSuspenseQuery } from '@tanstack/react-query';
+import 'server-only';
 import { ResponseBody } from '@/shared/types/responseBody';
 import { TrustGradeName } from '@/features/trustGrade/types/trustGrade';
 import { Position } from '@/features/position/types/position';
 import { TechStack } from '@/features/techStack/types/techStack';
-import { request } from '@/lib/clientApi/request';
+import { requestInServer } from '@/lib/serverApi/requestInServer';
 
 export type UserDetailInfo = {
   userId: bigint | null;
@@ -26,14 +26,5 @@ export type UserDetailInfo = {
 export const getUserDetailInfo = async (): Promise<
   ResponseBody<UserDetailInfo>
 > => {
-  return await request('GET', `/api/user/profile`);
-};
-
-export const USER_DETAIL_INFO_QUERY_KEY = 'profileInfo';
-
-export const useUserDetailInfo = () => {
-  return useSuspenseQuery({
-    queryKey: [USER_DETAIL_INFO_QUERY_KEY],
-    queryFn: getUserDetailInfo,
-  });
+  return await requestInServer('GET', `/api/user/profile`);
 };

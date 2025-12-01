@@ -1,5 +1,5 @@
-import UserImageFormSkeleton from '@/app/user/update/_components/UserImageFormSkeleton';
 import UserInfoFormSkeleton from '@/app/user/update/_components/userInfoForm/UserInfoFormSkeleton';
+import UserImageFormSkeleton from '@/app/user/update/_components/UserImageFormSkeleton';
 
 const UserUpdatePageLoading = () => {
   return (

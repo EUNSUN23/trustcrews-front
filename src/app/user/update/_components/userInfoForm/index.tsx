@@ -1,9 +1,11 @@
+'use client';
+
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import {
   userInfoFormLoadingSelector,
   userInfoFormStateStore,
 } from '@/store/useProfileEditor/UserInfoFormStateStore';
-import { useUserDetailInfo } from '@/features/user/api/getUserDetailInfo';
+import { UserDetailInfo } from '@/features/user/api/getUserDetailInfo';
 import { useEffect } from 'react';
 import Input from '@/shared/ui/Input';
 import { UpdateNicknameControl } from '@/app/user/update/_components/userInfoForm/inputControl/UpdateNicknameControl';
@@ -13,20 +15,19 @@ import UpdateIntroductionControl from '@/app/user/update/_components/userInfoFor
 import { bigIntToString } from '@/shared/utils/stringUtils';
 import UserInfoFormSkeleton from '@/app/user/update/_components/userInfoForm/UserInfoFormSkeleton';
 
-const UserInfoForm = () => {
-  const setUserInfoForm = useSetRecoilState(userInfoFormStateStore);
+type UserInfoFormProps = {
+  data: UserDetailInfo;
+};
 
+const UserInfoForm = ({ data }: UserInfoFormProps) => {
+  const { position, nickname, techStacks, intro, email } = data;
+  const positionId = bigIntToString(position.positionId);
+  const techStackIds = techStacks.map((v) => bigIntToString(v.techStackId));
+
+  const setUserInfoForm = useSetRecoilState(userInfoFormStateStore);
   const [isUserInfoFormLoading, setIsUserInfoFormLoading] = useRecoilState(
     userInfoFormLoadingSelector,
   );
-
-  const {
-    data: { data: profileInfo },
-  } = useUserDetailInfo();
-
-  const { position, nickname, techStacks, intro, email } = profileInfo;
-  const positionId = bigIntToString(position.positionId);
-  const techStackIds = techStacks.map((v) => bigIntToString(v.techStackId));
 
   useEffect(() => {
     if (isUserInfoFormLoading) {

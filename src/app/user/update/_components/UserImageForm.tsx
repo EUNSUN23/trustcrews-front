@@ -1,21 +1,21 @@
+'use client';
+
 import { ChangeEvent, useRef } from 'react';
 import { useRecoilState } from 'recoil';
 import Avatar from '@/features/user/ui/Avatar';
 import Button from '@/shared/ui/Button';
 import { userImageFormStateStore } from '@/store/useProfileEditor/UserImageFormStateStore';
-import { useUserDetailInfo } from '@/features/user/api/getUserDetailInfo';
+import { UserDetailInfo } from '@/features/user/api/getUserDetailInfo';
 
-const UserImageForm = () => {
+type UserImageFormProps = {
+  profileImgSrc: UserDetailInfo['profileImgSrc'];
+};
+
+const UserImageForm = ({ profileImgSrc }: UserImageFormProps) => {
   const fileRef = useRef<HTMLInputElement>(null);
   const [{ image, hasUpdate }, setUserImageState] = useRecoilState(
     userImageFormStateStore,
   );
-
-  const {
-    data: {
-      data: { profileImgSrc },
-    },
-  } = useUserDetailInfo();
 
   const handleChangeImage = (event: ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
