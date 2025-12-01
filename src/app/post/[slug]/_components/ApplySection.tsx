@@ -3,7 +3,7 @@
 import Button from '@/shared/ui/Button';
 import useSnackbar from '@/shared/hooks/useSnackbar';
 import { useRecoilValue, useResetRecoilState } from 'recoil';
-import ApplyPositionDropdown from '@/features/postDetail/ui/ApplyPositionDropdown';
+import ApplyPositionDropdown from '@/features/projectApplication/ui/ApplyPositionDropdown';
 import { useEffect } from 'react';
 import { useApplyProject } from '@/features/projectApplication/api/applyProject';
 import { PostDetailData } from '@/features/post/api/getPostDetail';

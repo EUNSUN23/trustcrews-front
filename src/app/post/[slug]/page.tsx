@@ -1,4 +1,4 @@
-import PostDetailContainer from '@/features/postDetail/ui/PostDetailContainer';
+import PostDetailContainer from '@/app/post/[slug]/_components/PostDetailContainer';
 import { checkIsAuthorized } from '@/lib/checkIsAuthorized';
 
 const PostPage = ({

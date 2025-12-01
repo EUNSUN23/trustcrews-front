@@ -1,12 +1,12 @@
 'use client';
 
-import ProjectInformation from '@/features/postDetail/ui/ProjectInformation';
-import ApplySection from '@/features/postDetail/ui/ApplySection';
+import ProjectInformation from '@/app/post/[slug]/_components/ProjectInformation';
+import ApplySection from '@/app/post/[slug]/_components/ApplySection';
 import { usePostDetail } from '@/features/post/api/getPostDetail';
 import { useProjectSummaryInfo } from '@/features/project/api/getProjectInfoSummary';
-import PostInformation from '@/features/postDetail/ui/PostInformation';
-import PostIntroduction from '@/features/postDetail/ui/PostIntroduction';
-import PostTitle from '@/features/postDetail/ui/PostTitle';
+import PostInformation from '@/app/post/[slug]/_components/PostInformation';
+import PostIntroduction from '@/app/post/[slug]/_components/PostIntroduction';
+import PostTitle from '@/app/post/[slug]/_components/PostTitle';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
 
 type PostDetailProps = {
