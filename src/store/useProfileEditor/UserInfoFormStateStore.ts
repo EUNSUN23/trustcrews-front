@@ -1,4 +1,4 @@
-import { UserInfoInput } from '@/features/userProfileEditor/api/updateUserDetail';
+import { UserInfoInput } from '@/features/user/api/updateUserDetail';
 import { atom, DefaultValue, selector, selectorFamily } from 'recoil';
 
 interface UserInfoFormData

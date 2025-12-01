@@ -4,7 +4,7 @@ import PMAuthEditorItem from '@/features/projectDetail/ui/projectConfigBoard/pmA
 import { useProjectCrewList } from '@/features/crews/api/getProjectCrewList';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
 
-const Index = () => {
+const PMAuthEditor = () => {
   const projectId = useRecoilValue(projectIdState);
 
   const {
@@ -30,4 +30,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default PMAuthEditor;

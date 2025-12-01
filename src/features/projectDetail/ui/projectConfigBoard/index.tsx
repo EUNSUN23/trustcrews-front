@@ -1,7 +1,7 @@
 import PostConfigForm from '@/features/projectDetail/ui/projectConfigBoard/postInfoEditor/PostConfigForm';
 import ProjectConfigFormSkeleton from '@/features/projectDetail/ui/projectConfigBoard/projectInfoEditor/ProjectConfigFormSkeleton';
 import ProjectConfigForm from '@/features/projectDetail/ui/projectConfigBoard/projectInfoEditor/ProjectConfigForm';
-import Index from 'pmAuthEditor';
+import PMAuthEditor from '@/features/projectDetail/ui/projectConfigBoard/pmAuthEditor/PMAuthEditor';
 import EndProject from '@/features/projectDetail/ui/projectConfigBoard/EndProject';
 import PMAuthEditorSkeleton from '@/features/projectDetail/ui/projectConfigBoard/pmAuthEditor/PMAuthEditorSkeleton';
 import PostConfigFormSkeleton from '@/features/projectDetail/ui/projectConfigBoard/postInfoEditor/PostConfigFormSkeleton';
@@ -30,7 +30,7 @@ const ProjectConfigBoard = () => {
           errorFallbackSize='md'
           suspenseFallback={<PMAuthEditorSkeleton />}
         >
-          <Index />
+          <PMAuthEditor />
         </FieldQueryBoundary>
       </ConfigLayout>
       <EndProject />

@@ -1,11 +1,11 @@
-import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { ResponseBody } from '@/shared/types/responseBody';
 import { TrustGradeName } from '@/features/trustGrade/types/trustGrade';
 import { Position } from '@/features/position/types/position';
 import { TechStack } from '@/features/techStack/types/techStack';
+import { request } from '@/lib/clientApi/request';
 
-export type UserProfileInfo = {
+export type UserDetailInfo = {
   userId: bigint | null;
   email: string;
   nickname: string;
@@ -24,7 +24,7 @@ export type UserProfileInfo = {
 };
 
 export const getUserDetailInfo = async (): Promise<
-  ResponseBody<UserProfileInfo>
+  ResponseBody<UserDetailInfo>
 > => {
   return await request('GET', `/api/user/profile`);
 };

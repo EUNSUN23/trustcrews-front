@@ -1,4 +1,4 @@
-import Avatar from '@/shared/ui/Avatar';
+import Avatar from '@/features/user/ui/Avatar';
 import TechStackImage from '@/features/techStack/ui/TechStackImage';
 import TrustGradeBadge from '@/features/trustGrade/ui/TrustGradeBadge';
 import RCVoteNoticeDetailSkeleton from '@/features/projectDetail/ui/projectNoticeBoard/rcVoteNotice/rcVoteNoticeModal/RCVoteNoticeDetailSkeleton';

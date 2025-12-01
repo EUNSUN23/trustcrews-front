@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Avatar from '@/shared/ui/Avatar';
+import Avatar from '@/features/user/ui/Avatar';
 import Badge from '@/shared/ui/Badge';
 import Button from '@/shared/ui/Button';
 import useSnackbar from '@/shared/hooks/useSnackbar';

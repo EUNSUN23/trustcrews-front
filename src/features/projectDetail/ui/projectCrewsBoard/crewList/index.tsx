@@ -9,7 +9,7 @@ import {
 import { crewIdState } from '@/store/projectDetail/crew/CrewIdStateStore';
 import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
 import { useProjectCrewList } from '@/features/crews/api/getProjectCrewList';
-import Avatar from '@/shared/ui/Avatar';
+import Avatar from '@/features/user/ui/Avatar';
 import Badge from '@/shared/ui/Badge';
 import PMAuthBadge from '@/features/projectMngAuth/ui/PMAuthBadge';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';

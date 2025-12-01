@@ -2,7 +2,7 @@ import Link from 'next/link';
 import TrustGradeBadge from '@/features/trustGrade/ui/TrustGradeBadge';
 import Badge from '@/shared/ui/Badge';
 import TechStackImage from '@/features/techStack/ui/TechStackImage';
-import Avatar from '@/shared/ui/Avatar';
+import Avatar from '@/features/user/ui/Avatar';
 import { format } from 'date-fns';
 import { FaPlusCircle } from '@react-icons/all-files/fa/FaPlusCircle';
 import { PostInfoSummary } from '@/features/post/api/getPostList';

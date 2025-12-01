@@ -1,7 +1,7 @@
 'use client';
 
 import { Fragment } from 'react';
-import Avatar from '@/shared/ui/Avatar';
+import Avatar from '@/features/user/ui/Avatar';
 import { FaChevronDown } from '@react-icons/all-files/fa/FaChevronDown';
 import {
   Menu,

@@ -1,6 +1,6 @@
 'use client';
 
-import Avatar from '@/shared/ui/Avatar';
+import Avatar from '@/features/user/ui/Avatar';
 import Badge from '@/shared/ui/Badge';
 import TechStackImage from '@/features/techStack/ui/TechStackImage';
 import TrustGradeBadge from '@/features/trustGrade/ui/TrustGradeBadge';

@@ -2,13 +2,13 @@
 
 import CommonPagination from '@/shared/ui/CommonPagination';
 import useTasks from '@/features/task/api/getTaskList';
-import TaskCard from 'taskCard';
 import { useRecoilValue } from 'recoil';
 import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
 import { activeMilestoneStateStore } from '@/store/projectDetail/job/milestone/ActiveMilestoneStateStore';
 import { useState } from 'react';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
 import { ITEM_COUNT_PER_PAGE } from '@/constants/pagination';
+import TaskCard from '@/features/projectDetail/ui/projectJobBoard/tasks/taskCard';
 
 const Tasks = () => {
   const [pageNumber, setPageNumber] = useState(0);

@@ -1,10 +1,10 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import Avatar from '@/shared/ui/Avatar';
+import Avatar from '@/features/user/ui/Avatar';
 import Button from '@/shared/ui/Button';
 import TechStackBadge from '@/features/techStack/ui/TechStackBadge';
-import { useUserDetailInfo } from '@/features/userProfile/api/getUserDetailInfo';
+import { useUserDetailInfo } from '@/features/user/api/getUserDetailInfo';
 
 const UserProfile = () => {
   const router = useRouter();

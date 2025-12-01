@@ -1,6 +1,6 @@
 'use client';
 
-import Avatar from '@/shared/ui/Avatar';
+import Avatar from '@/features/user/ui/Avatar';
 import { PostDetailData } from '@/features/post/api/getPostDetail';
 
 type PostTitleProps = { postInfo: PostDetailData };

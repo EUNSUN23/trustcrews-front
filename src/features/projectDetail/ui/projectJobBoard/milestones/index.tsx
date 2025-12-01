@@ -11,8 +11,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { Grid, Navigation, Pagination } from 'swiper/modules';
-import MilestoneCard from 'milestoneCard';
 import useMobileMediaQuery from '@/hooks/mediaQuery/useMobileMediaQuery';
+import MilestoneCard from '@/features/projectDetail/ui/projectJobBoard/milestones/milestoneCard';
 
 type MilestonesProps = {
   data: MilestoneInfo[];

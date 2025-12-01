@@ -1,4 +1,4 @@
-import Avatar from '@/shared/ui/Avatar';
+import Avatar from '@/features/user/ui/Avatar';
 import Badge from '@/shared/ui/Badge';
 import PMAuthBadge from '@/features/projectMngAuth/ui/PMAuthBadge';
 import VoteStatusBadge from '@/features/projectVote/ui/VoteStatusBadge';

@@ -1,12 +1,12 @@
 import response from '@/lib/clientApi/response';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { SIMPLE_USER_INFO_QUERY_KEY } from '@/features/auth/userMenu/api/getSimpleUserInfo';
 import { z } from 'zod';
-import { USER_DETAIL_INFO_QUERY_KEY } from '@/features/userProfile/api/getUserDetailInfo';
+import { USER_DETAIL_INFO_QUERY_KEY } from '@/features/user/api/getUserDetailInfo';
 import { ResponseBody } from '@/shared/types/responseBody';
 import { ApiResult } from '@/shared/types/apiResult';
 import NEXT_PUBLIC_URL from '@/constants/api/nextPublicUrl';
 import { POST_LIST_QUERY_KEY } from '@/features/post/api/getPostList';
+import { SIMPLE_USER_INFO_QUERY_KEY } from '@/features/auth/userMenu/api/getSimpleUserInfo';
 
 const nicknameRegex: RegExp = /^[a-zA-Z0-9]{6,10}$/;
 const MAX_FILE_SIZE = 5 * 1024 * 1024;

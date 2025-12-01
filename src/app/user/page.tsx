@@ -1,26 +1,22 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import UserProfileSkeleton from '@/features/userProfile/components/UserProfileSkeleton';
-import UserTrustScoreSkeleton from '@/features/userProfile/components/userTrustScore/UserTrustScoreSkeleton';
-import UserProjectHistorySkeleton from '@/features/userProfile/components/userProjectHistory/UserProjectHistorySkeleton';
+import UserProfileSkeleton from '@/app/user/_components/UserProfileSkeleton';
+import UserTrustScoreSkeleton from '@/app/user/_components/UserTrustScoreSkeleton';
+import UserProjectHistorySkeleton from '@/app/user/_components/UserProjectHistorySkeleton';
 
 const MyProjectHistory = dynamic(
-  () =>
-    import(
-      '@/features/userProfile/components/userProjectHistory/UserProjectHistory'
-    ),
+  () => import('@/app/user/_components/UserProjectHistory'),
   { ssr: false, loading: () => <UserProjectHistorySkeleton /> },
 );
 
 const UserProfile = dynamic(
-  () => import('@/features/userProfile/components/UserProfile'),
+  () => import('@/app/user/_components/UserProfile'),
   { ssr: false, loading: () => <UserProfileSkeleton /> },
 );
 
 const UserTrustScore = dynamic(
-  () =>
-    import('@/features/userProfile/components/userTrustScore/UserTrustScore'),
+  () => import('@/app/user/_components/UserTrustScore'),
   { ssr: false, loading: () => <UserTrustScoreSkeleton /> },
 );
 
