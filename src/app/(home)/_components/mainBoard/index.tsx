@@ -10,10 +10,10 @@ import { useEffect } from 'react';
 import CardListSkeleton from '@/shared/ui/skeleton/CardListSkeleton';
 import { ITEM_COUNT_PER_PAGE } from '@/constants/pagination';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';
-import PostsBoardContainerSkeleton from '@/features/postsBoard/ui/PostsBoardContainerSkeleton';
+import PostsBoardContainerSkeleton from '@/app/(home)/_components/mainBoard/PostsBoardContainerSkeleton';
 import { clsx } from 'clsx';
-import MyProjectsBoard from '@/features/myProjectsBoard/ui/MyProjectsBoardContainer';
-import PostsBoard from '@/features/postsBoard/ui/PostsBoardContainer';
+import MyProjectsBoard from '@/app/(home)/_components/mainBoard/MyProjectsBoardContainer';
+import PostsBoard from '@/app/(home)/_components/mainBoard/PostsBoardContainer';
 
 const {
   BM_TAB001: { code: POSTS_TAB },

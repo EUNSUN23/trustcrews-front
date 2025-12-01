@@ -2,7 +2,7 @@ import Button from '@/shared/ui/Button';
 import { useResetRecoilState } from 'recoil';
 import { useQueryClient } from '@tanstack/react-query';
 import { projectConfigFormStateStore } from '@/store/projectDetail/config/project/ProjectConfigFormStateStore';
-import { PROJECT_CONFIG_QUERY_KEY } from '@/features/project/api/generalConfig/getProjectConfig';
+import { PROJECT_INFO_SUMMARY_QUERY_KEY } from '@/features/project/api/getProjectInfoSummary';
 
 const ResetProjectConfigButton = () => {
   const resetProjectConfigForm = useResetRecoilState(
@@ -14,7 +14,7 @@ const ResetProjectConfigButton = () => {
   const handleClickResetButton = () => {
     resetProjectConfigForm();
     queryClient.invalidateQueries({
-      queryKey: [PROJECT_CONFIG_QUERY_KEY],
+      queryKey: [PROJECT_INFO_SUMMARY_QUERY_KEY],
     });
   };
 

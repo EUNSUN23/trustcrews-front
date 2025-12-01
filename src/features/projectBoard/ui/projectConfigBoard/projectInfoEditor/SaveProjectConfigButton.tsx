@@ -7,10 +7,10 @@ import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
 import { projectConfigFormStateStore } from '@/store/projectDetail/config/project/ProjectConfigFormStateStore';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
 import {
-  UpdateProjectConfigInput,
-  updateProjectConfigInputSchema,
-  useUpdateProjectConfig,
-} from '@/features/project/api/generalConfig/updateProjectConfig';
+  UpdateProjectInfoInput,
+  updateProjectInfoInputSchema,
+  useUpdateProjectInfo,
+} from '@/features/project/api/updateProjectInfo';
 import { projectManageAuthStateStore } from '@/store/projectDetail/config/pmAuth/ProjectManageAuthStateStore';
 import { ZodError } from 'zod';
 
@@ -23,7 +23,7 @@ const SaveProjectConfigButton = () => {
     data: { projectName, projectSubject, startDate, endDate, technologyIds },
   } = useRecoilValue(projectConfigFormStateStore);
 
-  const { mutate: updatePost, isPending: isUpdating } = useUpdateProjectConfig(
+  const { mutate: updatePost, isPending: isUpdating } = useUpdateProjectInfo(
     numStrToBigInt(projectId),
     userPMAuth,
     {
@@ -33,7 +33,7 @@ const SaveProjectConfigButton = () => {
   );
 
   const handleClickUpdateButton = () => {
-    const data: UpdateProjectConfigInput = {
+    const data: UpdateProjectInfoInput = {
       projectName,
       projectSubject,
       startDate,
@@ -42,7 +42,7 @@ const SaveProjectConfigButton = () => {
     };
 
     try {
-      updateProjectConfigInputSchema.parse(data);
+      updateProjectInfoInputSchema.parse(data);
     } catch (e: unknown) {
       if (e instanceof ZodError) setErrorSnackbar(e.errors[0].message);
       return;

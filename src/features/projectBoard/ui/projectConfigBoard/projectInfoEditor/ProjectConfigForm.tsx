@@ -10,13 +10,13 @@ import ConfigContentsLayout from '@/features/projectBoard/ui/projectConfigBoard/
 import ProjectConfigNameControl from '@/features/projectBoard/ui/projectConfigBoard/projectInfoEditor/inputControl/ProjectConfigNameControl';
 import ProjectConfigSubjectControl from '@/features/projectBoard/ui/projectConfigBoard/projectInfoEditor/inputControl/ProjectConfigSubjectControl';
 import ProjectConfigDateControl from '@/features/projectBoard/ui/projectConfigBoard/projectInfoEditor/inputControl/ProjectConfigDateControl';
-import { useProjectConfig } from '@/features/project/api/generalConfig/getProjectConfig';
 import { useEffect } from 'react';
 import {
   projectConfigFormLoadingSelector,
   projectConfigFormStateStore,
 } from '@/store/projectDetail/config/project/ProjectConfigFormStateStore';
 import ProjectConfigFormSkeleton from '@/features/projectBoard/ui/projectConfigBoard/projectInfoEditor/ProjectConfigFormSkeleton';
+import { useProjectSummaryInfo } from '@/features/project/api/getProjectInfoSummary';
 
 const ProjectConfigForm = () => {
   const isFormLoading = useRecoilValue(projectConfigFormLoadingSelector);
@@ -25,7 +25,7 @@ const ProjectConfigForm = () => {
 
   const {
     data: { data: projectInfo },
-  } = useProjectConfig(numStrToBigInt(projectId));
+  } = useProjectSummaryInfo(numStrToBigInt(projectId));
 
   const { projectName, projectSubject, startDate, endDate, technologyStacks } =
     projectInfo;

@@ -1,7 +1,7 @@
-import PostsTechStackFilterSkeleton from '@/features/postsBoard/ui/postsTechStackFilter/PostsTechStackFilterSkeleton';
+import PostsTechStackFilterSkeleton from '@/features/postSearcher/ui/postsTechStackFilter/PostsTechStackFilterSkeleton';
 import CardListSkeleton from '@/shared/ui/skeleton/CardListSkeleton';
 import Skeleton from '@/shared/ui/skeleton/Skeleton';
-import PostsPositionFilterSkeleton from '@/features/postsBoard/ui/postPositionFilter/PostsPositionFilterSkeleton';
+import PostsPositionFilterSkeleton from '@/features/postSearcher/ui/postPositionFilter/PostsPositionFilterSkeleton';
 
 const PostsBoardContainerSkeleton = () => {
   return (

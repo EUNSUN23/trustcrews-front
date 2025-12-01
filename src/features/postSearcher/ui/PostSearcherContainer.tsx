@@ -1,4 +1,4 @@
-import PostCard from '@/features/postsBoard/ui/postList/PostCard';
+import PostCard from '@/features/post/ui/PostCard';
 import CommonPagination from '@/shared/ui/CommonPagination';
 import { ITEM_COUNT_PER_PAGE, PAGE_RANGE } from '@/constants/pagination';
 import { usePostList } from '@/features/post/api/getPostList';
