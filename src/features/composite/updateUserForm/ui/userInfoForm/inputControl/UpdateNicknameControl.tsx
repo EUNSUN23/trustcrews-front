@@ -1,5 +1,5 @@
 import { useRecoilState } from 'recoil';
-import { userInfoFormFieldSelector } from '@/store/useProfileEditor/UserInfoFormStateStore';
+import { userInfoFormFieldSelector } from '@/features/composite/updateUserForm/store/UserInfoFormStateStore';
 import Input from '@/shared/ui/Input';
 import { ChangeEvent, useEffect, useRef } from 'react';
 import CheckNicknameButton from '@/features/core/auth/checkNickname/ui/CheckNicknameButton';

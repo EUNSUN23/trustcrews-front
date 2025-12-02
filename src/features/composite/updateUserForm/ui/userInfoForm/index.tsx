@@ -4,15 +4,15 @@ import { useRecoilState, useSetRecoilState } from 'recoil';
 import {
   userInfoFormLoadingSelector,
   userInfoFormStateStore,
-} from '@/store/useProfileEditor/UserInfoFormStateStore';
+} from '@/features/composite/updateUserForm/store/UserInfoFormStateStore';
 import { useEffect } from 'react';
 import Input from '@/shared/ui/Input';
-import { UpdateNicknameControl } from '@/app/user/update/_components/userInfoForm/inputControl/UpdateNicknameControl';
-import UpdatePositionControl from '@/app/user/update/_components/userInfoForm/inputControl/UpdatePositionControl';
-import UpdateTechStackControl from '@/app/user/update/_components/userInfoForm/inputControl/UpdateTechStackControl';
-import UpdateIntroductionControl from '@/app/user/update/_components/userInfoForm/inputControl/UpdateIntroductionControl';
+import { UpdateNicknameControl } from '@/features/composite/updateUserForm/ui/userInfoForm/inputControl/UpdateNicknameControl';
+import UpdatePositionControl from '@/features/composite/updateUserForm/ui/userInfoForm/inputControl/UpdatePositionControl';
+import UpdateTechStackControl from '@/features/composite/updateUserForm/ui/userInfoForm/inputControl/UpdateTechStackControl';
+import UpdateIntroductionControl from '@/features/composite/updateUserForm/ui/userInfoForm/inputControl/UpdateIntroductionControl';
 import { bigIntToString } from '@/shared/utils/stringUtils';
-import UserInfoFormSkeleton from '@/app/user/update/_components/userInfoForm/UserInfoFormSkeleton';
+import UserInfoFormSkeleton from '@/features/composite/updateUserForm/ui/userInfoForm/UserInfoFormSkeleton';
 import { useUserDetailInfo } from '@/features/core/user/api/getUserDetailInfo';
 
 const UserInfoForm = () => {

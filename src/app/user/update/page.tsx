@@ -1,12 +1,12 @@
 'use client';
 
-import SaveUserProfileButton from '@/app/user/update/_components/SaveUserProfileButton';
-import UserInfoFormSkeleton from '@/app/user/update/_components/userInfoForm/UserInfoFormSkeleton';
+import UpdateUserButton from '@/features/composite/updateUserForm/ui/UpdateUserButton';
+import UserInfoFormSkeleton from '@/features/composite/updateUserForm/ui/userInfoForm/UserInfoFormSkeleton';
 import dynamic from 'next/dynamic';
-import UserImageFormSkeleton from '@/app/user/update/_components/UserImageFormSkeleton';
+import UserImageFormSkeleton from '@/features/composite/updateUserForm/ui/userImageForm/UserImageFormSkeleton';
 
 const UserImageForm = dynamic(
-  () => import('@/app/user/update/_components/UserImageForm'),
+  () => import('@/features/composite/updateUserForm/ui/userImageForm'),
   {
     ssr: false,
     loading: () => <UserImageFormSkeleton />,
@@ -14,7 +14,7 @@ const UserImageForm = dynamic(
 );
 
 const UserInfoForm = dynamic(
-  () => import('@/app/user/update/_components/userInfoForm'),
+  () => import('../../../features/composite/updateUserForm/ui/userInfoForm'),
   { ssr: false, loading: () => <UserInfoFormSkeleton /> },
 );
 
@@ -24,7 +24,7 @@ const UserUpdatePage = () => {
       <div className='w-[380px] mobile:w-[300px] space-y-5 mobile:space-y-3'>
         <UserImageForm />
         <UserInfoForm />
-        <SaveUserProfileButton />
+        <UpdateUserButton />
       </div>
     </div>
   );

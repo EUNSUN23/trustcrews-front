@@ -15,7 +15,7 @@ import { MY_PROJECTS_QUERY_KEY } from '@/features/core/project/api/getMyProjects
 import { MY_PROJECT_APPLIES_QUERY_KEY } from '@/features/core/projectApplication/api/getMyProjectApplies';
 import { SIMPLE_USER_INFO_QUERY_KEY } from '@/features/core/user/api/getSimpleUserInfo';
 
-const LoginForm = () => {
+const LogInFormContainer = () => {
   const { setErrorSnackbar, setInfoSnackbar } = useSnackbar();
   const router = useRouter();
 
@@ -98,4 +98,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default LogInFormContainer;

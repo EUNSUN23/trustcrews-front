@@ -7,11 +7,11 @@ import {
 } from '@/features/core/user/api/updateUserDetail';
 import { ZodError } from 'zod';
 import { useRecoilValue } from 'recoil';
-import { userInfoFormStateStore } from '@/store/useProfileEditor/UserInfoFormStateStore';
-import { userImageFormStateStore } from '@/store/useProfileEditor/UserImageFormStateStore';
+import { userInfoFormStateStore } from '@/features/composite/updateUserForm/store/UserInfoFormStateStore';
+import { userImageFormStateStore } from '@/features/composite/updateUserForm/store/UserImageFormStateStore';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
 
-const SaveUserProfileButton = () => {
+const UpdateUserButton = () => {
   const { setSuccessSnackbar, setErrorSnackbar } = useSnackbar();
   const { data: infoForm } = useRecoilValue(userInfoFormStateStore);
   const { image, hasUpdate: hasProfileImgUpdate } = useRecoilValue(
@@ -52,4 +52,4 @@ const SaveUserProfileButton = () => {
   return <FormButton onClick={handleClickSaveProfileButton}>저장</FormButton>;
 };
 
-export default SaveUserProfileButton;
+export default UpdateUserButton;

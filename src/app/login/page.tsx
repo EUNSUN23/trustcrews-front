@@ -1,4 +1,4 @@
-import LoginForm from '@/app/login/_components/LogInForm';
+import LogInFormContainer from '@/features/composite/loginForm/ui/LogInFormContainer';
 import Link from 'next/link';
 
 const LoginPage = () => {
@@ -7,7 +7,7 @@ const LoginPage = () => {
       <h1 className='text-3xl mobile:text-2xl font-semibold w-full text-center mb-10'>
         로그인
       </h1>
-      <LoginForm />
+      <LogInFormContainer />
       <div className='text-center text-sm mobile:text-xs mt-3'>
         회원이 아니신가요?
         <Link href='/signup'>

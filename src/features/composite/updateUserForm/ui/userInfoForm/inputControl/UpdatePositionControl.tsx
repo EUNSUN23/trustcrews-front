@@ -1,5 +1,5 @@
 import PositionSelect from '@/features/core/position/ui/PositionSelect';
-import { userInfoFormFieldSelector } from '@/store/useProfileEditor/UserInfoFormStateStore';
+import { userInfoFormFieldSelector } from '@/features/composite/updateUserForm/store/UserInfoFormStateStore';
 import { useRecoilState } from 'recoil';
 import { Field, Label } from '@headlessui/react';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';

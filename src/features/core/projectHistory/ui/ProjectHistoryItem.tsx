@@ -3,7 +3,7 @@ import { BiUser } from '@react-icons/all-files/bi/BiUser';
 import { BiCheck } from '@react-icons/all-files/bi/BiCheck';
 import { BiUndo } from '@react-icons/all-files/bi/BiUndo';
 import { BiX } from '@react-icons/all-files/bi/BiX';
-import { ProjectHistoryData } from '@/features/core/projectHistory/types/projectHistory';
+import { ProjectHistoryData } from '@/features/core/projectHistory/types/projectHistoryData';
 import { ProjectHistoryStatus } from '@/features/core/projectHistory/types/projectHistoryStatus';
 import { PROJECT_HISTORY_STATUS } from '@/features/core/projectHistory/constants/projectHistoryStatus';
 import { cva } from 'class-variance-authority';
