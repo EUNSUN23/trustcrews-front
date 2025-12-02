@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import logo from '../../../public/images/logo.png';
 import Link from 'next/link';
-import UserMenuContainerSkeleton from '@/features/userMenu/ui/UserMenuContainerSkeleton';
+import UserMenuContainerSkeleton from '@/features/composite/userMenu/ui/UserMenuContainerSkeleton';
 import { IoCreateOutline } from '@react-icons/all-files/io5/IoCreateOutline';
 import calcImageSizes from '@/lib/calcImageSizes';
-import { UserMenuContainer } from '@/features/userMenu/ui/UserMenuContainer';
+import { UserMenuContainer } from '@/features/composite/userMenu/ui/UserMenuContainer';
 import { Suspense } from 'react';
 import { checkIsAuthorized } from '@/lib/checkIsAuthorized';
 

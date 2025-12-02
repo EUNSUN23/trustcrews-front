@@ -2,8 +2,8 @@
 
 import ProjectInformation from '@/app/post/[slug]/_components/ProjectInformation';
 import ApplySection from '@/app/post/[slug]/_components/ApplySection';
-import { usePostDetail } from '@/features/post/api/getPostDetail';
-import { useProjectSummaryInfo } from '@/features/project/api/getProjectInfoSummary';
+import { usePostDetail } from '@/features/core/post/api/getPostDetail';
+import { useProjectSummaryInfo } from '@/features/core/project/api/getProjectInfoSummary';
 import PostInformation from '@/app/post/[slug]/_components/PostInformation';
 import PostIntroduction from '@/app/post/[slug]/_components/PostIntroduction';
 import PostTitle from '@/app/post/[slug]/_components/PostTitle';

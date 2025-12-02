@@ -5,7 +5,7 @@ import {
   userInfoFormLoadingSelector,
   userInfoFormStateStore,
 } from '@/store/useProfileEditor/UserInfoFormStateStore';
-import { UserDetailInfo } from '@/features/user/api/getUserDetailInfo';
+import { UserDetailInfo } from '@/features/core/user/api/getUserDetailInfo';
 import { useEffect } from 'react';
 import Input from '@/shared/ui/Input';
 import { UpdateNicknameControl } from '@/app/user/update/_components/userInfoForm/inputControl/UpdateNicknameControl';

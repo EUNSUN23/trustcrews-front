@@ -1,5 +1,5 @@
 import { atom } from 'recoil';
-import { TechStackMapping } from '@/features/techStack/api/getTechStackMappings';
+import { TechStackMapping } from '@/features/core/techStack/api/getTechStackMappings';
 import { SelectItem } from '@/shared/types/selectItem';
 
 export const DEFAULT_TECH_CATEGORY: SelectItem<string, string> = {

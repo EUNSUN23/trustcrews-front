@@ -1,4 +1,4 @@
-import GuideNavLink from '@/features/guide/ui/GuideNavLink';
+import GuideNavLink from '@/features/core/guide/ui/GuideNavLink';
 
 const Guide = () => {
   return (

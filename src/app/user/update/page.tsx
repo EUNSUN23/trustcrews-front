@@ -1,5 +1,5 @@
 import SaveUserProfileButton from '@/app/user/update/_components/SaveUserProfileButton';
-import { getUserDetailInfo } from '@/features/user/api/getUserDetailInfo';
+import { getUserDetailInfo } from '@/features/core/user/api/getUserDetailInfo';
 import UserImageForm from '@/app/user/update/_components/UserImageForm';
 import UserInfoForm from '@/app/user/update/_components/userInfoForm';
 

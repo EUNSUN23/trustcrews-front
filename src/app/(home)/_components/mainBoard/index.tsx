@@ -5,7 +5,7 @@ import {
   activeMainBoardTabStore,
   MAIN_BOARD_TABS,
 } from '@/store/ActiveMainBoardTabStateStore';
-import MyProjectApplies from '@/features/myProjectApplies/ui';
+import MyProjectApplies from '@/features/composite/myProjectApplies/ui';
 import { useEffect } from 'react';
 import CardListSkeleton from '@/shared/ui/skeleton/CardListSkeleton';
 import { ITEM_COUNT_PER_PAGE } from '@/constants/pagination';

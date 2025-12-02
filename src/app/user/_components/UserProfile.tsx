@@ -1,10 +1,10 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import Avatar from '@/features/user/ui/Avatar';
+import Avatar from '@/features/core/user/ui/Avatar';
 import Button from '@/shared/ui/Button';
-import TechStackBadge from '@/features/techStack/ui/TechStackBadge';
-import { UserDetailInfo } from '@/features/user/api/getUserDetailInfo';
+import TechStackBadge from '@/features/core/techStack/ui/TechStackBadge';
+import { UserDetailInfo } from '@/features/core/user/api/getUserDetailInfo';
 
 type UserProfileProps = {
   data: UserDetailInfo;

@@ -3,7 +3,7 @@ import { numStrToBigInt } from '@/shared/utils/stringUtils';
 import {
   signUpInputScheme,
   useSignUp,
-} from '@/features/auth/signUp/api/signUp';
+} from '@/features/core/auth/signUp/api/signUp';
 import { ZodError } from 'zod';
 import { useRouter } from 'next/navigation';
 import useSnackbar from '@/shared/hooks/useSnackbar';

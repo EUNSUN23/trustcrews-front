@@ -7,10 +7,10 @@ import {
   projectIdState,
 } from '@/store/projectDetail/ProjectIdStateStore';
 import dynamic from 'next/dynamic';
-import ProjectBoardContainerSkeleton from '@/features/projectBoard/ui/ProjectBoardContainerSkeleton';
+import ProjectBoardContainerSkeleton from '@/features/composite/projectBoard/ui/ProjectBoardContainerSkeleton';
 
 const ProjectDetail = dynamic(
-  () => import('@/features/projectBoard/ui/ProjectBoardContainer'),
+  () => import('@/features/composite/projectBoard/ui/ProjectBoardContainer'),
   { ssr: false, loading: () => <ProjectBoardContainerSkeleton /> },
 );
 

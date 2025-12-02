@@ -1,7 +1,7 @@
 'use client';
 
-import TechStackImage from '@/features/techStack/ui/TechStackImage';
-import { ProjectInfoSummary } from '@/features/project/api/getProjectInfoSummary';
+import TechStackImage from '@/features/core/techStack/ui/TechStackImage';
+import { ProjectInfoSummary } from '@/features/core/project/api/getProjectInfoSummary';
 
 type ProjectPublicInfoProps = {
   projectInfo: ProjectInfoSummary;

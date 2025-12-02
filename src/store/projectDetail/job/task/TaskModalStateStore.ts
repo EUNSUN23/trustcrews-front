@@ -1,9 +1,9 @@
 import { atom, DefaultValue, selector, selectorFamily } from 'recoil';
 import _ from 'lodash';
 import { v4 } from 'uuid';
-import { CreateTaskInput } from '@/features/task/api/createTask';
-import { UpdateTaskInput } from '@/features/task/api/updateTask';
-import { TASK_STATUS } from '@/features/task/constants/taskStatus';
+import { CreateTaskInput } from '@/features/core/task/api/createTask';
+import { UpdateTaskInput } from '@/features/core/task/api/updateTask';
+import { TASK_STATUS } from '@/features/core/task/constants/taskStatus';
 import { ModalState } from '@/shared/types/modalState';
 
 const {

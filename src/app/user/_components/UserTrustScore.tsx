@@ -1,5 +1,5 @@
-import TrustGradeBadge from '@/features/trustGrade/ui/TrustGradeBadge';
-import { TrustGradeName } from '@/features/trustGrade/types/trustGrade';
+import TrustGradeBadge from '@/features/core/trustGrade/ui/TrustGradeBadge';
+import { TrustGradeName } from '@/features/core/trustGrade/types/trustGrade';
 
 type UserTrustScoreProps = {
   trustGrade: TrustGradeName;

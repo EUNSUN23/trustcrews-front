@@ -6,10 +6,13 @@ import FormButton from '@/shared/ui/FormButton';
 import { useRouter } from 'next/navigation';
 import { useQueryClient } from '@tanstack/react-query';
 import { ZodError } from 'zod';
-import { loginInputSchema, useLogin } from '@/features/auth/login/api/logIn';
+import {
+  loginInputSchema,
+  useLogin,
+} from '@/features/core/auth/login/api/logIn';
 import useSnackbar from '@/shared/hooks/useSnackbar';
-import { MY_PROJECTS_QUERY_KEY } from '@/features/project/api/getMyProjects';
-import { MY_PROJECT_APPLIES_QUERY_KEY } from '@/features/projectApplication/api/getMyProjectApplies';
+import { MY_PROJECTS_QUERY_KEY } from '@/features/core/project/api/getMyProjects';
+import { MY_PROJECT_APPLIES_QUERY_KEY } from '@/features/core/projectApplication/api/getMyProjectApplies';
 
 const LoginForm = () => {
   const { setErrorSnackbar, setInfoSnackbar } = useSnackbar();

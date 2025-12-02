@@ -1,4 +1,4 @@
-import PositionSelect from '@/features/position/ui/PositionSelect';
+import PositionSelect from '@/features/core/position/ui/PositionSelect';
 import { useRecoilState } from 'recoil';
 import { signUpFormFieldSelector } from '@/store/signup/SignUpFormStateStore';
 import { Field, Label } from '@headlessui/react';

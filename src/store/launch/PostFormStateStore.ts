@@ -1,5 +1,5 @@
 import { atom, DefaultValue, selectorFamily } from 'recoil';
-import { CreatePostInput } from '@/features/post/api/createPost';
+import { CreatePostInput } from '@/features/core/post/api/createPost';
 
 interface CreatePostFormData extends Omit<CreatePostInput, 'positionIds'> {
   positionIds: readonly string[];

@@ -1,5 +1,5 @@
 import Badge from '@/shared/ui/Badge';
-import { PostDetailData } from '@/features/post/api/getPostDetail';
+import { PostDetailData } from '@/features/core/post/api/getPostDetail';
 
 interface InfoProps {
   postInfo: PostDetailData;

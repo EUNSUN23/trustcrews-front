@@ -1,7 +1,7 @@
 'use client';
 
-import Avatar from '@/features/user/ui/Avatar';
-import { PostDetailData } from '@/features/post/api/getPostDetail';
+import Avatar from '@/features/core/user/ui/Avatar';
+import { PostDetailData } from '@/features/core/post/api/getPostDetail';
 
 type PostTitleProps = { postInfo: PostDetailData };
 

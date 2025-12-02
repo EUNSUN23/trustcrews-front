@@ -1,11 +1,11 @@
 'use client';
 
-import PostsTitleFilter from '@/features/postSearcher/ui/PostsTitleFilter';
-import PostsPositionFilter from '@/features/postSearcher/ui/postPositionFilter';
-import PostList from '@/features/postSearcher/ui/PostSearcherContainer';
+import PostsTitleFilter from '@/features/composite/postSearcher/ui/PostsTitleFilter';
+import PostsPositionFilter from '@/features/composite/postSearcher/ui/postPositionFilter';
+import PostList from '@/features/composite/postSearcher/ui/PostSearcherContainer';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';
 import CardListSkeleton from '@/shared/ui/skeleton/CardListSkeleton';
-import PostsTechStackFilter from '@/features/postSearcher/ui/postsTechStackFilter';
+import PostsTechStackFilter from '@/features/composite/postSearcher/ui/postsTechStackFilter';
 
 const PostsBoard = () => {
   return (

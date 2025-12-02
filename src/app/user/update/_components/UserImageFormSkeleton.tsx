@@ -1,4 +1,4 @@
-import AvatarSkeleton from '@/features/user/ui/AvatarSkeleton';
+import AvatarSkeleton from '@/features/core/user/ui/AvatarSkeleton';
 import Skeleton from '@/shared/ui/skeleton/Skeleton';
 
 const UserImageFormSkeleton = () => {

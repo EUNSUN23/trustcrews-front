@@ -1,5 +1,5 @@
 import { atom, DefaultValue, selector, selectorFamily } from 'recoil';
-import { UpdateProjectInfoInput } from '@/features/project/api/updateProjectInfo';
+import { UpdateProjectInfoInput } from '@/features/core/project/api/updateProjectInfo';
 
 interface UpdateProjectConfigFormData
   extends Omit<UpdateProjectInfoInput, 'technologyIds'> {

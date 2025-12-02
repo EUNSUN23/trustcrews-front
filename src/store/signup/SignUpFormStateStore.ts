@@ -1,5 +1,5 @@
 import { atom, DefaultValue, selectorFamily } from 'recoil';
-import { SignUpInput } from '@/features/auth/signUp/api/signUp';
+import { SignUpInput } from '@/features/core/auth/signUp/api/signUp';
 
 interface SignUpFormState
   extends Omit<SignUpInput, 'positionId' | 'techStackIds' | 'intro'> {

@@ -6,7 +6,7 @@ import {
   userInfoInputSchema,
   userProfileImgInputSchema,
   useUpdateUserDetail,
-} from '@/features/user/api/updateUserDetail';
+} from '@/features/core/user/api/updateUserDetail';
 import { ZodError } from 'zod';
 import { useRecoilValue } from 'recoil';
 import { userInfoFormStateStore } from '@/store/useProfileEditor/UserInfoFormStateStore';

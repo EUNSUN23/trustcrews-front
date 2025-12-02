@@ -3,13 +3,13 @@
 import Button from '@/shared/ui/Button';
 import useSnackbar from '@/shared/hooks/useSnackbar';
 import { useRecoilValue, useResetRecoilState } from 'recoil';
-import ApplyPositionDropdown from '@/features/projectApplication/ui/ApplyPositionDropdown';
+import ApplyPositionDropdown from '@/features/core/projectApplication/ui/ApplyPositionDropdown';
 import { useEffect } from 'react';
-import { useApplyProject } from '@/features/projectApplication/api/applyProject';
-import { PostDetailData } from '@/features/post/api/getPostDetail';
+import { useApplyProject } from '@/features/core/projectApplication/api/applyProject';
+import { PostDetailData } from '@/features/core/post/api/getPostDetail';
 import { projectApplyPositionState } from '@/store/postDetail/applyProject/ApplyPositionStateStore';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
-import { DEFAULT_POSITION_OPTION } from '@/features/position/constants/defaultPositionOption';
+import { DEFAULT_POSITION_OPTION } from '@/features/core/position/constants/defaultPositionOption';
 import { useRouter } from 'next/navigation';
 
 type ApplySectionProps = {

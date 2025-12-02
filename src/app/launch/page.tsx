@@ -1,6 +1,6 @@
 'use client';
 
-import { ProjectLaunchForm } from '@/features/projectLauncher/ui/projectLaunchForm';
+import { ProjectLaunchForm } from '@/features/composite/projectLauncher/ui/projectLaunchForm';
 
 const LaunchPage = () => {
   return <ProjectLaunchForm />;
