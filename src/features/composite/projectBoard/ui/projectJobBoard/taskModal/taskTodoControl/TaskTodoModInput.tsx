@@ -6,7 +6,7 @@ import {
   taskModalEditDisabledSelector,
   taskTodoItemSelector,
   taskTodoSelector,
-} from '@/store/projectDetail/job/task/TaskModalStateStore';
+} from '@/features/composite/projectBoard/store/job/task/TaskModalStateStore';
 import { clsx } from 'clsx';
 import { cva } from 'class-variance-authority';
 import TaskTodoEditFinishButton from '@/features/composite/projectBoard/ui/projectJobBoard/taskModal/taskTodoControl/TaskTodoEditFinishButton';

@@ -3,15 +3,15 @@
 import Button from '@/shared/ui/Button';
 import { useRecoilValue } from 'recoil';
 import useSnackbar from '@/shared/hooks/useSnackbar';
-import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
-import { projectConfigFormStateStore } from '@/store/projectDetail/config/project/ProjectConfigFormStateStore';
+import { projectIdState } from '@/features/composite/projectBoard/store/ProjectIdStateStore';
+import { projectConfigFormStateStore } from '@/features/composite/projectBoard/store/config/project/ProjectConfigFormStateStore';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
 import {
   UpdateProjectInfoInput,
   updateProjectInfoInputSchema,
   useUpdateProjectInfo,
 } from '@/features/core/project/api/updateProjectInfo';
-import { projectManageAuthStateStore } from '@/store/projectDetail/config/pmAuth/ProjectManageAuthStateStore';
+import { projectManageAuthStateStore } from '@/features/composite/projectBoard/store/config/pmAuth/ProjectManageAuthStateStore';
 import { ZodError } from 'zod';
 
 const SaveProjectConfigButton = () => {

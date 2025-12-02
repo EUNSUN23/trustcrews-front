@@ -13,7 +13,7 @@ import {
 import useSnackbar from '@/shared/hooks/useSnackbar';
 import { useRecruitNotice } from '@/features/core/projectNotice/api/rcVoteNotice/getRCVoteNotice';
 import { useRecoilValue } from 'recoil';
-import { rcVoteNoticeModalState } from '@/store/projectDetail/notice/rcVoteNotice/RCVoteNoticeModalStateStore';
+import { rcVoteNoticeModalState } from '@/features/composite/projectBoard/store/notice/rcVoteNotice/RCVoteNoticeModalStateStore';
 import { ZodError } from 'zod';
 import Loader from '@/shared/ui/Loader';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';

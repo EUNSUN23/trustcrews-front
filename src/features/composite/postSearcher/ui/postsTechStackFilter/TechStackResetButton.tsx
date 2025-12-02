@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useRecoilValue, useResetRecoilState } from 'recoil';
-import { selectedTechStackState } from '@/store/posts/filter/TechStackFilterStateStore';
+import { selectedTechStackState } from '@/features/composite/postSearcher/store/TechStackFilterStateStore';
 import { clsx } from 'clsx';
 
 const TechStackResetButton = () => {

@@ -3,7 +3,7 @@
 import { KeyboardEvent, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useRecoilState, useResetRecoilState } from 'recoil';
-import { postSearchValue } from '@/store/posts/PostSearchStateStore';
+import { postSearchValue } from '@/features/composite/postSearcher/store/PostSearchStateStore';
 
 const PostsTitleFilter = () => {
   const resetTitleSearchValue = useResetRecoilState(postSearchValue);

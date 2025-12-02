@@ -3,20 +3,26 @@
 import Button from '@/shared/ui/Button';
 import useSnackbar from '@/shared/hooks/useSnackbar';
 import { useRecoilState, useResetRecoilState } from 'recoil';
-import ApplyPositionDropdown from '@/features/core/projectApplication/ui/ApplyPositionDropdown';
+import ApplyPositionDropdown from '@/features/composite/projectApplyForm/ui/ApplyPositionDropdown';
 import { useEffect } from 'react';
 import { useApplyProject } from '@/features/core/projectApplication/api/applyProject';
-import { PostDetailData } from '@/features/core/post/api/getPostDetail';
-import { projectApplyPositionState } from '@/store/postDetail/applyProject/ApplyPositionStateStore';
+import { projectApplyPositionState } from '@/features/composite/projectApplyForm/store/ApplyPositionStateStore';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
 import { DEFAULT_POSITION_OPTION } from '@/features/core/position/constants/defaultPositionOption';
 import { useRouter } from 'next/navigation';
+import { Position } from '@/features/core/position/types/position';
 
 type ApplySectionProps = {
   isAuthorized: boolean;
-  postInfo: PostDetailData;
+  projectId: bigint;
+  positions: Position[];
 };
-const ApplySection = ({ isAuthorized, postInfo }: ApplySectionProps) => {
+
+const ProjectApplyFormContainer = ({
+  isAuthorized,
+  projectId,
+  positions,
+}: ApplySectionProps) => {
   const router = useRouter();
   const { setSuccessSnackbar, setErrorSnackbar, setInfoSnackbar } =
     useSnackbar();
@@ -49,7 +55,7 @@ const ApplySection = ({ isAuthorized, postInfo }: ApplySectionProps) => {
       return;
     }
     applyProject({
-      projectId: postInfo.projectId,
+      projectId,
       positionId: numStrToBigInt(applyPosition.value),
     });
   };
@@ -57,7 +63,7 @@ const ApplySection = ({ isAuthorized, postInfo }: ApplySectionProps) => {
   return (
     <footer className='flex justify-center gap-5 my-5'>
       <ApplyPositionDropdown
-        applyPositions={postInfo.postPositions.map(({ position }) => position)}
+        applyPositions={positions}
         selected={applyPosition}
         onChangeCallback={(item) => setApplyPosition(item)}
       />
@@ -73,4 +79,4 @@ const ApplySection = ({ isAuthorized, postInfo }: ApplySectionProps) => {
   );
 };
 
-export default ApplySection;
+export default ProjectApplyFormContainer;

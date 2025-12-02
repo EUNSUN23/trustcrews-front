@@ -3,7 +3,7 @@
 import Button from '@/shared/ui/Button';
 import { FaPlus } from '@react-icons/all-files/fa/FaPlus';
 import { useSetRecoilState } from 'recoil';
-import { milestoneAddModalStateStore } from '@/store/projectDetail/job/milestone/MilestoneModalStateStore';
+import { milestoneAddModalStateStore } from '@/features/composite/projectBoard/store/job/milestone/MilestoneModalStateStore';
 
 const MilestoneAddButton = () => {
   const setMilestoneAddModalState = useSetRecoilState(

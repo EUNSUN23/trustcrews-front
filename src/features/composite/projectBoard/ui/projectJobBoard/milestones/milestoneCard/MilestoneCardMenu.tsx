@@ -12,14 +12,14 @@ import {
 import { useRecoilValue, useResetRecoilState, useSetRecoilState } from 'recoil';
 import { useDeleteMilestone } from '@/features/core/milestone/api/deleteMilestone';
 import useSnackbar from '@/shared/hooks/useSnackbar';
-import { activeMilestoneStateStore } from '@/store/projectDetail/job/milestone/ActiveMilestoneStateStore';
+import { activeMilestoneStateStore } from '@/features/composite/projectBoard/store/job/milestone/ActiveMilestoneStateStore';
 import {
   milestoneModFormStateStore,
   milestoneModModalStateStore,
-} from '@/store/projectDetail/job/milestone/MilestoneModalStateStore';
+} from '@/features/composite/projectBoard/store/job/milestone/MilestoneModalStateStore';
 import { cva } from 'class-variance-authority';
-import { projectManageAuthStateStore } from '@/store/projectDetail/config/pmAuth/ProjectManageAuthStateStore';
-import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
+import { projectManageAuthStateStore } from '@/features/composite/projectBoard/store/config/pmAuth/ProjectManageAuthStateStore';
+import { projectIdState } from '@/features/composite/projectBoard/store/ProjectIdStateStore';
 import { MilestoneInfo } from '@/features/core/milestone/constants/milestone';
 import { bigIntToString, numStrToBigInt } from '@/shared/utils/stringUtils';
 

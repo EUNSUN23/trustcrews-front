@@ -6,7 +6,7 @@ import { v4 } from 'uuid';
 import {
   TaskModalType,
   taskTodoItemSelector,
-} from '@/store/projectDetail/job/task/TaskModalStateStore';
+} from '@/features/composite/projectBoard/store/job/task/TaskModalStateStore';
 import { IoIosAddCircle } from '@react-icons/all-files/io/IoIosAddCircle';
 
 type TaskContentDetailAddInputProps = {

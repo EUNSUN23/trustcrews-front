@@ -7,7 +7,7 @@ import {
   PROJECT_MENU,
   projectActiveNavState,
   ProjectMenu,
-} from '@/store/projectDetail/ProjectNavTabStateStore';
+} from '@/features/composite/projectBoard/store/ProjectNavTabStateStore';
 
 const ProjectNavLinkVariants = cva(
   'flex whitespace-nowrap border-b-[3px] -mb-[1.8px] py-4 px-1 mobile:px-4 pc:text-[2rem] tablet:text-[1.5rem] mobile:text-lg font-semibold',

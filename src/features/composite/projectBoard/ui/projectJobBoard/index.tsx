@@ -4,14 +4,14 @@ import MilestoneAddButton from '@/features/composite/projectBoard/ui/projectJobB
 import Milestones from '@/features/composite/projectBoard/ui/projectJobBoard/milestones';
 import { useMilestones } from '@/features/core/milestone/api/getMilestones';
 import { useRecoilState, useRecoilValue, useResetRecoilState } from 'recoil';
-import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
+import { projectIdState } from '@/features/composite/projectBoard/store/ProjectIdStateStore';
 import TaskAddButton from '@/features/composite/projectBoard/ui/projectJobBoard/TaskAddButton';
 import Tasks from '@/features/composite/projectBoard/ui/projectJobBoard/tasks';
 import { useEffect } from 'react';
 import {
   activeMilestoneStateStore,
   DEFAULT_ACTIVE_MILESTONE,
-} from '@/store/projectDetail/job/milestone/ActiveMilestoneStateStore';
+} from '@/features/composite/projectBoard/store/job/milestone/ActiveMilestoneStateStore';
 import ProjectJobBoardSkeleton from '@/features/composite/projectBoard/ui/projectJobBoard/ProjectJobBoardSkeleton';
 import MilestoneModModal from '@/features/composite/projectBoard/ui/projectJobBoard/milestoneModal/MilestoneModModal';
 import MilestoneAddModal from '@/features/composite/projectBoard/ui/projectJobBoard/milestoneModal/MilestoneAddModal';

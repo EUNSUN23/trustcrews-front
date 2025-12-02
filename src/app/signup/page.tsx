@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import SignUpForm from '@/app/signup/_components/signUpForm';
+import SignUpForm from '@/features/composite/signUpForm/ui/SignUpFormContainer';
 
 const SignUpPage = () => {
   return (

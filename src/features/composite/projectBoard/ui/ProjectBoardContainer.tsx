@@ -5,14 +5,14 @@ import ProjectBoardNavTab from '@/features/composite/projectBoard/ui/ProjectBoar
 import {
   DEFAULT_PM_AUTH,
   projectManageAuthStateStore,
-} from '@/store/projectDetail/config/pmAuth/ProjectManageAuthStateStore';
+} from '@/features/composite/projectBoard/store/config/pmAuth/ProjectManageAuthStateStore';
 import { useRecoilState, useRecoilValue, useResetRecoilState } from 'recoil';
-import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
+import { projectIdState } from '@/features/composite/projectBoard/store/ProjectIdStateStore';
 import { useMyPMAuth } from '@/features/core/projectMngAuth/api/getMyPMAuth';
 import {
   PROJECT_MENU,
   projectActiveNavState,
-} from '@/store/projectDetail/ProjectNavTabStateStore';
+} from '@/features/composite/projectBoard/store/ProjectNavTabStateStore';
 import ProjectJobBoardSkeleton from '@/features/composite/projectBoard/ui/projectJobBoard/ProjectJobBoardSkeleton';
 import ProjectJobBoard from '@/features/composite/projectBoard/ui/projectJobBoard';
 import ProjectCrewsBoard from '@/features/composite/projectBoard/ui/projectCrewsBoard/crewList';

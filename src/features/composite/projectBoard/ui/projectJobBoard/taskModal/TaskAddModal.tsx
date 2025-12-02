@@ -14,7 +14,7 @@ import {
   taskAddFormStateStore,
   taskAddModalStateStore,
   TaskModalType,
-} from '@/store/projectDetail/job/task/TaskModalStateStore';
+} from '@/features/composite/projectBoard/store/job/task/TaskModalStateStore';
 import TaskTodoControl from './taskTodoControl';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
 

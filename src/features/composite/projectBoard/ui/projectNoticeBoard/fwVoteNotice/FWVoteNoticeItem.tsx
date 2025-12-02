@@ -2,10 +2,10 @@ import NoticeBadge from '@/features/core/projectNotice/ui/NoticeBadge';
 import VoteStatusBadge from '@/features/core/projectVote/ui/VoteStatusBadge';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { NOTICE_TYPES } from '@/features/core/projectNotice/constants/noticeTypes';
-import { fwNoticeModalState } from '@/store/projectDetail/notice/fwVoteNotice/FWVoteNoticeModalStateStore';
+import { fwNoticeModalState } from '@/features/composite/projectBoard/store/notice/fwVoteNotice/FWVoteNoticeModalStateStore';
 import { FWVoteNoticeData } from '@/features/core/projectNotice/api/fwVoteNotice/getFWVoteNoticeList';
-import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
-import { projectManageAuthStateStore } from '@/store/projectDetail/config/pmAuth/ProjectManageAuthStateStore';
+import { projectIdState } from '@/features/composite/projectBoard/store/ProjectIdStateStore';
+import { projectManageAuthStateStore } from '@/features/composite/projectBoard/store/config/pmAuth/ProjectManageAuthStateStore';
 import { bigIntToString } from '@/shared/utils/stringUtils';
 
 type VAlertFwListItemProps = {

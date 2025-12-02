@@ -1,6 +1,6 @@
 import { useRecoilState } from 'recoil';
 import TextArea from '@/shared/ui/TextArea';
-import { postConfigFormFieldSelector } from '@/store/projectDetail/config/post/PostConfigFormStateStore';
+import { postConfigFormFieldSelector } from '@/features/composite/projectBoard/store/config/post/PostConfigFormStateStore';
 
 const PostConfigContentControl = () => {
   const [content, setContent] = useRecoilState(

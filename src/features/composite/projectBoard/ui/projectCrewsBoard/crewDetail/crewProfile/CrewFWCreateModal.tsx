@@ -5,7 +5,7 @@ import { useRecoilState, useRecoilValue, useResetRecoilState } from 'recoil';
 import {
   crewFWModalDataStateStore,
   crewFWModalStateStore,
-} from '@/store/projectDetail/crew/crewDetail/crewFW/CrewFWModalStateStore';
+} from '@/features/composite/projectBoard/store/crew/crewDetail/crewFW/CrewFWModalStateStore';
 import { createPortal } from 'react-dom';
 import Modal from '@/shared/ui/Modal';
 import useSnackbar from '@/shared/hooks/useSnackbar';

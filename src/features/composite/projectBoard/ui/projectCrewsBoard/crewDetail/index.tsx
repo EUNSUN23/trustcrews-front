@@ -9,7 +9,7 @@ import { useSetRecoilState } from 'recoil';
 import {
   PROJECT_MENU,
   projectActiveNavState,
-} from '@/store/projectDetail/ProjectNavTabStateStore';
+} from '@/features/composite/projectBoard/store/ProjectNavTabStateStore';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';
 
 const {

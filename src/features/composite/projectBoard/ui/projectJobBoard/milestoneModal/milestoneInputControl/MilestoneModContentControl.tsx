@@ -1,6 +1,6 @@
 import Input from '@/shared/ui/Input';
 import { useRecoilState } from 'recoil';
-import { milestoneModFormFieldSelector } from '@/store/projectDetail/job/milestone/MilestoneModalStateStore';
+import { milestoneModFormFieldSelector } from '@/features/composite/projectBoard/store/job/milestone/MilestoneModalStateStore';
 import { ChangeEvent } from 'react';
 
 const MilestoneModContentControl = () => {

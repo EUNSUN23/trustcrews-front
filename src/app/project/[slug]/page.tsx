@@ -5,7 +5,7 @@ import { useRecoilState } from 'recoil';
 import {
   DEFAULT_PROJECT_ID,
   projectIdState,
-} from '@/store/projectDetail/ProjectIdStateStore';
+} from '@/features/composite/projectBoard/store/ProjectIdStateStore';
 import dynamic from 'next/dynamic';
 import ProjectBoardContainerSkeleton from '@/features/composite/projectBoard/ui/ProjectBoardContainerSkeleton';
 

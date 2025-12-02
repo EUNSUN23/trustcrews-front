@@ -8,7 +8,7 @@ import VoteBar from '@/features/core/projectVote/ui/VoteBar';
 import { VOTE_OPTIONS } from '@/features/core/projectVote/constants/voteOptions';
 import useSnackbar from '@/shared/hooks/useSnackbar';
 import { useFWVoteNotice } from '@/features/core/projectNotice/api/fwVoteNotice/getFWVoteNotice';
-import { fwNoticeModalState } from '@/store/projectDetail/notice/fwVoteNotice/FWVoteNoticeModalStateStore';
+import { fwNoticeModalState } from '@/features/composite/projectBoard/store/notice/fwVoteNotice/FWVoteNoticeModalStateStore';
 import { ZodError } from 'zod';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
 import {

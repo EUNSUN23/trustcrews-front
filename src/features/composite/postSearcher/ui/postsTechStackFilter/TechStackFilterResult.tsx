@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
 import Image from 'next/image';
 import { useRecoilState } from 'recoil';
-import { selectedTechStackState } from '@/store/posts/filter/TechStackFilterStateStore';
+import { selectedTechStackState } from '@/features/composite/postSearcher/store/TechStackFilterStateStore';
 import {
   TechStackMapping,
   useTechStackMappings,

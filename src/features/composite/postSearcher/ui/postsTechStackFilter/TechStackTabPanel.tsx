@@ -9,7 +9,7 @@ import {
   DEFAULT_TECH_CATEGORY,
   selectedTechStackState,
   techStackCategoryState,
-} from '@/store/posts/filter/TechStackFilterStateStore';
+} from '@/features/composite/postSearcher/store/TechStackFilterStateStore';
 import { bigIntToString } from '@/shared/utils/stringUtils';
 import { clsx } from 'clsx';
 

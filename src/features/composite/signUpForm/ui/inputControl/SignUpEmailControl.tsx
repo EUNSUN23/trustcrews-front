@@ -1,6 +1,6 @@
 import Input from '@/shared/ui/Input';
 import { useRecoilState } from 'recoil';
-import { signUpFormFieldSelector } from '@/store/signup/SignUpFormStateStore';
+import { signUpFormFieldSelector } from '@/features/composite/signUpForm/store/SignUpFormStateStore';
 
 const SignUpEmailControl = () => {
   const [email, setEmail] = useRecoilState(signUpFormFieldSelector('email'));

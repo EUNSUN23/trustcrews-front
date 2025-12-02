@@ -1,7 +1,7 @@
 'use client';
 
 import ProjectInformation from '@/app/post/[slug]/_components/ProjectInformation';
-import ApplySection from '@/app/post/[slug]/_components/ApplySection';
+import ProjectApplyFormContainer from '@/features/composite/projectApplyForm/ui/ProjectApplyFormContainer';
 import { usePostDetail } from '@/features/core/post/api/getPostDetail';
 import { useProjectSummaryInfo } from '@/features/core/project/api/getProjectInfoSummary';
 import PostInformation from '@/app/post/[slug]/_components/PostInformation';
@@ -31,7 +31,11 @@ const PostDetailContainer = ({ isAuthorized, postId }: PostDetailProps) => {
         <ProjectInformation projectInfo={projectInfo} />
       </article>
       <PostIntroduction content={postInfo.content} />
-      <ApplySection isAuthorized={isAuthorized} postInfo={postInfo} />
+      <ProjectApplyFormContainer
+        isAuthorized={isAuthorized}
+        projectId={postInfo.projectId}
+        positions={postInfo.postPositions.map(({ position }) => position)}
+      />
     </article>
   );
 };

@@ -10,7 +10,7 @@ import {
   TaskModForm,
   taskModFormStateStore,
   taskModModalStateStore,
-} from '@/store/projectDetail/job/task/TaskModalStateStore';
+} from '@/features/composite/projectBoard/store/job/task/TaskModalStateStore';
 import useUpdateTask, {
   updateTaskInputSchema,
 } from '@/features/core/task/api/updateTask';

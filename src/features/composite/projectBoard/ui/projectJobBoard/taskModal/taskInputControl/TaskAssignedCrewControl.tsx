@@ -3,9 +3,9 @@ import {
   taskFormFieldSelector,
   taskModalEditDisabledSelector,
   TaskModalType,
-} from '@/store/projectDetail/job/task/TaskModalStateStore';
+} from '@/features/composite/projectBoard/store/job/task/TaskModalStateStore';
 import { Field, Label } from '@headlessui/react';
-import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
+import { projectIdState } from '@/features/composite/projectBoard/store/ProjectIdStateStore';
 import ProjectCrewSelector from '@/features/core/crews/ui/ProjectCrewSelector';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';
 import SelectSkeleton from '@/shared/ui/skeleton/SelectSkeleton';

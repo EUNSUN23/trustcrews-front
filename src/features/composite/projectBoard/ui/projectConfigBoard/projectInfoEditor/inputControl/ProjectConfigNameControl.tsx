@@ -1,7 +1,7 @@
 import Input from '@/shared/ui/Input';
 import { useRecoilState } from 'recoil';
 import Row from '@/shared/ui/Row';
-import { projectConfigFormFieldSelector } from '@/store/projectDetail/config/project/ProjectConfigFormStateStore';
+import { projectConfigFormFieldSelector } from '@/features/composite/projectBoard/store/config/project/ProjectConfigFormStateStore';
 
 const ProjectConfigNameControl = () => {
   const [projectName, setProjectName] = useRecoilState(

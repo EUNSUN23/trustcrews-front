@@ -1,6 +1,6 @@
 import { useRecoilState } from 'recoil';
 import Input from '@/shared/ui/Input';
-import { postConfigFormFieldSelector } from '@/store/projectDetail/config/post/PostConfigFormStateStore';
+import { postConfigFormFieldSelector } from '@/features/composite/projectBoard/store/config/post/PostConfigFormStateStore';
 
 const PostConfigTitleControl = () => {
   const [title, setTitle] = useRecoilState(

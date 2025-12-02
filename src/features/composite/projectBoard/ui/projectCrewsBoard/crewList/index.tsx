@@ -5,9 +5,9 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 import {
   PROJECT_MENU,
   projectActiveNavState,
-} from '@/store/projectDetail/ProjectNavTabStateStore';
-import { crewIdState } from '@/store/projectDetail/crew/CrewIdStateStore';
-import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
+} from '@/features/composite/projectBoard/store/ProjectNavTabStateStore';
+import { crewIdState } from '@/features/composite/projectBoard/store/crew/CrewIdStateStore';
+import { projectIdState } from '@/features/composite/projectBoard/store/ProjectIdStateStore';
 import { useProjectCrewList } from '@/features/core/crews/api/getProjectCrewList';
 import Avatar from '@/features/core/user/ui/Avatar';
 import Badge from '@/shared/ui/Badge';

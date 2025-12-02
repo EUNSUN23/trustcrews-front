@@ -4,9 +4,9 @@ import {
   CrewFWModalState,
   crewFWModalStateStore,
   DEFAULT_FW_MODAL_STATE,
-} from '@/store/projectDetail/crew/crewDetail/crewFW/CrewFWModalStateStore';
+} from '@/features/composite/projectBoard/store/crew/crewDetail/crewFW/CrewFWModalStateStore';
 import { bigIntToString } from '@/shared/utils/stringUtils';
-import { projectManageAuthStateStore } from '@/store/projectDetail/config/pmAuth/ProjectManageAuthStateStore';
+import { projectManageAuthStateStore } from '@/features/composite/projectBoard/store/config/pmAuth/ProjectManageAuthStateStore';
 import { ProjectCrewProfileInfo } from '@/features/core/crews/api/getCrewDetail';
 
 const { title: DEFALUT_TITLE } = DEFAULT_FW_MODAL_STATE;

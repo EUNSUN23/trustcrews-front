@@ -3,7 +3,7 @@
 import TechStackImage from '@/features/core/techStack/ui/TechStackImage';
 import { useRecoilValue } from 'recoil';
 import { useProjectSummaryInfo } from '@/features/core/project/api/getProjectInfoSummary';
-import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
+import { projectIdState } from '@/features/composite/projectBoard/store/ProjectIdStateStore';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
 import ProjectInfoItem from '@/features/composite/projectBoard/ui/projectInfo/ProjectInfoItem';
 

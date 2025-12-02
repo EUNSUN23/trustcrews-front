@@ -4,11 +4,11 @@ import Badge from '@/shared/ui/Badge';
 import Button from '@/shared/ui/Button';
 import useSnackbar from '@/shared/hooks/useSnackbar';
 import { useRecoilValue } from 'recoil';
-import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
+import { projectIdState } from '@/features/composite/projectBoard/store/ProjectIdStateStore';
 import { ZodError } from 'zod';
 import SelectSkeleton from '@/shared/ui/skeleton/SelectSkeleton';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
-import { projectManageAuthStateStore } from '@/store/projectDetail/config/pmAuth/ProjectManageAuthStateStore';
+import { projectManageAuthStateStore } from '@/features/composite/projectBoard/store/config/pmAuth/ProjectManageAuthStateStore';
 import {
   UpdateProjectMngAuthInput,
   updateProjectMngAuthInputSchema,

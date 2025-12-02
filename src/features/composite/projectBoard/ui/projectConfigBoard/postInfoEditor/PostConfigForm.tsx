@@ -4,7 +4,7 @@ import PostConfigContentControl from '@/features/composite/projectBoard/ui/proje
 import ProjectPostInfoSaveButton from '@/features/composite/projectBoard/ui/projectConfigBoard/postInfoEditor/PostConfigSaveButton';
 import PostConfigRecruitStatusControl from '@/features/composite/projectBoard/ui/projectConfigBoard/postInfoEditor/inputControl/PostConfigRecruitStatusControl';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
+import { projectIdState } from '@/features/composite/projectBoard/store/ProjectIdStateStore';
 import PostConfigResetButton from '@/features/composite/projectBoard/ui/projectConfigBoard/postInfoEditor/PostConfigResetButton';
 import ConfigLayout from '@/features/composite/projectBoard/ui/projectConfigBoard/ConfigLayout';
 import ConfigSummaryLayout from '@/features/composite/projectBoard/ui/projectConfigBoard/ConfigSummaryLayout';
@@ -16,7 +16,7 @@ import { useEffect } from 'react';
 import {
   postConfigFormLoadingSelector,
   postConfigFormStateStore,
-} from '@/store/projectDetail/config/post/PostConfigFormStateStore';
+} from '@/features/composite/projectBoard/store/config/post/PostConfigFormStateStore';
 import PostConfigFormSkeleton from '@/features/composite/projectBoard/ui/projectConfigBoard/postInfoEditor/PostConfigFormSkeleton';
 
 const PostConfigForm = () => {

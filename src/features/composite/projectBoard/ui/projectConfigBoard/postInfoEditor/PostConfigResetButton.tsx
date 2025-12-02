@@ -1,7 +1,7 @@
 import Button from '@/shared/ui/Button';
 import { useQueryClient } from '@tanstack/react-query';
 import { useResetRecoilState } from 'recoil';
-import { postConfigFormStateStore } from '@/store/projectDetail/config/post/PostConfigFormStateStore';
+import { postConfigFormStateStore } from '@/features/composite/projectBoard/store/config/post/PostConfigFormStateStore';
 import { POST_CONFIG_QUERY_KEY } from '@/features/core/post/api/generalConfig/getPostConfig';
 
 const PostConfigResetButton = () => {

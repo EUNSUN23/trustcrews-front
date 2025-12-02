@@ -3,7 +3,7 @@ import CommonPagination from '@/shared/ui/CommonPagination';
 import NoContentsMessage from '@/shared/ui/NoContentsMessage';
 import { useCrewNoticeList } from '@/features/core/projectNotice/api/crewNotice/getCrewNoticeList';
 import { useRecoilValue } from 'recoil';
-import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
+import { projectIdState } from '@/features/composite/projectBoard/store/ProjectIdStateStore';
 import NoticeBadge from '@/features/core/projectNotice/ui/NoticeBadge';
 import { NOTICE_TYPES } from '@/features/core/projectNotice/constants/noticeTypes';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';

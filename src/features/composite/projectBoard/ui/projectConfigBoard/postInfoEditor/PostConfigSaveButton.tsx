@@ -1,11 +1,11 @@
 import Button from '@/shared/ui/Button';
 import { useRecoilValue } from 'recoil';
 import useSnackbar from '@/shared/hooks/useSnackbar';
-import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
+import { projectIdState } from '@/features/composite/projectBoard/store/ProjectIdStateStore';
 import { ZodError } from 'zod';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
-import { postConfigFormStateStore } from '@/store/projectDetail/config/post/PostConfigFormStateStore';
-import { projectManageAuthStateStore } from '@/store/projectDetail/config/pmAuth/ProjectManageAuthStateStore';
+import { postConfigFormStateStore } from '@/features/composite/projectBoard/store/config/post/PostConfigFormStateStore';
+import { projectManageAuthStateStore } from '@/features/composite/projectBoard/store/config/pmAuth/ProjectManageAuthStateStore';
 import {
   updatePostConfigInputSchema,
   useUpdatePostConfig,

@@ -3,7 +3,7 @@ import ConfigLayout from '@/features/composite/projectBoard/ui/projectConfigBoar
 import Button from '@/shared/ui/Button';
 import { useRecoilValue } from 'recoil';
 import { useRouter } from 'next/navigation';
-import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
+import { projectIdState } from '@/features/composite/projectBoard/store/ProjectIdStateStore';
 import useSnackbar from '@/shared/hooks/useSnackbar';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
 import { useEndProject } from '@/features/core/project/api/endProject';

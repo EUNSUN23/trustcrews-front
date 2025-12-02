@@ -2,13 +2,13 @@
 
 import { Suspense } from 'react';
 import SelectSkeleton from '@/shared/ui/skeleton/SelectSkeleton';
-import SignUpEmailControl from '@/app/signup/_components/signUpForm/inputControl/SignUpEmailControl';
-import SignUpPasswordControl from '@/app/signup/_components/signUpForm/inputControl/SignUpPasswordControl';
-import SignUpNicknameControl from '@/app/signup/_components/signUpForm/inputControl/SignUpNicknameControl';
-import SignUpPositionControl from '@/app/signup/_components/signUpForm/inputControl/SignUpPositionControl';
-import SignUpTechStackControl from '@/app/signup/_components/signUpForm/inputControl/SignUpTechStackControl';
-import SignUpIntroControl from '@/app/signup/_components/signUpForm/inputControl/SignUpIntroControl';
-import SignUpButton from '@/app/signup/_components/signUpForm/SignUpButton';
+import SignUpEmailControl from '@/features/composite/signUpForm/ui/inputControl/SignUpEmailControl';
+import SignUpPasswordControl from '@/features/composite/signUpForm/ui/inputControl/SignUpPasswordControl';
+import SignUpNicknameControl from '@/features/composite/signUpForm/ui/inputControl/SignUpNicknameControl';
+import SignUpPositionControl from '@/features/composite/signUpForm/ui/inputControl/SignUpPositionControl';
+import SignUpTechStackControl from '@/features/composite/signUpForm/ui/inputControl/SignUpTechStackControl';
+import SignUpIntroControl from '@/features/composite/signUpForm/ui/inputControl/SignUpIntroControl';
+import SignUpButton from '@/features/composite/signUpForm/ui/SignUpButton';
 
 const SignUpForm = () => {
   return (

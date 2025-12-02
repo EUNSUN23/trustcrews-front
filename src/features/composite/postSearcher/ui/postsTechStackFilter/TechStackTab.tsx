@@ -3,7 +3,7 @@ import { useTechCategories } from '@/features/core/techStack/api/getTechStackCat
 import {
   DEFAULT_TECH_CATEGORY,
   techStackCategoryState,
-} from '@/store/posts/filter/TechStackFilterStateStore';
+} from '@/features/composite/postSearcher/store/TechStackFilterStateStore';
 import { SelectItem } from '@/shared/types/selectItem';
 import { useRecoilState } from 'recoil';
 import { bigIntToString } from '@/shared/utils/stringUtils';

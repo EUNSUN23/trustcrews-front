@@ -5,7 +5,7 @@ import {
   taskModalEditDisabledSelector,
   TaskModalType,
   taskTodoSelector,
-} from '@/store/projectDetail/job/task/TaskModalStateStore';
+} from '@/features/composite/projectBoard/store/job/task/TaskModalStateStore';
 import { MAX_TASK_CONTENT_DETAIL } from '@/features/core/task/constants/maxTaskContentDetail';
 import useSnackbar from '@/shared/hooks/useSnackbar';
 import clsx from 'clsx';

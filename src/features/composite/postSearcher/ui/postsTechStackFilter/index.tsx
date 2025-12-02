@@ -5,7 +5,7 @@ import { useRecoilValue, useResetRecoilState } from 'recoil';
 import { BsChevronDown } from '@react-icons/all-files/bs/BsChevronDown';
 import { TechStackMapping } from '@/features/core/techStack/api/getTechStackMappings';
 import useDropdownState from '@/shared/hooks/useDropdownState';
-import { selectedTechStackState } from '@/store/posts/filter/TechStackFilterStateStore';
+import { selectedTechStackState } from '@/features/composite/postSearcher/store/TechStackFilterStateStore';
 import TechStackTab from '@/features/composite/postSearcher/ui/postsTechStackFilter/TechStackTab';
 import TechStackTabPanel from '@/features/composite/postSearcher/ui/postsTechStackFilter/TechStackTabPanel';
 import TechStackFilterResult from '@/features/composite/postSearcher/ui/postsTechStackFilter/TechStackFilterResult';

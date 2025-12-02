@@ -16,9 +16,9 @@ import {
   TaskModForm,
   taskModFormStateStore,
   taskModModalStateStore,
-} from '@/store/projectDetail/job/task/TaskModalStateStore';
+} from '@/features/composite/projectBoard/store/job/task/TaskModalStateStore';
 import { TASK_STATUS } from '@/features/core/task/constants/taskStatus';
-import { projectManageAuthStateStore } from '@/store/projectDetail/config/pmAuth/ProjectManageAuthStateStore';
+import { projectManageAuthStateStore } from '@/features/composite/projectBoard/store/config/pmAuth/ProjectManageAuthStateStore';
 import { cva } from 'class-variance-authority';
 import { TaskItem } from '@/features/core/task/api/getTaskList';
 import { bigIntToString } from '@/shared/utils/stringUtils';

@@ -2,8 +2,8 @@ import NoticeBadge from '@/features/core/projectNotice/ui/NoticeBadge';
 import VoteStatusBadge from '@/features/core/projectVote/ui/VoteStatusBadge';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { NOTICE_TYPES } from '@/features/core/projectNotice/constants/noticeTypes';
-import { rcVoteNoticeModalState } from '@/store/projectDetail/notice/rcVoteNotice/RCVoteNoticeModalStateStore';
-import { projectManageAuthStateStore } from '@/store/projectDetail/config/pmAuth/ProjectManageAuthStateStore';
+import { rcVoteNoticeModalState } from '@/features/composite/projectBoard/store/notice/rcVoteNotice/RCVoteNoticeModalStateStore';
+import { projectManageAuthStateStore } from '@/features/composite/projectBoard/store/config/pmAuth/ProjectManageAuthStateStore';
 import { RCVoteNoticeData } from '@/features/core/projectNotice/api/rcVoteNotice/getRCVoteNoticeList';
 import { bigIntToString } from '@/shared/utils/stringUtils';
 

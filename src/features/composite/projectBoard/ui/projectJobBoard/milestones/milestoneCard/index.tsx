@@ -3,7 +3,7 @@
 import { MouseEvent } from 'react';
 import MilestoneCardMenu from '@/features/composite/projectBoard/ui/projectJobBoard/milestones/milestoneCard/MilestoneCardMenu';
 import { useRecoilState } from 'recoil';
-import { activeMilestoneStateStore } from '@/store/projectDetail/job/milestone/ActiveMilestoneStateStore';
+import { activeMilestoneStateStore } from '@/features/composite/projectBoard/store/job/milestone/ActiveMilestoneStateStore';
 import { MilestoneInfo } from '@/features/core/milestone/constants/milestone';
 import { clsx } from 'clsx';
 import { bigIntToString, numStrToBigInt } from '@/shared/utils/stringUtils';

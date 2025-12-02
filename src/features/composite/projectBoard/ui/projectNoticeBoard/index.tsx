@@ -5,7 +5,7 @@ import CrewNotices from '@/features/composite/projectBoard/ui/projectNoticeBoard
 import FWVoteNoticeModal from '@/features/composite/projectBoard/ui/projectNoticeBoard/fwVoteNotice/fwVoteNoticeModal';
 import RCVoteNoticeModal from '@/features/composite/projectBoard/ui/projectNoticeBoard/rcVoteNotice/rcVoteNoticeModal';
 import { useRecoilValue } from 'recoil';
-import { activeNoticeTabStateStore } from '@/store/projectDetail/notice/ActiveNoticeTabStateStore';
+import { activeNoticeTabStateStore } from '@/features/composite/projectBoard/store/notice/ActiveNoticeTabStateStore';
 import { NOTICE_TABS } from '@/features/core/projectNotice/constants/noticeTabs';
 import ContentsLoader from '@/shared/ui/ContentsLoader';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';

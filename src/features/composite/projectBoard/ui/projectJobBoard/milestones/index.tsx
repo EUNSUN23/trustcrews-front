@@ -2,7 +2,7 @@
 
 import { MilestoneInfo } from '@/features/core/milestone/constants/milestone';
 import { useRecoilValue } from 'recoil';
-import { activeMilestoneStateStore } from '@/store/projectDetail/job/milestone/ActiveMilestoneStateStore';
+import { activeMilestoneStateStore } from '@/features/composite/projectBoard/store/job/milestone/ActiveMilestoneStateStore';
 import { useEffect, useRef, useState } from 'react';
 import SwiperCore from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';

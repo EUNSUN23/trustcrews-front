@@ -3,9 +3,9 @@
 import Button from '@/shared/ui/Button';
 import { FaPlus } from '@react-icons/all-files/fa/FaPlus';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { taskAddModalStateStore } from '@/store/projectDetail/job/task/TaskModalStateStore';
-import { activeMilestoneStateStore } from '@/store/projectDetail/job/milestone/ActiveMilestoneStateStore';
-import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
+import { taskAddModalStateStore } from '@/features/composite/projectBoard/store/job/task/TaskModalStateStore';
+import { activeMilestoneStateStore } from '@/features/composite/projectBoard/store/job/milestone/ActiveMilestoneStateStore';
+import { projectIdState } from '@/features/composite/projectBoard/store/ProjectIdStateStore';
 
 const TaskAddButton = () => {
   const projectId = useRecoilValue(projectIdState);

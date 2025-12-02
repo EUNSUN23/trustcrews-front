@@ -1,7 +1,7 @@
 import Button from '@/shared/ui/Button';
 import { useResetRecoilState } from 'recoil';
 import { useQueryClient } from '@tanstack/react-query';
-import { projectConfigFormStateStore } from '@/store/projectDetail/config/project/ProjectConfigFormStateStore';
+import { projectConfigFormStateStore } from '@/features/composite/projectBoard/store/config/project/ProjectConfigFormStateStore';
 import { PROJECT_INFO_SUMMARY_QUERY_KEY } from '@/features/core/project/api/getProjectInfoSummary';
 
 const ResetProjectConfigButton = () => {

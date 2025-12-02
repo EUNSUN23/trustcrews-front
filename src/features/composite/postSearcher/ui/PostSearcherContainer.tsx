@@ -6,9 +6,9 @@ import { useRecoilValue } from 'recoil';
 import {
   postSearchValue,
   selectedPositionState,
-} from '@/store/posts/PostSearchStateStore';
+} from '@/features/composite/postSearcher/store/PostSearchStateStore';
 import { useState } from 'react';
-import { selectedTechStackState } from '@/store/posts/filter/TechStackFilterStateStore';
+import { selectedTechStackState } from '@/features/composite/postSearcher/store/TechStackFilterStateStore';
 
 const PostList = () => {
   const selectedTechStacks = useRecoilValue(selectedTechStackState);

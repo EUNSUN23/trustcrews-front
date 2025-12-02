@@ -2,7 +2,7 @@
 
 import { useRecoilState } from 'recoil';
 import Select from '@/shared/ui/Select';
-import { activeNoticeTabStateStore } from '@/store/projectDetail/notice/ActiveNoticeTabStateStore';
+import { activeNoticeTabStateStore } from '@/features/composite/projectBoard/store/notice/ActiveNoticeTabStateStore';
 import { NOTICE_TABS } from '@/features/core/projectNotice/constants/noticeTabs';
 import { clsx } from 'clsx';
 import { NoticeTab } from '@/features/core/projectNotice/types/noticeTab';

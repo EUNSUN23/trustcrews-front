@@ -2,7 +2,7 @@ import { MouseEvent, useEffect } from 'react';
 import { BsChevronDown } from '@react-icons/all-files/bs/BsChevronDown';
 import useDropdownState from '@/shared/hooks/useDropdownState';
 import { useRecoilState, useResetRecoilState } from 'recoil';
-import { selectedPositionState } from '@/store/posts/PostSearchStateStore';
+import { selectedPositionState } from '@/features/composite/postSearcher/store/PostSearchStateStore';
 import { bigIntToString } from '@/shared/utils/stringUtils';
 import { usePositionList } from '@/features/core/position/api/getPositionList';
 import { DEFAULT_POSITION_OPTION } from '@/features/core/position/constants/defaultPositionOption';

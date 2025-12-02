@@ -1,5 +1,5 @@
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
+import { projectIdState } from '@/features/composite/projectBoard/store/ProjectIdStateStore';
 import { bigIntToString, numStrToBigInt } from '@/shared/utils/stringUtils';
 import ResetProjectConfigButton from '@/features/composite/projectBoard/ui/projectConfigBoard/projectInfoEditor/ResetProjectConfigButton';
 import ProjectConfigTechStackControl from '@/features/composite/projectBoard/ui/projectConfigBoard/projectInfoEditor/inputControl/ProjectConfigTechStackControl';
@@ -14,7 +14,7 @@ import { useEffect } from 'react';
 import {
   projectConfigFormLoadingSelector,
   projectConfigFormStateStore,
-} from '@/store/projectDetail/config/project/ProjectConfigFormStateStore';
+} from '@/features/composite/projectBoard/store/config/project/ProjectConfigFormStateStore';
 import ProjectConfigFormSkeleton from '@/features/composite/projectBoard/ui/projectConfigBoard/projectInfoEditor/ProjectConfigFormSkeleton';
 import { useProjectSummaryInfo } from '@/features/core/project/api/getProjectInfoSummary';
 

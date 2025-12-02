@@ -4,7 +4,7 @@ import { useRecoilValue } from 'recoil';
 import {
   PROJECT_MENU,
   projectActiveNavState,
-} from '@/store/projectDetail/ProjectNavTabStateStore';
+} from '@/features/composite/projectBoard/store/ProjectNavTabStateStore';
 import ProjectJobBoardSkeleton from '@/features/composite/projectBoard/ui/projectJobBoard/ProjectJobBoardSkeleton';
 import CrewListSkeleton from '@/features/composite/projectBoard/ui/projectCrewsBoard/crewList/CrewListSkeleton';
 import { ProjectNoticeBoardSkeleton } from '@/features/composite/projectBoard/ui/projectNoticeBoard/ProjectNoticeBoardSkeleton';

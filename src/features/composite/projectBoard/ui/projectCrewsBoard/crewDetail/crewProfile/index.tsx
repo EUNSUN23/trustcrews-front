@@ -5,7 +5,7 @@ import Badge from '@/shared/ui/Badge';
 import TechStackImage from '@/features/core/techStack/ui/TechStackImage';
 import TrustGradeBadge from '@/features/core/trustGrade/ui/TrustGradeBadge';
 import { useCrewDetail } from '@/features/core/crews/api/getCrewDetail';
-import { crewIdState } from '@/store/projectDetail/crew/CrewIdStateStore';
+import { crewIdState } from '@/features/composite/projectBoard/store/crew/CrewIdStateStore';
 import { useRecoilValue } from 'recoil';
 import CrewOutButton from '@/features/composite/projectBoard/ui/projectCrewsBoard/crewDetail/crewProfile/CrewOutButton';
 import CrewFwButton from '@/features/composite/projectBoard/ui/projectCrewsBoard/crewDetail/crewProfile/CrewFWButton';

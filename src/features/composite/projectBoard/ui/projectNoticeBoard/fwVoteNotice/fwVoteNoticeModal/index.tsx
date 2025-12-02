@@ -2,7 +2,7 @@ import { useRecoilValue, useResetRecoilState } from 'recoil';
 import { createPortal } from 'react-dom';
 import Modal from '@/shared/ui/Modal';
 import FWVoteNoticeDetail from '@/features/composite/projectBoard/ui/projectNoticeBoard/fwVoteNotice/fwVoteNoticeModal/FWVoteNoticeDetail';
-import { fwNoticeModalState } from '@/store/projectDetail/notice/fwVoteNotice/FWVoteNoticeModalStateStore';
+import { fwNoticeModalState } from '@/features/composite/projectBoard/store/notice/fwVoteNotice/FWVoteNoticeModalStateStore';
 import useModalPortalElement from '@/shared/hooks/useModalPortalElement';
 import FWVoteNoticeDetailSkeleton from '@/features/composite/projectBoard/ui/projectNoticeBoard/fwVoteNotice/fwVoteNoticeModal/FWVoteNoticeDetailSkeleton';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';

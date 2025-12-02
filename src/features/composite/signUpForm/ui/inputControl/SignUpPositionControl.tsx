@@ -1,6 +1,6 @@
 import PositionSelect from '@/features/core/position/ui/PositionSelect';
 import { useRecoilState } from 'recoil';
-import { signUpFormFieldSelector } from '@/store/signup/SignUpFormStateStore';
+import { signUpFormFieldSelector } from '@/features/composite/signUpForm/store/SignUpFormStateStore';
 import { Field, Label } from '@headlessui/react';
 import SelectSkeleton from '@/shared/ui/skeleton/SelectSkeleton';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';

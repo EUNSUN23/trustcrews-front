@@ -14,9 +14,9 @@ import { ZodError } from 'zod';
 import {
   milestoneModFormStateStore,
   milestoneModModalStateStore,
-} from '@/store/projectDetail/job/milestone/MilestoneModalStateStore';
-import { activeMilestoneStateStore } from '@/store/projectDetail/job/milestone/ActiveMilestoneStateStore';
-import { projectManageAuthStateStore } from '@/store/projectDetail/config/pmAuth/ProjectManageAuthStateStore';
+} from '@/features/composite/projectBoard/store/job/milestone/MilestoneModalStateStore';
+import { activeMilestoneStateStore } from '@/features/composite/projectBoard/store/job/milestone/ActiveMilestoneStateStore';
+import { projectManageAuthStateStore } from '@/features/composite/projectBoard/store/config/pmAuth/ProjectManageAuthStateStore';
 import useModalPortalElement from '@/shared/hooks/useModalPortalElement';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
 

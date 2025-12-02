@@ -12,12 +12,12 @@ import {
 import {
   milestoneAddFormStateStore,
   milestoneAddModalStateStore,
-} from '@/store/projectDetail/job/milestone/MilestoneModalStateStore';
+} from '@/features/composite/projectBoard/store/job/milestone/MilestoneModalStateStore';
 import useSnackbar from '@/shared/hooks/useSnackbar';
-import { activeMilestoneStateStore } from '@/store/projectDetail/job/milestone/ActiveMilestoneStateStore';
+import { activeMilestoneStateStore } from '@/features/composite/projectBoard/store/job/milestone/ActiveMilestoneStateStore';
 import { ZodError } from 'zod';
-import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
-import { projectManageAuthStateStore } from '@/store/projectDetail/config/pmAuth/ProjectManageAuthStateStore';
+import { projectIdState } from '@/features/composite/projectBoard/store/ProjectIdStateStore';
+import { projectManageAuthStateStore } from '@/features/composite/projectBoard/store/config/pmAuth/ProjectManageAuthStateStore';
 import useModalPortalElement from '@/shared/hooks/useModalPortalElement';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
 

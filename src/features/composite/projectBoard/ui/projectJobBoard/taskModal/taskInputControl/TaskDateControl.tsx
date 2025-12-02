@@ -2,12 +2,12 @@ import { useEffect } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import DateRangePicker from '@/shared/ui/DateRangePicker';
 import { addDays, format, subDays } from 'date-fns';
-import { activeMilestoneStateStore } from '@/store/projectDetail/job/milestone/ActiveMilestoneStateStore';
+import { activeMilestoneStateStore } from '@/features/composite/projectBoard/store/job/milestone/ActiveMilestoneStateStore';
 import {
   taskFormFieldSelector,
   taskModalEditDisabledSelector,
   TaskModalType,
-} from '@/store/projectDetail/job/task/TaskModalStateStore';
+} from '@/features/composite/projectBoard/store/job/task/TaskModalStateStore';
 
 type TaskDateProps = {
   modalType: TaskModalType;

@@ -2,7 +2,7 @@ import DateInput from '@/shared/ui/DateInput';
 import { useRecoilState } from 'recoil';
 import { addDays, format } from 'date-fns';
 import Row from '@/shared/ui/Row';
-import { projectConfigFormFieldSelector } from '@/store/projectDetail/config/project/ProjectConfigFormStateStore';
+import { projectConfigFormFieldSelector } from '@/features/composite/projectBoard/store/config/project/ProjectConfigFormStateStore';
 import { useEffect } from 'react';
 
 const ProjectConfigDateControl = () => {

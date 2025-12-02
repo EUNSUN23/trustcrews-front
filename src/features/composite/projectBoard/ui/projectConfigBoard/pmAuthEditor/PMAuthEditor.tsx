@@ -1,5 +1,5 @@
 import { useRecoilValue } from 'recoil';
-import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
+import { projectIdState } from '@/features/composite/projectBoard/store/ProjectIdStateStore';
 import PMAuthEditorItem from '@/features/composite/projectBoard/ui/projectConfigBoard/pmAuthEditor/PMAuthEditorItem';
 import { useProjectCrewList } from '@/features/core/crews/api/getProjectCrewList';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';

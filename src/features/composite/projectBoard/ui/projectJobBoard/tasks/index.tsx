@@ -3,8 +3,8 @@
 import CommonPagination from '@/shared/ui/CommonPagination';
 import useTasks from '@/features/core/task/api/getTaskList';
 import { useRecoilValue } from 'recoil';
-import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
-import { activeMilestoneStateStore } from '@/store/projectDetail/job/milestone/ActiveMilestoneStateStore';
+import { projectIdState } from '@/features/composite/projectBoard/store/ProjectIdStateStore';
+import { activeMilestoneStateStore } from '@/features/composite/projectBoard/store/job/milestone/ActiveMilestoneStateStore';
 import { useState } from 'react';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
 import { ITEM_COUNT_PER_PAGE } from '@/shared/constants/pagination';

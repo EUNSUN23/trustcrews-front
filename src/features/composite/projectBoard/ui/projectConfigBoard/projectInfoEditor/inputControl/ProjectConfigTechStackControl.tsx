@@ -1,7 +1,7 @@
 import TechStackSelect from '@/features/core/techStack/ui/TechStackSelect';
 import { useRecoilState } from 'recoil';
 import Row from '@/shared/ui/Row';
-import { projectConfigFormFieldSelector } from '@/store/projectDetail/config/project/ProjectConfigFormStateStore';
+import { projectConfigFormFieldSelector } from '@/features/composite/projectBoard/store/config/project/ProjectConfigFormStateStore';
 import SelectSkeleton from '@/shared/ui/skeleton/SelectSkeleton';
 import { Field, Label } from '@headlessui/react';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';

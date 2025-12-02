@@ -3,7 +3,7 @@ import CommonPagination from '@/shared/ui/CommonPagination';
 import NoContentsMessage from '@/shared/ui/NoContentsMessage';
 import { useFWVoteNoticeList } from '@/features/core/projectNotice/api/fwVoteNotice/getFWVoteNoticeList';
 import { useRecoilValue } from 'recoil';
-import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
+import { projectIdState } from '@/features/composite/projectBoard/store/ProjectIdStateStore';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
 import { ITEM_COUNT_PER_PAGE, PAGE_RANGE } from '@/shared/constants/pagination';
 import FWVoteNoticeItem from '@/features/composite/projectBoard/ui/projectNoticeBoard/fwVoteNotice/FWVoteNoticeItem';

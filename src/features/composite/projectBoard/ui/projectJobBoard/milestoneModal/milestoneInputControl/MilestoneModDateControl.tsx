@@ -1,6 +1,6 @@
 import DateRangePicker from '@/shared/ui/DateRangePicker';
 import { useRecoilState } from 'recoil';
-import { milestoneModFormFieldSelector } from '@/store/projectDetail/job/milestone/MilestoneModalStateStore';
+import { milestoneModFormFieldSelector } from '@/features/composite/projectBoard/store/job/milestone/MilestoneModalStateStore';
 
 const START_DATE_INPUT_ID = 'milestoneModStartDate';
 const END_DATE_INPUT_ID = 'milestoneModEndDate';

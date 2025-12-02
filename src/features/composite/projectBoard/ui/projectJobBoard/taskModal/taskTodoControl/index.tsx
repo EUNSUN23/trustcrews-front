@@ -5,7 +5,7 @@ import _ from 'lodash';
 import {
   TaskModalType,
   taskTodoSelector,
-} from '@/store/projectDetail/job/task/TaskModalStateStore';
+} from '@/features/composite/projectBoard/store/job/task/TaskModalStateStore';
 import AddTaskTodoToggle from '@/features/composite/projectBoard/ui/projectJobBoard/taskModal/taskTodoControl/AddTaskTodoToggle';
 import TaskTodoModInput from '@/features/composite/projectBoard/ui/projectJobBoard/taskModal/taskTodoControl/TaskTodoModInput';
 

@@ -1,6 +1,6 @@
 import { Switch } from '@headlessui/react';
 import { useRecoilState } from 'recoil';
-import { postConfigFormFieldSelector } from '@/store/projectDetail/config/post/PostConfigFormStateStore';
+import { postConfigFormFieldSelector } from '@/features/composite/projectBoard/store/config/post/PostConfigFormStateStore';
 
 const PostConfigRecruitStatusControl = () => {
   const [recruitmentStatus, setRecruitmentStatus] = useRecoilState(
