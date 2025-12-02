@@ -2,15 +2,14 @@ import 'server-only';
 import { refreshToken } from '@/lib/interceptor/auth/refreshToken';
 import { reqLogger, resLogger } from '@/lib/interceptor/interceptorLogger';
 import { authFetchWrapper } from '@/lib/interceptor/auth/authFetchWrapper';
-import BACKEND_URL from '@/constants/api/backendUrl';
-import { getCookieValue } from '@/lib/cookieUtils';
-import { COOKIE } from '@/constants/cookie';
+import { COOKIE, getCookieValue } from '@/lib/cookie';
 import { getResponseErrorMessage } from '@/lib/interceptor/getResponseErrorMessage';
-import { HttpError } from '@/shared/utils/HttpError';
+import { HttpError } from '@/lib/error/HttpError';
 import { HttpStatusCode } from 'axios';
 import pendingRequest from '@/lib/interceptor/auth/pendingRequest';
 import pendingRetryRequest from '@/lib/interceptor/auth/pendingRetryRequest';
 import revalidatingUsers from '@/lib/interceptor/auth/revalidatingUsers';
+import { BACKEND_URL } from '@/shared/constants/processEnv';
 
 const authFetch = authFetchWrapper({
   baseUrl: BACKEND_URL,

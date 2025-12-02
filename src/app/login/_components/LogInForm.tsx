@@ -13,6 +13,7 @@ import {
 import useSnackbar from '@/shared/hooks/useSnackbar';
 import { MY_PROJECTS_QUERY_KEY } from '@/features/core/project/api/getMyProjects';
 import { MY_PROJECT_APPLIES_QUERY_KEY } from '@/features/core/projectApplication/api/getMyProjectApplies';
+import { SIMPLE_USER_INFO_QUERY_KEY } from '@/features/core/user/api/getSimpleUserInfo';
 
 const LoginForm = () => {
   const { setErrorSnackbar, setInfoSnackbar } = useSnackbar();
@@ -26,13 +27,20 @@ const LoginForm = () => {
     onSuccess: async (res) => {
       const { message } = res;
 
+      const invalidateUserInfo = queryClient.invalidateQueries({
+        queryKey: [SIMPLE_USER_INFO_QUERY_KEY],
+      });
       const invalidateMyProjectList = queryClient.invalidateQueries({
         queryKey: [MY_PROJECTS_QUERY_KEY],
       });
       const invalidateProjectNotice = queryClient.invalidateQueries({
         queryKey: [MY_PROJECT_APPLIES_QUERY_KEY],
       });
-      await Promise.all([invalidateMyProjectList, invalidateProjectNotice]);
+      await Promise.all([
+        invalidateMyProjectList,
+        invalidateProjectNotice,
+        invalidateUserInfo,
+      ]);
       router.replace('/');
       router.refresh();
 

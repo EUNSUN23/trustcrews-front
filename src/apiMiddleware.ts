@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { HttpStatusCode } from 'axios';
-import { COOKIE } from '@/constants/cookie';
+import { COOKIE } from '@/lib/cookie';
 
 const isAuthorizedApiRequest = (request: NextRequest) => {
   const authRouteMatcher = new RegExp(

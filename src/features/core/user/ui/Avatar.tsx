@@ -3,9 +3,9 @@
 import Image, { ImageProps } from 'next/image';
 import { cva, VariantProps } from 'class-variance-authority';
 import cn from '@/shared/styles/cn';
-import calcImageSizes from '@/lib/calcImageSizes';
-import { ApplicationError } from '@/shared/utils/ApplicationError';
-import placeholderDataUrl from '@/constants/placeholderDataUrl';
+import calcImageSizes from '@/shared/utils/calcImageSizes';
+import { ApplicationError } from '@/lib/error/ApplicationError';
+import placeholderDataUrl from '@/shared/constants/placeholderDataUrl';
 
 const AvatarVariants = cva(
   `relative inline-block rounded-full ring-2 ring-white`,

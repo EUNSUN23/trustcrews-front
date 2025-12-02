@@ -3,7 +3,7 @@ import { useSuspenseQuery } from '@tanstack/react-query';
 import { TASK_STATUS } from '@/features/core/task/constants/taskStatus';
 import { TaskStatus } from '@/features/core/task/types/task';
 import { bigIntToString } from '@/shared/utils/stringUtils';
-import { ITEM_COUNT_PER_PAGE } from '@/constants/pagination';
+import { ITEM_COUNT_PER_PAGE } from '@/shared/constants/pagination';
 import { PageResponseBody } from '@/shared/types/responseBody';
 
 export type TasksReqParam = {

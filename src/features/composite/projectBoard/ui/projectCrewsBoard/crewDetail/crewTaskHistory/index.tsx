@@ -8,7 +8,7 @@ import { FaMinus } from '@react-icons/all-files/fa/FaMinus';
 import { FaPlus } from '@react-icons/all-files/fa/FaPlus';
 import { useRecoilValue } from 'recoil';
 import { crewIdState } from '@/store/projectDetail/crew/CrewIdStateStore';
-import { ITEM_COUNT_PER_PAGE, PAGE_RANGE } from '@/constants/pagination';
+import { ITEM_COUNT_PER_PAGE, PAGE_RANGE } from '@/shared/constants/pagination';
 
 const Index = () => {
   const crewId = useRecoilValue(crewIdState);

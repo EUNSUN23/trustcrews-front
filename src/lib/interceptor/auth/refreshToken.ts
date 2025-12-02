@@ -1,11 +1,8 @@
-import { cookies } from 'next/headers';
 import { reqLogger, resLogger } from '@/lib/interceptor/interceptorLogger';
-import BACKEND_URL from '@/constants/api/backendUrl';
-import { getRefreshTokenFromHeader } from '@/lib/interceptor/getRefreshTokenFromHeader';
-import { getCookieValue } from '@/lib/cookieUtils';
-import { COOKIE } from '@/constants/cookie';
+import { COOKIE, getCookieValue } from '@/lib/cookie';
 import { getResponseErrorMessage } from '@/lib/interceptor/getResponseErrorMessage';
 import { HttpStatusCode } from 'axios';
+import { BACKEND_URL } from '@/shared/constants/processEnv';
 
 const refreshTokenApi = async (
   userId: string | undefined,

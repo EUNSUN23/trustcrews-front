@@ -3,10 +3,10 @@ import { NextRequest } from 'next/server';
 import { cookies } from 'next/headers';
 import { routeResponse } from '@/lib/serverApi/routeResponse';
 import { getRefreshTokenFromHeader } from '@/lib/interceptor/getRefreshTokenFromHeader';
-import { COOKIE } from '@/constants/cookie';
 import { HttpStatusCode } from 'axios';
 import { createErrorResponse } from '@/lib/interceptor/createErrorResponse';
-import { HttpError } from '@/shared/utils/HttpError';
+import { HttpError } from '@/lib/error/HttpError';
+import { COOKIE } from '@/lib/cookie';
 
 export async function POST(req: NextRequest) {
   const loginRequest = await req.json();

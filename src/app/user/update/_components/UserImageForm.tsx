@@ -5,13 +5,9 @@ import { useRecoilState } from 'recoil';
 import Avatar from '@/features/core/user/ui/Avatar';
 import Button from '@/shared/ui/Button';
 import { userImageFormStateStore } from '@/store/useProfileEditor/UserImageFormStateStore';
-import { UserDetailInfo } from '@/features/core/user/api/getUserDetailInfo';
+import { useUserDetailInfo } from '@/features/core/user/api/getUserDetailInfo';
 
-type UserImageFormProps = {
-  profileImgSrc: UserDetailInfo['profileImgSrc'];
-};
-
-const UserImageForm = ({ profileImgSrc }: UserImageFormProps) => {
+const UserImageForm = () => {
   const fileRef = useRef<HTMLInputElement>(null);
   const [{ image, hasUpdate }, setUserImageState] = useRecoilState(
     userImageFormStateStore,
@@ -31,6 +27,12 @@ const UserImageForm = ({ profileImgSrc }: UserImageFormProps) => {
     setUserImageState({ hasUpdate: true, image: null });
     if (fileRef.current) fileRef.current.value = '';
   };
+
+  const {
+    data: {
+      data: { profileImgSrc },
+    },
+  } = useUserDetailInfo();
 
   let imageSrc = profileImgSrc;
   if (hasUpdate) imageSrc = image ? URL.createObjectURL(image) : null;

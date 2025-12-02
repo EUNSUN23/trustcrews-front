@@ -1,13 +1,20 @@
-import 'server-only';
+import { request } from '@/lib/clientApi/request';
+import { useSuspenseQuery } from '@tanstack/react-query';
 import { PageResponseBody } from '@/shared/types/responseBody';
 import { ProjectHistoryData } from '@/features/core/projectHistory/types/projectHistory';
-import { requestInServer } from '@/lib/serverApi/requestInServer';
 
 export const getMyProjectHistory = async (
   pageNumber: number,
 ): Promise<PageResponseBody<ProjectHistoryData[]>> => {
-  return await requestInServer(
+  return await request(
     'GET',
     `/api/projectHistory/auth/me?pageNumber=${pageNumber}`,
   );
+};
+
+export const useMyProjectHistory = (pageIndex: number) => {
+  return useSuspenseQuery({
+    queryKey: ['myProjectHistory', pageIndex],
+    queryFn: () => getMyProjectHistory(pageIndex),
+  });
 };

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Button from '@/shared/ui/Button';
 import CommonPagination from '@/shared/ui/CommonPagination';
 import { useProjectHistory } from '@/features/core/projectHistory/api/getProjectHistory';
-import { ITEM_COUNT_PER_PAGE, PAGE_RANGE } from '@/constants/pagination';
+import { ITEM_COUNT_PER_PAGE, PAGE_RANGE } from '@/shared/constants/pagination';
 import ProjectHistoryItem from '@/features/core/projectHistory/ui/ProjectHistoryItem';
 
 type RCTargetProjectHistoryProps = {

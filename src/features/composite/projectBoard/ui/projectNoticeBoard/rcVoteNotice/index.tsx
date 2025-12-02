@@ -5,7 +5,7 @@ import { useRCVoteNoticeList } from '@/features/core/projectNotice/api/rcVoteNot
 import { useRecoilValue } from 'recoil';
 import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
-import { ITEM_COUNT_PER_PAGE, PAGE_RANGE } from '@/constants/pagination';
+import { ITEM_COUNT_PER_PAGE, PAGE_RANGE } from '@/shared/constants/pagination';
 import RCVoteNoticeItem from '@/features/composite/projectBoard/ui/projectNoticeBoard/rcVoteNotice/RCVoteNoticeItem';
 
 const RCVoteNotice = () => {

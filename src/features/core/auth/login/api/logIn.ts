@@ -3,7 +3,7 @@ import { z } from 'zod';
 import { request } from '@/lib/clientApi/request';
 import { ResponseBody } from '@/shared/types/responseBody';
 import { ApiResult } from '@/shared/types/apiResult';
-import { HttpError } from '@/shared/utils/HttpError';
+import { HttpError } from '@/lib/error/HttpError';
 import { HttpStatusCode } from 'axios';
 
 export const loginInputSchema = z.object({

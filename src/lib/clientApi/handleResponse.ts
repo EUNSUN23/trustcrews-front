@@ -1,6 +1,6 @@
-import { HttpError } from '@/shared/utils/HttpError';
+import { HttpError } from '@/lib/error/HttpError';
 
-const response = async (res: Response) => {
+const handleResponse = async (res: Response) => {
   if (res.ok) {
     return res.json();
   } else {
@@ -10,4 +10,4 @@ const response = async (res: Response) => {
   }
 };
 
-export default response;
+export default handleResponse;

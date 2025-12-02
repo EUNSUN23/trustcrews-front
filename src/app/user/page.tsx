@@ -1,29 +1,31 @@
-import UserProfile from '@/app/user/_components/UserProfile';
-import UserProjectHistory from '@/app/user/_components/UserProjectHistory';
-import UserTrustScore from '@/app/user/_components/UserTrustScore';
-import { getUserDetailInfo } from '@/features/core/user/api/getUserDetailInfo';
-import { getMyProjectHistory } from '@/features/core/projectHistory/api/getMyProjectHistory';
+'use client';
 
-const UserPage = async () => {
-  const getUserProfile = getUserDetailInfo();
-  const getUserProjectHistory = getMyProjectHistory(5);
+import dynamic from 'next/dynamic';
+import UserProfileSkeleton from '@/app/user/_components/UserProfileSkeleton';
+import UserTrustScoreSkeleton from '@/app/user/_components/UserTrustScoreSkeleton';
+import UserProjectHistorySkeleton from '@/app/user/_components/UserProjectHistorySkeleton';
 
-  const [userDetailRes, userProjectHistoryRes] = await Promise.all([
-    getUserProfile,
-    getUserProjectHistory,
-  ]);
+const MyProjectHistory = dynamic(
+  () => import('@/app/user/_components/UserProjectHistory'),
+  { ssr: false, loading: () => <UserProjectHistorySkeleton /> },
+);
 
-  const userDetailData = userDetailRes.data;
-  const userProjectHistoryData = userProjectHistoryRes.data;
+const UserProfile = dynamic(
+  () => import('@/app/user/_components/UserProfile'),
+  { ssr: false, loading: () => <UserProfileSkeleton /> },
+);
 
+const UserTrustScore = dynamic(
+  () => import('@/app/user/_components/UserTrustScore'),
+  { ssr: false, loading: () => <UserTrustScoreSkeleton /> },
+);
+
+const UserPage = () => {
   return (
     <>
-      <UserProfile data={userDetailData} />
-      <UserTrustScore
-        trustScore={userDetailData.trustScore}
-        trustGrade={userDetailData.trustGrade.trustGradeName}
-      />
-      <UserProjectHistory data={userProjectHistoryData} />
+      <UserProfile />
+      <UserTrustScore />
+      <MyProjectHistory />
     </>
   );
 };

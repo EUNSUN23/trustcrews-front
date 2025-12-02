@@ -1,7 +1,6 @@
 'use client';
 
 import { Fragment } from 'react';
-import Avatar from '@/features/core/user/ui/Avatar';
 import { FaChevronDown } from '@react-icons/all-files/fa/FaChevronDown';
 import {
   Menu,
@@ -12,26 +11,21 @@ import {
 } from '@headlessui/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useLogout } from '@/features/core/auth/logout/api/logout';
 import { useResetRecoilState } from 'recoil';
 import { activeMainBoardTabStore } from '@/store/ActiveMainBoardTabStateStore';
 import useSnackbar from '@/shared/hooks/useSnackbar';
-import { SimpleUserInfo } from '@/features/core/user/api/getSimpleUserInfo';
 import { clsx } from 'clsx';
-import useDesktopMediaQuery from '@/hooks/mediaQuery/useDesktopMediaQuery';
-import useIsClient from '@/shared/hooks/useIsClient';
-import Skeleton from '@/shared/ui/skeleton/Skeleton';
+import { useLogout } from '@/features/core/auth/logout/api/logout';
+import useDesktopMediaQuery from '@/shared/hooks/useDesktopMediaQuery';
+import { useSimpleUserInfo } from '@/features/core/user/api/getSimpleUserInfo';
+import Avatar from '@/features/core/user/ui/Avatar';
 
-type UserMenuProps = {
-  data: SimpleUserInfo;
-};
-
-const UserMenu = ({ data }: UserMenuProps) => {
-  const isClient = useIsClient();
+const UserMenu = () => {
   const isDesktop = useDesktopMediaQuery();
+
+  const router = useRouter();
   const resetActiveBoardTab = useResetRecoilState(activeMainBoardTabStore);
   const { setInfoSnackbar, setErrorSnackbar } = useSnackbar();
-  const router = useRouter();
 
   const { mutate: logout } = useLogout({
     onSuccess: ({ message }) => {
@@ -45,11 +39,15 @@ const UserMenu = ({ data }: UserMenuProps) => {
     },
   });
 
+  const {
+    data: {
+      data: { nickname, profileImgSrc },
+    },
+  } = useSimpleUserInfo();
+
   const handleClickLogout = () => {
     logout();
   };
-
-  const { nickname, profileImgSrc } = data;
 
   return (
     <div className='flex items-center mx-2 space-x-2'>
@@ -60,12 +58,8 @@ const UserMenu = ({ data }: UserMenuProps) => {
           alt='사용자 아바타 이미지'
           loading='eager'
         />
-        {isClient ? (
-          isDesktop && (
-            <span className='text-grey90 leading-loose'>{nickname}</span>
-          )
-        ) : (
-          <Skeleton text={nickname} />
+        {isDesktop && (
+          <span className='text-grey90 leading-loose'>{nickname}</span>
         )}
       </div>
       <Menu as='div' className='relative flex text-center'>

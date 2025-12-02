@@ -7,7 +7,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query';
-import { HttpError } from '@/shared/utils/HttpError';
+import { HttpError } from '@/lib/error/HttpError';
 import { HttpStatusCode } from 'axios';
 
 type RootProviderProps = {

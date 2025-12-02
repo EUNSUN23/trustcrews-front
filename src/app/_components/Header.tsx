@@ -1,21 +1,31 @@
 import Image from 'next/image';
 import logo from '../../../public/images/logo.png';
 import Link from 'next/link';
-import UserMenuContainerSkeleton from '@/features/composite/userMenu/ui/UserMenuContainerSkeleton';
+import UserMenuSkeleton from '@/features/composite/userMenu/ui/UserMenuSkeleton';
 import { IoCreateOutline } from '@react-icons/all-files/io5/IoCreateOutline';
-import calcImageSizes from '@/lib/calcImageSizes';
-import { UserMenuContainer } from '@/features/composite/userMenu/ui/UserMenuContainer';
-import { Suspense } from 'react';
-import { checkIsAuthorized } from '@/lib/checkIsAuthorized';
+import dynamic from 'next/dynamic';
+import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';
+import calcImageSizes from '@/shared/utils/calcImageSizes';
 
-const Header = () => {
-  const isAuthorized = checkIsAuthorized();
+const UserMenu = dynamic(
+  () => import('@/features/composite/userMenu/ui/UserMenu'),
+  {
+    ssr: false,
+    loading: () => <UserMenuSkeleton />,
+  },
+);
+
+type HeaderProps = {
+  isAuthorized: boolean;
+};
+
+const Header = ({ isAuthorized }: HeaderProps) => {
   return (
     <header className='flex flex-col'>
       <div className='flex items-center justify-between h-[80px] mobile:h-[65px] my-1'>
         <div id='top-navigation-wrap'>
           <Link
-            href='/public'
+            href='/'
             aria-label='trustcrews 홈페이지'
             className='inline-block relative pc:w-[200px] pc:h-[60px] tablet:w-[150px] tablet:h-[50px] mobile:w-[120px] mobile:h-[40px]'
           >
@@ -48,9 +58,12 @@ const Header = () => {
           </Link>
           <div>
             {isAuthorized ? (
-              <Suspense fallback={<UserMenuContainerSkeleton />}>
-                <UserMenuContainer />
-              </Suspense>
+              <FieldQueryBoundary
+                isThrowingAllowed={false}
+                suspenseFallback={<UserMenuSkeleton />}
+              >
+                <UserMenu />
+              </FieldQueryBoundary>
             ) : (
               <Link
                 aria-label='로그인 페이지'

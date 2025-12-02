@@ -3,7 +3,7 @@ import { useSuspenseQuery } from '@tanstack/react-query';
 import { NOTICE_TYPES } from '@/features/core/projectNotice/constants/noticeTypes';
 import { ProjectAuthMap } from '@/features/core/projectMngAuth/types/projectAuth';
 import { bigIntToString } from '@/shared/utils/stringUtils';
-import { ITEM_COUNT_PER_PAGE } from '@/constants/pagination';
+import { ITEM_COUNT_PER_PAGE } from '@/shared/constants/pagination';
 import { PageResponseBody } from '@/shared/types/responseBody';
 import { VoteStatusType } from '@/features/core/projectVote/types/projectVote';
 

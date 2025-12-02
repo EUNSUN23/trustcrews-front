@@ -4,7 +4,7 @@ import Skeleton from '@/shared/ui/skeleton/Skeleton';
 import SquareSkeleton from '@/shared/ui/skeleton/SquareSkeleton';
 import BadgeStyleSkeleton from '@/shared/ui/skeleton/BadgeStyleSkeleton';
 import TasksSkeleton from '@/features/composite/projectBoard/ui/projectJobBoard/tasks/TasksSkeleton';
-import useMobileMediaQuery from '@/hooks/mediaQuery/useMobileMediaQuery';
+import useMobileMediaQuery from '@/shared/hooks/useMobileMediaQuery';
 
 const ProjectJobBoardSkeleton = () => {
   const isMobile = useMobileMediaQuery();

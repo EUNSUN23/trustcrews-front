@@ -1,5 +1,3 @@
-'use client';
-
 import FormButton from '@/shared/ui/FormButton';
 import useSnackbar from '@/shared/hooks/useSnackbar';
 import {

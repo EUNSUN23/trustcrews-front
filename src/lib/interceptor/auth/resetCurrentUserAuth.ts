@@ -1,6 +1,5 @@
 import 'server-only';
-import { deleteCookieValue } from '@/lib/cookieUtils';
-import { COOKIE } from '@/constants/cookie';
+import { COOKIE, deleteCookieValue } from '@/lib/cookie';
 
 const resetCurrentUserAuth = () => {
   deleteCookieValue(COOKIE.ACS_TOKEN);

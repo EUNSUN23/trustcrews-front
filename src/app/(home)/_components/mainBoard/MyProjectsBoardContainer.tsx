@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import ProjectCard from '@/features/core/project/ui/ProjectCard';
 import CommonPagination from '@/shared/ui/CommonPagination';
-import { ITEM_COUNT_PER_PAGE, PAGE_RANGE } from '@/constants/pagination';
+import { ITEM_COUNT_PER_PAGE, PAGE_RANGE } from '@/shared/constants/pagination';
 import { useMyProjects } from '@/features/core/project/api/getMyProjects';
 
 const MyProjectsBoard = () => {

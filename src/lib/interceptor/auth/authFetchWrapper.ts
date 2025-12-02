@@ -1,10 +1,9 @@
 import 'server-only';
 import returnFetch, { ReturnFetchDefaultOptions } from 'return-fetch';
 import { createRequestHeaders } from '@/lib/interceptor/createRequestHeaders';
-import { getCookieValue } from '@/lib/cookieUtils';
-import { COOKIE } from '@/constants/cookie';
+import { COOKIE, getCookieValue } from '@/lib/cookie';
 import { createErrorResponse } from '@/lib/interceptor/createErrorResponse';
-import { HttpError } from '@/shared/utils/HttpError';
+import { HttpError } from '@/lib/error/HttpError';
 import { HttpStatusCode } from 'axios';
 import resetCurrentUserAuth from '@/lib/interceptor/auth/resetCurrentUserAuth';
 import revalidatingUsers from '@/lib/interceptor/auth/revalidatingUsers';

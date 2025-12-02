@@ -2,7 +2,7 @@ import Input from '@/shared/ui/Input';
 import { useRecoilState } from 'recoil';
 import Row from '@/shared/ui/Row';
 import { ChangeEvent } from 'react';
-import { postFormFieldSelector } from '@/store/launch/PostFormStateStore';
+import { postFormFieldSelector } from '@/features/composite/projectLauncher/store/PostFormStateStore';
 
 const LaunchContactControl = () => {
   const [contact, setContact] = useRecoilState(

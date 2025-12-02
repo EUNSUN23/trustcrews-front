@@ -1,6 +1,6 @@
 import { request } from '@/lib/clientApi/request';
 import { useSuspenseInfiniteQuery } from '@tanstack/react-query';
-import { ITEM_COUNT_PER_PAGE } from '@/constants/pagination';
+import { ITEM_COUNT_PER_PAGE } from '@/shared/constants/pagination';
 import { PageResponseBody } from '@/shared/types/responseBody';
 
 type ProjectApplyStatusCode = 'PAS1001' | 'PAS1002' | 'PAS1003';

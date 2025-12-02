@@ -2,7 +2,7 @@
 
 import { MdModeEdit } from '@react-icons/all-files/md/MdModeEdit';
 import { FaCheck } from '@react-icons/all-files/fa/FaCheck';
-import useMobileMediaQuery from '@/hooks/mediaQuery/useMobileMediaQuery';
+import useMobileMediaQuery from '@/shared/hooks/useMobileMediaQuery';
 
 type TaskContentEditFinishButtonProps = {
   onClick: () => void;

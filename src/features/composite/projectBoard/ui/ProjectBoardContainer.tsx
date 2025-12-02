@@ -22,7 +22,7 @@ import { ProjectNoticeBoard } from '@/features/composite/projectBoard/ui/project
 import { ProjectNoticeBoardSkeleton } from '@/features/composite/projectBoard/ui/projectNoticeBoard/ProjectNoticeBoardSkeleton';
 import ProjectConfigBoard from '@/features/composite/projectBoard/ui/projectConfigBoard';
 import ProjectConfigBoardSkeleton from '@/features/composite/projectBoard/ui/projectConfigBoard/ProjectConfigBoardSkeleton';
-import { ApplicationError } from '@/shared/utils/ApplicationError';
+import { ApplicationError } from '@/lib/error/ApplicationError';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';
 import ProjectBoardContainerSkeleton from '@/features/composite/projectBoard/ui/ProjectBoardContainerSkeleton';
 

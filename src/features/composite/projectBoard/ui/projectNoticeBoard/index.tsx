@@ -9,7 +9,7 @@ import { activeNoticeTabStateStore } from '@/store/projectDetail/notice/ActiveNo
 import { NOTICE_TABS } from '@/features/core/projectNotice/constants/noticeTabs';
 import ContentsLoader from '@/shared/ui/ContentsLoader';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';
-import { ApplicationError } from '@/shared/utils/ApplicationError';
+import { ApplicationError } from '@/lib/error/ApplicationError';
 
 const {
   NTAB001: { code: RCVOTE_NOTICE_TAB },

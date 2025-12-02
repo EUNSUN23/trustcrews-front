@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import calcImageSizes from '@/lib/calcImageSizes';
-import placeholderDataUrl from '@/constants/placeholderDataUrl';
+import calcImageSizes from '@/shared/utils/calcImageSizes';
+import placeholderDataUrl from '@/shared/constants/placeholderDataUrl';
 
 interface TechStackImageProps {
   stackName: string;

@@ -1,7 +1,7 @@
 import { ErrorBoundary } from 'react-error-boundary';
 import { ReactNode, Suspense } from 'react';
 import { ErrorBoundaryPropsWithRender } from 'react-error-boundary/dist/declarations/src/types';
-import { HttpError } from '@/shared/utils/HttpError';
+import { HttpError } from '@/lib/error/HttpError';
 import { HttpStatusCode } from 'axios';
 
 interface SuspenseQueryErrorBoundaryProps extends ErrorBoundaryPropsWithRender {

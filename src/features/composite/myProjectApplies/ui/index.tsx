@@ -1,7 +1,7 @@
 import Button from '@/shared/ui/Button';
 import { useSetRecoilState } from 'recoil';
 import MyProjectAppliesModal from '@/features/composite/myProjectApplies/ui/myProjectAppliesModal';
-import { myProjectAppliesModalStateStore } from '@/store/myProjectApplies/MyProjectAppliesModalStateStore';
+import { myProjectAppliesModalStateStore } from '@/features/composite/myProjectApplies/store/MyProjectAppliesModalStateStore';
 
 const MyProjectApplies = () => {
   const setUserNoticeModal = useSetRecoilState(myProjectAppliesModalStateStore);

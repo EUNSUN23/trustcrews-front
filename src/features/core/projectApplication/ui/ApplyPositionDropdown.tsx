@@ -1,6 +1,5 @@
 import { Fragment } from 'react';
 import useDropdownState from '@/shared/hooks/useDropdownState';
-import { useRecoilState } from 'recoil';
 import { BsChevronDown } from '@react-icons/all-files/bs/BsChevronDown';
 import {
   Listbox,
@@ -12,40 +11,45 @@ import {
 import { selectItemComparator } from '@/shared/utils/selectItemComparator';
 import { clsx } from 'clsx';
 import { bigIntToString } from '@/shared/utils/stringUtils';
-import { PostDetailData } from '@/features/core/post/api/getPostDetail';
-import { projectApplyPositionState } from '@/store/postDetail/applyProject/ApplyPositionStateStore';
 import { DEFAULT_POSITION_OPTION } from '@/features/core/position/constants/defaultPositionOption';
+import { SelectItem } from '@/shared/types/selectItem';
+import { Position } from '@/features/core/position/types/position';
 
 type ApplyPositionDropdownProps = {
-  applyPositions: PostDetailData['postPositions'];
+  applyPositions: Position[];
+  selected: SelectItem<string, string>;
+  onChangeCallback: (item: SelectItem<string, string>) => void;
 };
 
 const ApplyPositionDropdown = ({
   applyPositions,
+  selected,
+  onChangeCallback,
 }: ApplyPositionDropdownProps) => {
   const { dropdownRef, openDropdown, setOpenDropdown } =
     useDropdownState<HTMLDivElement>();
-  const [projectApplyPosition, setProjectApplyPosition] = useRecoilState(
-    projectApplyPositionState,
-  );
 
   const positionItems = [
     DEFAULT_POSITION_OPTION,
-    ...applyPositions.map(({ position: { positionName, positionId } }) => ({
+    ...applyPositions.map(({ positionName, positionId }) => ({
       name: positionName,
       value: bigIntToString(positionId),
     })),
   ];
 
   const selectedPosition = positionItems.find(
-    (item) => item.value === bigIntToString(projectApplyPosition.value),
+    (item) => item.value === bigIntToString(selected.value),
   )!;
+
+  const handleChangePosition = (item: SelectItem<string, string>) => {
+    onChangeCallback(item);
+  };
 
   return (
     <Listbox
       aria-label='모집 포지션'
       value={selectedPosition}
-      onChange={(item) => setProjectApplyPosition(item)}
+      onChange={handleChangePosition}
       by={selectItemComparator}
     >
       <div

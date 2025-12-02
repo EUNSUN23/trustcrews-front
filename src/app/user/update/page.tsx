@@ -1,15 +1,29 @@
-import SaveUserProfileButton from '@/app/user/update/_components/SaveUserProfileButton';
-import { getUserDetailInfo } from '@/features/core/user/api/getUserDetailInfo';
-import UserImageForm from '@/app/user/update/_components/UserImageForm';
-import UserInfoForm from '@/app/user/update/_components/userInfoForm';
+'use client';
 
-const UserUpdatePage = async () => {
-  const { data: userDetailInfo } = await getUserDetailInfo();
+import SaveUserProfileButton from '@/app/user/update/_components/SaveUserProfileButton';
+import UserInfoFormSkeleton from '@/app/user/update/_components/userInfoForm/UserInfoFormSkeleton';
+import dynamic from 'next/dynamic';
+import UserImageFormSkeleton from '@/app/user/update/_components/UserImageFormSkeleton';
+
+const UserImageForm = dynamic(
+  () => import('@/app/user/update/_components/UserImageForm'),
+  {
+    ssr: false,
+    loading: () => <UserImageFormSkeleton />,
+  },
+);
+
+const UserInfoForm = dynamic(
+  () => import('@/app/user/update/_components/userInfoForm'),
+  { ssr: false, loading: () => <UserInfoFormSkeleton /> },
+);
+
+const UserUpdatePage = () => {
   return (
     <div className='flex flex-col items-center justify-center min-h-[calc(100vh-200px)]'>
       <div className='w-[380px] mobile:w-[300px] space-y-5 mobile:space-y-3'>
-        <UserImageForm profileImgSrc={userDetailInfo.profileImgSrc} />
-        <UserInfoForm data={userDetailInfo} />
+        <UserImageForm />
+        <UserInfoForm />
         <SaveUserProfileButton />
       </div>
     </div>

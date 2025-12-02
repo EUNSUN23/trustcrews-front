@@ -1,7 +1,9 @@
 import Guide from '@/app/(home)/_components/GuideContainer';
-import MainBoard from '@/features/homePage/ui/mainBoard';
 import StaticDataProvider from '@/providers/data/StaticDataProvider';
 import { checkIsAuthorized } from '@/lib/checkIsAuthorized';
+import MainBoard from '@/app/(home)/_components/mainBoard';
+
+export const revalidate = 0;
 
 const HomePage = () => {
   const isAuthorized = checkIsAuthorized();

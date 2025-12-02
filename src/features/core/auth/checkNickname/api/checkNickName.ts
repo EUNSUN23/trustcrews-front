@@ -3,7 +3,7 @@ import { useMutation } from '@tanstack/react-query';
 import { z } from 'zod';
 import { ResponseBody } from '@/shared/types/responseBody';
 import { ApiResult } from '@/shared/types/apiResult';
-import { NICKNAME_REGEX } from '@/constants/validationRegex';
+import { NICKNAME_REGEX } from '@/shared/constants/validationRegex';
 
 export const checkNicknameInputSchema = z
   .string()

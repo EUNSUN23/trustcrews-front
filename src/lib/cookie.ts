@@ -1,6 +1,11 @@
 import 'server-only';
 import { cookies } from 'next/headers';
-import { COOKIE } from '@/constants/cookie';
+
+export const COOKIE = {
+  ACS_TOKEN: 'Access',
+  REF_TOKEN: 'Refresh',
+  USER_ID: 'user_id',
+} as const;
 
 type CookieName =
   | typeof COOKIE.ACS_TOKEN

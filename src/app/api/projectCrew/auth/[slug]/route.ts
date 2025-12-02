@@ -1,8 +1,7 @@
 import { NextRequest } from 'next/server';
 import authFetch from '@/lib/interceptor/auth/authFetch';
 import { routeResponse } from '@/lib/serverApi/routeResponse';
-import { getCookieValue } from '@/lib/cookieUtils';
-import { COOKIE } from '@/constants/cookie';
+import { COOKIE, getCookieValue } from '@/lib/cookie';
 import { bigIntToString } from '@/shared/utils/stringUtils';
 
 export async function GET(

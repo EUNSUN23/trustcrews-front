@@ -3,7 +3,7 @@
 import TaskCardMenu from '@/features/composite/projectBoard/ui/projectJobBoard/tasks/taskCard/TaskCardMenu';
 import { TaskItem } from '@/features/core/task/api/getTaskList';
 import TaskStatusBadge from '@/features/core/task/ui/TaskStatusBadge';
-import useDesktopMediaQuery from '@/hooks/mediaQuery/useDesktopMediaQuery';
+import useDesktopMediaQuery from '@/shared/hooks/useDesktopMediaQuery';
 
 type TaskCardProps = {
   item: TaskItem;

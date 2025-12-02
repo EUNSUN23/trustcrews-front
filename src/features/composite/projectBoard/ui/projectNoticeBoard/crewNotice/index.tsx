@@ -7,7 +7,7 @@ import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
 import NoticeBadge from '@/features/core/projectNotice/ui/NoticeBadge';
 import { NOTICE_TYPES } from '@/features/core/projectNotice/constants/noticeTypes';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
-import { ITEM_COUNT_PER_PAGE, PAGE_RANGE } from '@/constants/pagination';
+import { ITEM_COUNT_PER_PAGE, PAGE_RANGE } from '@/shared/constants/pagination';
 
 const CrewNotices = () => {
   const [pageIndex, setPageIndex] = useState(0);

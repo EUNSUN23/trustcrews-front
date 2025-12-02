@@ -8,7 +8,7 @@ import {
 import MyProjectApplies from '@/features/composite/myProjectApplies/ui';
 import { useEffect } from 'react';
 import CardListSkeleton from '@/shared/ui/skeleton/CardListSkeleton';
-import { ITEM_COUNT_PER_PAGE } from '@/constants/pagination';
+import { ITEM_COUNT_PER_PAGE } from '@/shared/constants/pagination';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';
 import PostsBoardContainerSkeleton from '@/app/(home)/_components/mainBoard/PostsBoardContainerSkeleton';
 import { clsx } from 'clsx';

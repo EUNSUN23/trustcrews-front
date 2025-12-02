@@ -4,7 +4,7 @@ import { useQueryErrorResetBoundary } from '@tanstack/react-query';
 import cn from '@/shared/styles/cn';
 import { CgRedo } from '@react-icons/all-files/cg/CgRedo';
 import { cva, VariantProps } from 'class-variance-authority';
-import { HttpError } from '@/shared/utils/HttpError';
+import { HttpError } from '@/lib/error/HttpError';
 import { HttpStatusCode } from 'axios';
 
 const QueryErrorMessageVariants = cva(

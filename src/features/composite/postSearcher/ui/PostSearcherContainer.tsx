@@ -1,6 +1,6 @@
 import PostCard from '@/features/core/post/ui/PostCard';
 import CommonPagination from '@/shared/ui/CommonPagination';
-import { ITEM_COUNT_PER_PAGE, PAGE_RANGE } from '@/constants/pagination';
+import { ITEM_COUNT_PER_PAGE, PAGE_RANGE } from '@/shared/constants/pagination';
 import { usePostList } from '@/features/core/post/api/getPostList';
 import { useRecoilValue } from 'recoil';
 import {

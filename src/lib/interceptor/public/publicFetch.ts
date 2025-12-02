@@ -1,7 +1,7 @@
 import { publicFetchWrapper } from '@/lib/interceptor/public/publicFetchWrapper';
 import { reqPLogger, resPLogger } from '@/lib/interceptor/interceptorLogger';
-import BACKEND_URL from '@/constants/api/backendUrl';
 import { getResponseErrorMessage } from '@/lib/interceptor/getResponseErrorMessage';
+import { BACKEND_URL } from '@/shared/constants/processEnv';
 
 const publicFetch = publicFetchWrapper({
   baseUrl: BACKEND_URL,

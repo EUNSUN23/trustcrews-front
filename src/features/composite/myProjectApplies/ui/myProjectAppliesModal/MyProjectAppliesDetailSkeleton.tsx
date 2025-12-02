@@ -1,4 +1,4 @@
-import { ITEM_COUNT_PER_PAGE } from '@/constants/pagination';
+import { ITEM_COUNT_PER_PAGE } from '@/shared/constants/pagination';
 import Skeleton from '@/shared/ui/skeleton/Skeleton';
 
 const MyProjectAppliesDetailSkeleton = () => {

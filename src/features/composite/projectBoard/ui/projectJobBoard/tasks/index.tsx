@@ -7,7 +7,7 @@ import { projectIdState } from '@/store/projectDetail/ProjectIdStateStore';
 import { activeMilestoneStateStore } from '@/store/projectDetail/job/milestone/ActiveMilestoneStateStore';
 import { useState } from 'react';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
-import { ITEM_COUNT_PER_PAGE } from '@/constants/pagination';
+import { ITEM_COUNT_PER_PAGE } from '@/shared/constants/pagination';
 import TaskCard from '@/features/composite/projectBoard/ui/projectJobBoard/tasks/taskCard';
 
 const Tasks = () => {

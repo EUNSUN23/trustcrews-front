@@ -9,7 +9,7 @@ import ProjectJobBoardSkeleton from '@/features/composite/projectBoard/ui/projec
 import CrewListSkeleton from '@/features/composite/projectBoard/ui/projectCrewsBoard/crewList/CrewListSkeleton';
 import { ProjectNoticeBoardSkeleton } from '@/features/composite/projectBoard/ui/projectNoticeBoard/ProjectNoticeBoardSkeleton';
 import ProjectConfigBoardSkeleton from '@/features/composite/projectBoard/ui/projectConfigBoard/ProjectConfigBoardSkeleton';
-import { ApplicationError } from '@/shared/utils/ApplicationError';
+import { ApplicationError } from '@/lib/error/ApplicationError';
 import { ReactNode } from 'react';
 
 const {

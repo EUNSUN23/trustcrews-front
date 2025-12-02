@@ -1,5 +1,5 @@
 import Skeleton from '@/shared/ui/skeleton/Skeleton';
-import { ITEM_COUNT_PER_PAGE } from '@/constants/pagination';
+import { ITEM_COUNT_PER_PAGE } from '@/shared/constants/pagination';
 
 const TasksSkeleton = () => {
   const items = new Array(ITEM_COUNT_PER_PAGE.CARDS_SM).fill(null);

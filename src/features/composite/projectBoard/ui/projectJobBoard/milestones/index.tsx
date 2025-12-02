@@ -11,7 +11,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { Grid, Navigation, Pagination } from 'swiper/modules';
-import useMobileMediaQuery from '@/hooks/mediaQuery/useMobileMediaQuery';
+import useMobileMediaQuery from '@/shared/hooks/useMobileMediaQuery';
 import MilestoneCard from '@/features/composite/projectBoard/ui/projectJobBoard/milestones/milestoneCard';
 
 type MilestonesProps = {

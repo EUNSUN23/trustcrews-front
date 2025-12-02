@@ -1,7 +1,7 @@
 import Button from '@/shared/ui/Button';
 import { useRecoilValue, useResetRecoilState } from 'recoil';
-import { projectFormStateStore } from '@/store/launch/ProjectFormStateStore';
-import { postFormStateStore } from '@/store/launch/PostFormStateStore';
+import { projectFormStateStore } from '@/features/composite/projectLauncher/store/ProjectFormStateStore';
+import { postFormStateStore } from '@/features/composite/projectLauncher/store/PostFormStateStore';
 import { ZodError } from 'zod';
 import useSnackbar from '@/shared/hooks/useSnackbar';
 import { useLaunchProject } from '@/features/composite/projectLauncher/api/launchProject';

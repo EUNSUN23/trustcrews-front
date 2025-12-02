@@ -3,7 +3,7 @@
 import { RiDeleteBin6Line } from '@react-icons/all-files/ri/RiDeleteBin6Line';
 import { ImCancelCircle } from '@react-icons/all-files/im/ImCancelCircle';
 import { HTMLAttributes } from 'react';
-import useMobileMediaQuery from '@/hooks/mediaQuery/useMobileMediaQuery';
+import useMobileMediaQuery from '@/shared/hooks/useMobileMediaQuery';
 
 interface TaskContentCancelDeleteButtonProps
   extends HTMLAttributes<HTMLButtonElement> {

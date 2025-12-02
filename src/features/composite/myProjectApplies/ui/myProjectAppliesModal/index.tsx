@@ -5,7 +5,7 @@ import { createPortal } from 'react-dom';
 import Modal from '@/shared/ui/Modal';
 import MyProjectAppliesDetail from './MyProjectAppliesDetail';
 import useModalPortalElement from '@/shared/hooks/useModalPortalElement';
-import { myProjectAppliesModalStateStore } from '@/store/myProjectApplies/MyProjectAppliesModalStateStore';
+import { myProjectAppliesModalStateStore } from '@/features/composite/myProjectApplies/store/MyProjectAppliesModalStateStore';
 import MyProjectAppliesDetailSkeleton from '@/features/composite/myProjectApplies/ui/myProjectAppliesModal/MyProjectAppliesDetailSkeleton';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';
 

@@ -1,7 +1,7 @@
 import Input from '@/shared/ui/Input';
 import { useRecoilState } from 'recoil';
 import Row from '@/shared/ui/Row';
-import { projectFormFieldSelector } from '@/store/launch/ProjectFormStateStore';
+import { projectFormFieldSelector } from '@/features/composite/projectLauncher/store/ProjectFormStateStore';
 import { ChangeEvent } from 'react';
 
 const LaunchProjectNameControl = () => {

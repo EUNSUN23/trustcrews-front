@@ -1,19 +1,18 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import Avatar from '@/features/core/user/ui/Avatar';
 import Button from '@/shared/ui/Button';
 import TechStackBadge from '@/features/core/techStack/ui/TechStackBadge';
-import { UserDetailInfo } from '@/features/core/user/api/getUserDetailInfo';
+import Avatar from '@/features/core/user/ui/Avatar';
+import { useUserDetailInfo } from '@/features/core/user/api/getUserDetailInfo';
 
-type UserProfileProps = {
-  data: UserDetailInfo;
-};
-
-const UserProfile = ({ data }: UserProfileProps) => {
+const UserProfile = () => {
   const router = useRouter();
+  const {
+    data: { data: profileInfo },
+  } = useUserDetailInfo();
 
-  const { nickname, profileImgSrc, position, techStacks, intro } = data;
+  const { nickname, profileImgSrc, position, techStacks, intro } = profileInfo;
 
   return (
     <div className='rounded-lg border-2 border-gray-200 bg-white mt-3 mobile:mt-2 px-2'>

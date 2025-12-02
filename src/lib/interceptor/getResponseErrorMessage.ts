@@ -1,5 +1,5 @@
 import 'server-only';
-import { getDefaultHttpErrorMessage } from '@/shared/utils/getDefaultHttpErrorMessage';
+import { getDefaultHttpErrorMessage } from '@/lib/error/getDefaultHttpErrorMessage';
 
 export const getResponseErrorMessage = async (
   response: Response,

@@ -1,7 +1,7 @@
 import DateInput from '@/shared/ui/DateInput';
 import { useRecoilState } from 'recoil';
 import Row from '@/shared/ui/Row';
-import { projectFormFieldSelector } from '@/store/launch/ProjectFormStateStore';
+import { projectFormFieldSelector } from '@/features/composite/projectLauncher/store/ProjectFormStateStore';
 
 const LaunchProjectDateControl = () => {
   const [startDate, setStartDate] = useRecoilState(

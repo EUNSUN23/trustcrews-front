@@ -1,10 +1,10 @@
-import response from '@/lib/clientApi/response';
+import handleResponse from '@/lib/clientApi/handleResponse';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { z } from 'zod';
 import { ResponseBody } from '@/shared/types/responseBody';
 import { ApiResult } from '@/shared/types/apiResult';
-import NEXT_PUBLIC_URL from '@/constants/api/nextPublicUrl';
 import { POST_LIST_QUERY_KEY } from '@/features/core/post/api/getPostList';
+import { NEXT_PUBLIC_URL } from '@/shared/constants/processEnv';
 
 const nicknameRegex: RegExp = /^[a-zA-Z0-9]{6,10}$/;
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
@@ -72,7 +72,7 @@ export const updateUserDetail = async (
     body: formData,
   });
 
-  return await response(res);
+  return await handleResponse(res);
 };
 
 export const useUpdateUserDetail = ({
