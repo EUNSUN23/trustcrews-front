@@ -3,6 +3,8 @@ import { COOKIE, getCookieValue } from '@/lib/cookie';
 import { getResponseErrorMessage } from '@/lib/interceptor/getResponseErrorMessage';
 import { HttpStatusCode } from 'axios';
 import { BACKEND_URL } from '@/shared/constants/processEnv';
+import { getRefreshTokenFromHeader } from '@/lib/interceptor/getRefreshTokenFromHeader';
+import { cookies } from 'next/headers';
 
 const refreshTokenApi = async (
   userId: string | undefined,
