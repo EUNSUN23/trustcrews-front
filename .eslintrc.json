@@ -17,7 +17,16 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "jsx-a11y", "@stylistic"],
+  "plugins": ["react", "@typescript-eslint", "jsx-a11y", "@stylistic", "boundaries"],
+  "settings": {
+    "boundaries/elements": [
+      { "type": "app", "pattern": "src/app/*" },
+      { "type": "core", "pattern": "src/features/core/*" },
+      { "type": "composite", "pattern": "src/features/composite/*" },
+      {"type":  "lib", "pattern":  "src/lib/*"},
+      { "type": "shared", "pattern": "src/shared/*" }
+    ]
+  },
   "rules": {
     "@typescript-eslint/no-unused-vars": "off",
     "import/no-anonymous-default-export": "off",
@@ -40,6 +49,35 @@
         "next": "import"
       }
     ],
-    "@typescript-eslint/no-explicit-any": "off"
+    "@typescript-eslint/no-explicit-any": "off",
+    "boundaries/element-types": [
+      "error",
+      {
+        "default": "disallow",
+        "rules": [
+          {
+            "from": "app",
+            "allow": ["*"]
+          },
+          {
+            "from": "composite",
+            "allow": ["core", "lib", "shared"]
+          },
+          {
+            "from": "core",
+            "allow": ["lib", "shared"]
+          },
+          {
+            "from": "lib",
+            "allow": ["lib", "shared"]
+          }
+          ,
+          {
+            "from": "shared",
+            "allow": ["shared"]
+          }
+        ]
+      }
+    ]
   }
 }
