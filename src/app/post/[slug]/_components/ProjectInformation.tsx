@@ -1,10 +1,10 @@
 'use client';
 
 import TechStackImage from '@/features/core/techStack/ui/TechStackImage';
-import { ProjectData } from '@/shared/model/project/projectData';
+import { Project } from '@/entities/project';
 
 type ProjectPublicInfoProps = {
-  projectInfo: ProjectData;
+  projectInfo: Project;
 };
 
 const ProjectInformation = ({ projectInfo }: ProjectPublicInfoProps) => {

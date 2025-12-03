@@ -5,12 +5,12 @@ import { useRecoilState } from 'recoil';
 import {
   DEFAULT_PROJECT_ID,
   projectIdState,
-} from '@/features/composite/projectBoard/store/ProjectIdStateStore';
+} from '@/app/project/[slug]/_store/ProjectIdStateStore';
 import dynamic from 'next/dynamic';
-import ProjectBoardContainerSkeleton from '@/features/composite/projectBoard/ui/ProjectBoardContainerSkeleton';
+import ProjectBoardContainerSkeleton from '@/app/project/[slug]/_components/ProjectBoardContainerSkeleton';
 
-const ProjectDetail = dynamic(
-  () => import('@/features/composite/projectBoard/ui/ProjectBoardContainer'),
+const ProjectBoardContainer = dynamic(
+  () => import('@/app/project/[slug]/_components/ProjectBoardContainer'),
   { ssr: false, loading: () => <ProjectBoardContainerSkeleton /> },
 );
 
@@ -29,7 +29,7 @@ const ProjectPage = ({
   if (currentProjectId === DEFAULT_PROJECT_ID)
     return <ProjectBoardContainerSkeleton />;
 
-  return <ProjectDetail />;
+  return <ProjectBoardContainer />;
 };
 
 export default ProjectPage;

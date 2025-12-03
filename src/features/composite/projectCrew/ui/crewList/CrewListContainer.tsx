@@ -1,0 +1,74 @@
+'use client';
+
+import { useProjectCrewList } from '@/features/core/crews/api/getProjectCrewList';
+import Avatar from '@/shared/ui/avatar';
+import Badge from '@/shared/ui/Badge';
+import PMAuthBadge from '@/features/core/projectAuth/ui/PMAuthBadge';
+import { numStrToBigInt } from '@/shared/utils/stringUtils';
+import { ProjectCrew } from '@/entities/projectCrew';
+
+type ProjectCrewsContainerProps = {
+  projectId: string;
+  onClickCrewCallback: (crewId: bigint) => void;
+};
+
+const CrewListContainer = ({
+  projectId,
+  onClickCrewCallback,
+}: ProjectCrewsContainerProps) => {
+  const {
+    data: {
+      data: { projectCrews: crewList },
+    },
+  } = useProjectCrewList(numStrToBigInt(projectId));
+
+  return (
+    <section className='w-full flex flex-col items-center px-1'>
+      <section className='w-full mobile:max-h-[400px] mx-auto  mobile:overflow-y-scroll'>
+        <ul role='list' className='min-h-[350px]'>
+          {crewList.map(
+            ({
+              position: { positionName },
+              crewPMAuth,
+              user: { userId: projectMemberUseId, nickname, profileImgSrc },
+              crewId,
+            }: ProjectCrew) => {
+              return (
+                <li
+                  key={projectMemberUseId}
+                  className='cursor flex items-center gap-x-6 py-5 cursor-pointer hover:bg-grey000 border-b border-grey300'
+                  onClick={() => onClickCrewCallback(crewId)}
+                >
+                  <div className='w-full min-w-0 flex mobile:flex-col items-center mobile:items-start mobile:space-y-3 tablet:px-6 mobile:pl-4'>
+                    <div className='min-w-0 flex items-center tablet:space-x-6 mobile:space-x-4'>
+                      <Avatar
+                        size='xs'
+                        src={profileImgSrc}
+                        alt='크루 아바타 이미지'
+                      />
+                      <p className='tablet:text-[1.2rem] mobile:text-sm font-semibold leading-5 text-gray-900'>
+                        {nickname}
+                      </p>
+                      <ul className='flex items-center space-x-3'>
+                        <li>
+                          <Badge text={positionName} />
+                        </li>
+                        <li>
+                          <PMAuthBadge auth={crewPMAuth.code}>
+                            {crewPMAuth.name}
+                          </PMAuthBadge>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              );
+            },
+          )}
+        </ul>
+      </section>
+    </section>
+  );
+};
+
+export default CrewListContainer;

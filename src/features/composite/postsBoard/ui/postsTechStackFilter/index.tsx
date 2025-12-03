@@ -9,7 +9,7 @@ import TechStackTab from '@/features/composite/postsBoard/ui/postsTechStackFilte
 import TechStackTabPanel from '@/features/composite/postsBoard/ui/postsTechStackFilter/TechStackTabPanel';
 import TechStackFilterResult from '@/features/composite/postsBoard/ui/postsTechStackFilter/TechStackFilterResult';
 import TechStackResetButton from '@/features/composite/postsBoard/ui/postsTechStackFilter/TechStackResetButton';
-import { TechStackMappingData } from '@/shared/model/techStack/techStackMappingData';
+import { TechStackMappingData } from '@/entities/techStack';
 
 const getSelectedTechStackText = (
   selectedTechStacks: TechStackMappingData[],

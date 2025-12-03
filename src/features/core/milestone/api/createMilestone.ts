@@ -1,7 +1,6 @@
 import { request } from '@/lib/clientApi/request';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useMutation } from '@tanstack/react-query';
 import { z } from 'zod';
-import { MILESTONES_QUERY_KEY } from '@/features/core/milestone/api/getMilestones';
 import { ResponseBody } from '@/shared/types/responseBody';
 import { ApiResult } from '@/shared/types/apiResult';
 
@@ -38,15 +37,10 @@ export const useCreateMilestone = (
     onError?: (error: Error) => void;
   },
 ) => {
-  const queryClient = useQueryClient();
-
   return useMutation({
     mutationFn: (reqData: CreateMilestoneInput) =>
       createMilestone(projectId, userPMAuth, reqData),
     onSuccess: async (res) => {
-      await queryClient.invalidateQueries({
-        queryKey: [MILESTONES_QUERY_KEY],
-      });
       onSuccess?.(res);
     },
     onError: (error) => {

@@ -1,7 +1,7 @@
 import { ResponseBody } from '@/shared/types/responseBody';
 import { request } from '@/lib/clientApi/request';
 import { queryOptions, useSuspenseQuery } from '@tanstack/react-query';
-import { TechStackData } from '@/shared/model/techStack/techStackData';
+import { TechStackData } from '@/entities/techStack';
 
 export const getTechStackList = async (): Promise<
   ResponseBody<TechStackData[]>

@@ -3,9 +3,11 @@ import { BiUser } from '@react-icons/all-files/bi/BiUser';
 import { BiCheck } from '@react-icons/all-files/bi/BiCheck';
 import { BiUndo } from '@react-icons/all-files/bi/BiUndo';
 import { BiX } from '@react-icons/all-files/bi/BiX';
-import { ProjectHistoryData } from '@/shared/model/projectHistory/projectHistoryData';
-import { ProjectHistoryStatusType } from '@/shared/model/projectHistory/projectHistoryStatusType';
-import { PROJECT_HISTORY_STATUS } from '@/shared/model/projectHistory/projectHistoryStatus';
+import {
+  PROJECT_HISTORY_STATUS,
+  ProjectHistory,
+  ProjectHistoryStatus,
+} from '@/entities/projectHistory';
 import { cva } from 'class-variance-authority';
 
 const {
@@ -31,7 +33,7 @@ const HistoryStatusIconVariants = cva(
   },
 );
 
-const getIconByStatus = (status: ProjectHistoryStatusType) => {
+const getIconByStatus = (status: ProjectHistoryStatus) => {
   const iconClassName = 'h-5 w-5 text-white';
 
   switch (status.code) {
@@ -51,7 +53,7 @@ const getIconByStatus = (status: ProjectHistoryStatusType) => {
 };
 
 type ProjectHistoryItemProps = {
-  history: ProjectHistoryData;
+  history: ProjectHistory;
   isLast: boolean;
 };
 

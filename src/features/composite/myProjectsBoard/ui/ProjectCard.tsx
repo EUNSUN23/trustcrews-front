@@ -2,10 +2,10 @@ import { format } from 'date-fns';
 import Link from 'next/link';
 import TechStackImage from '@/features/core/techStack/ui/TechStackImage';
 import { FaPlusCircle } from '@react-icons/all-files/fa/FaPlusCircle';
-import { ProjectData } from '@/shared/model/project/projectData';
+import { Project } from '@/entities/project';
 
 interface ProjectCardProps {
-  data: ProjectData;
+  data: Project;
 }
 
 const ProjectCard = ({ data }: ProjectCardProps) => {

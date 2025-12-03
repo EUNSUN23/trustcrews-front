@@ -2,7 +2,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 import cn from '@/shared/styles/cn';
 import { HTMLAttributes } from 'react';
 import baseBadgeVariants from '@/shared/styles/baseBadgeVariants';
-import { NoticeType } from '@/shared/model/projectNotice/noticeType';
+import { ProjectNoticeType } from '@/entities/projectNoticeType';
 
 const NoticeBadgeVariants = cva(
   'inline-flex items-center rounded-full font-medium ring-1 ring-inset',
@@ -24,7 +24,7 @@ const NoticeBadgeVariants = cva(
 interface NoticeBadgeProps
   extends HTMLAttributes<HTMLSpanElement>,
     VariantProps<typeof NoticeBadgeVariants> {
-  noticeType: NoticeType['code'];
+  noticeType: ProjectNoticeType['code'];
 }
 
 const NoticeBadge = ({ noticeType, size, ...props }: NoticeBadgeProps) => {

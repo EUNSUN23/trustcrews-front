@@ -1,11 +1,11 @@
 import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { PageResponseBody } from '@/shared/types/responseBody';
-import { ProjectHistoryData } from '@/shared/model/projectHistory/projectHistoryData';
+import { ProjectHistory } from '@/entities/projectHistory';
 
 export const getMyProjectHistory = async (
   pageNumber: number,
-): Promise<PageResponseBody<ProjectHistoryData[]>> => {
+): Promise<PageResponseBody<ProjectHistory[]>> => {
   return await request(
     'GET',
     `/api/projectHistory/auth/me?pageNumber=${pageNumber}`,

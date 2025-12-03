@@ -3,8 +3,7 @@
 import { ChangeEvent, useState } from 'react';
 import { clsx } from 'clsx';
 import { cva } from 'class-variance-authority';
-import { VOTE_OPTIONS } from '@/shared/model/projectVote/voteOptions';
-import { VoteOptionCode } from '@/shared/model/projectVote/projectVote';
+import { VOTE_OPTIONS, VoteOptionCode } from '@/entities/voteOption';
 
 const {
   VODA1001: { code: AGREE },

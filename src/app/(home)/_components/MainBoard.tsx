@@ -5,7 +5,7 @@ import {
   activeMainBoardTabStore,
   MAIN_BOARD_TABS,
 } from '@/app/(home)/_store/ActiveMainBoardTabStateStore';
-import MyProjectApplies from '@/features/composite/myProjectApplies/ui';
+import MyProjectAppliesContainer from '@/features/composite/myProjectApplies/ui/MyProjectAppliesContainer';
 import { useEffect } from 'react';
 import CardListSkeleton from '@/shared/ui/skeleton/CardListSkeleton';
 import { ITEM_COUNT_PER_PAGE } from '@/shared/constants/pagination';
@@ -70,7 +70,7 @@ const MainBoard = ({ isAuthorized }: MainBoardProps) => {
         >
           {activeMainBoardTab === MANAGE_PROJECT_TAB && (
             <>
-              {isAuthorized && <MyProjectApplies />}
+              {isAuthorized && <MyProjectAppliesContainer />}
               <FieldQueryBoundary
                 errorFallbackSize='lg'
                 suspenseFallback={

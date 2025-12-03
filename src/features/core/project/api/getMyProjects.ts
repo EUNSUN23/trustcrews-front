@@ -3,12 +3,12 @@ import { useSuspenseQuery } from '@tanstack/react-query';
 import { ITEM_COUNT_PER_PAGE } from '@/shared/constants/pagination';
 import { PageResponseBody } from '@/shared/types/responseBody';
 import sortByStartDate from '@/shared/utils/sortByStartDate';
-import { ProjectData } from '@/shared/model/project/projectData';
+import { Project } from '@/entities/project';
 
 export const getMyProjects = async (
   pageIndex: number,
   itemCount: number,
-): Promise<PageResponseBody<ProjectData[]>> => {
+): Promise<PageResponseBody<Project[]>> => {
   const resBody = await request(
     'GET',
     `/api/project/auth?pageIndex=${pageIndex}&itemCount=${itemCount}`,

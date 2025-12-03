@@ -24,6 +24,7 @@
       { "type": "core", "pattern": "src/features/core/*" },
       { "type": "composite", "pattern": "src/features/composite/*" },
       {"type":  "lib", "pattern":  "src/lib/*"},
+      {"type":  "entities", "pattern": "src/entities/*"},
       { "type": "shared", "pattern": "src/shared/*" }
     ]
   },
@@ -61,17 +62,21 @@
           },
           {
             "from": "composite",
-            "allow": ["core", "lib", "shared"]
+            "allow": ["core", "lib", "shared", "entities"]
           },
           {
             "from": "core",
-            "allow": ["lib", "shared"]
+            "allow": ["lib", "shared", "entities"]
           },
           {
             "from": "lib",
-            "allow": ["lib", "shared"]
-          }
-          ,
+            "allow": ["lib", "shared", "entities"]
+          },
+          {
+            "from": "entities",
+            "allow": ["entities"]
+
+          },
           {
             "from": "shared",
             "allow": ["shared"]

@@ -1,7 +1,6 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useMutation } from '@tanstack/react-query';
 import { z } from 'zod';
 import { request } from '@/lib/clientApi/request';
-import { PROJECT_INFO_SUMMARY_QUERY_KEY } from '@/features/core/project/api/getProjectInfoSummary';
 import { ResponseBody } from '@/shared/types/responseBody';
 import { ApiResult } from '@/shared/types/apiResult';
 
@@ -54,14 +53,10 @@ export const useUpdateProjectInfo = (
     onError?: (error: Error) => void;
   },
 ) => {
-  const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (data: UpdateProjectInfoInput) =>
       updateProjectInfo(projectId, userPMAuth, data),
     onSuccess: async (res) => {
-      await queryClient.invalidateQueries({
-        queryKey: [PROJECT_INFO_SUMMARY_QUERY_KEY],
-      });
       onSuccess?.(res);
     },
     onError: (error) => {

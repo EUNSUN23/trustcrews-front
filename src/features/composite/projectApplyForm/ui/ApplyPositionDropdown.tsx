@@ -13,7 +13,7 @@ import { clsx } from 'clsx';
 import { bigIntToString } from '@/shared/utils/stringUtils';
 import { DEFAULT_POSITION_OPTION } from '@/features/core/position/constants/defaultPositionOption';
 import { SelectItem } from '@/shared/types/selectItem';
-import { Position } from '@/shared/model/position';
+import { Position } from '@/entities/position';
 
 type ApplyPositionDropdownProps = {
   applyPositions: Position[];

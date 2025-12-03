@@ -1,6 +1,6 @@
 import { atom } from 'recoil';
 import { SelectItem } from '@/shared/types/selectItem';
-import { TechStackMappingData } from '@/shared/model/techStack/techStackMappingData';
+import { TechStackMappingData } from '@/entities/techStack';
 
 export const DEFAULT_TECH_CATEGORY: SelectItem<string, string> = {
   name: 'All',

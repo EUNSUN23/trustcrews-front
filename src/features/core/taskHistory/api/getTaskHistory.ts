@@ -2,7 +2,7 @@ import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { ITEM_COUNT_PER_PAGE, PAGE_RANGE } from '@/shared/constants/pagination';
 import { PageResponseBody } from '@/shared/types/responseBody';
-import { TaskPointType } from '@/shared/model/taskPointType';
+import { TaskPointType } from '@/entities/taskPointType';
 
 export interface TaskHistory {
   taskId: bigint;

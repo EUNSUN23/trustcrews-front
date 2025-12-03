@@ -4,7 +4,7 @@ import { useRecoilState } from 'recoil';
 import { selectedTechStackState } from '@/features/composite/postsBoard/store/TechStackFilterStateStore';
 import { useTechStackMappings } from '@/features/core/techStack/api/getTechStackMappings';
 import { bigIntToString } from '@/shared/utils/stringUtils';
-import { TechStackMappingData } from '@/shared/model/techStack/techStackMappingData';
+import { TechStackMappingData } from '@/entities/techStack';
 
 const TechStackFilterResult = () => {
   const [selectedTechStacks, setSelectedTechStacks] = useRecoilState(

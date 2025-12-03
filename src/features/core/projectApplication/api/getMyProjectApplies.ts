@@ -2,12 +2,12 @@ import { request } from '@/lib/clientApi/request';
 import { useSuspenseInfiniteQuery } from '@tanstack/react-query';
 import { ITEM_COUNT_PER_PAGE } from '@/shared/constants/pagination';
 import { PageResponseBody } from '@/shared/types/responseBody';
-import { ProjectApplyDataType } from '@/shared/model/projectApplication/projectApplyDataType';
+import { ProjectApply } from '@/entities/projectApply';
 
 export const getMyProjectApplies = async (
   pageIndex: number,
   itemCount: number,
-): Promise<PageResponseBody<ProjectApplyDataType[]>> => {
+): Promise<PageResponseBody<ProjectApply[]>> => {
   return await request(
     'GET',
     `/api/projectApply/auth?pageIndex=${pageIndex}&itemCount=${itemCount}`,

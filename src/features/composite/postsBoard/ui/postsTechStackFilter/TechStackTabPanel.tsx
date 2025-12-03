@@ -9,7 +9,7 @@ import {
 } from '@/features/composite/postsBoard/store/TechStackFilterStateStore';
 import { bigIntToString } from '@/shared/utils/stringUtils';
 import { clsx } from 'clsx';
-import { TechStackMappingData } from '@/shared/model/techStack/techStackMappingData';
+import { TechStackMappingData } from '@/entities/techStack';
 
 const TechStackTabPanel = () => {
   const {

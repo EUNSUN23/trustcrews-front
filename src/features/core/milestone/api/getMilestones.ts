@@ -2,11 +2,11 @@ import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { ResponseBody } from '@/shared/types/responseBody';
 import sortByStartDate from '@/shared/utils/sortByStartDate';
-import { MilestoneDataType } from '@/shared/model/milestone/milestoneDataType';
+import { Milestone } from '@/entities/milestone';
 
 export const getMilestones = async (
   projectId: string,
-): Promise<ResponseBody<MilestoneDataType[]>> => {
+): Promise<ResponseBody<Milestone[]>> => {
   const resBody = await request(
     'GET',
     `/api/projectJobs/auth/milestone?projectId=${projectId}`,

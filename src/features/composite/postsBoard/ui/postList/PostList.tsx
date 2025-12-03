@@ -3,7 +3,7 @@ import CommonPagination from '@/shared/ui/CommonPagination';
 import { ITEM_COUNT_PER_PAGE, PAGE_RANGE } from '@/shared/constants/pagination';
 import { usePostList } from '@/features/core/post/api/getPostList';
 import { useState } from 'react';
-import { TechStackMappingData } from '@/shared/model/techStack/techStackMappingData';
+import { TechStackMappingData } from '@/entities/techStack';
 
 type PostListProps = {
   filter: {

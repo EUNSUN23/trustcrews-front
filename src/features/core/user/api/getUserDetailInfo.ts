@@ -1,7 +1,7 @@
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { ResponseBody } from '@/shared/types/responseBody';
 import { request } from '@/lib/clientApi/request';
-import { UserDetailInfo } from '@/shared/model/user/userDetailInfo';
+import { UserDetailInfo } from '@/entities/user';
 
 export const getUserDetailInfo = async (): Promise<
   ResponseBody<UserDetailInfo>

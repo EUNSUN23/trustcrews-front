@@ -2,9 +2,9 @@ import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { bigIntToString } from '@/shared/utils/stringUtils';
 import { ResponseBody } from '@/shared/types/responseBody';
-import { PostDataType } from '@/shared/model/post/postDataType';
+import { Post } from '@/entities/post';
 
-export type PostDetailData = PostDataType & {
+export type PostDetailData = Post & {
   projectId: bigint;
   user: {
     userId: bigint;

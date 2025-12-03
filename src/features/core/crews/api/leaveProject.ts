@@ -1,8 +1,8 @@
 import { request } from '@/lib/clientApi/request';
-import { ProjectAuthCode } from '@/shared/model/projectMngAuth/projectAuth';
 import { useMutation } from '@tanstack/react-query';
 import { ResponseBody } from '@/shared/types/responseBody';
 import { ApiResult } from '@/shared/types/apiResult';
+import { ProjectAuthCode } from '@/entities/projectAuth';
 
 export type LeaveProjectInput = {
   projectId: bigint;
