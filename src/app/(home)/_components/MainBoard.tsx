@@ -4,7 +4,7 @@ import { useRecoilState, useResetRecoilState } from 'recoil';
 import {
   activeMainBoardTabStore,
   MAIN_BOARD_TABS,
-} from '@/store/ActiveMainBoardTabStateStore';
+} from '@/app/(home)/_store/ActiveMainBoardTabStateStore';
 import MyProjectApplies from '@/features/composite/myProjectApplies/ui';
 import { useEffect } from 'react';
 import CardListSkeleton from '@/shared/ui/skeleton/CardListSkeleton';

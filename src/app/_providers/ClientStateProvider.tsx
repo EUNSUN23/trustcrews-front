@@ -47,7 +47,7 @@ const getQueryClient = () => {
   }
 };
 
-const ClientProvider = ({ children }: RootProviderProps) => {
+const ClientStateProvider = ({ children }: RootProviderProps) => {
   const queryClient = getQueryClient();
 
   return (
@@ -57,4 +57,4 @@ const ClientProvider = ({ children }: RootProviderProps) => {
   );
 };
 
-export default ClientProvider;
+export default ClientStateProvider;

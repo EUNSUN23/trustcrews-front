@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Snackbar from '@/shared/ui/Snackbar';
-import Header from '@/app/_components/Header';
+import Header from '@/app/_components/header';
 import { ReactNode } from 'react';
-import ClientProvider from '@/providers/ClientProvider';
+import ClientStateProvider from '@/app/_providers/ClientStateProvider';
 import { checkIsAuthorized } from '@/lib/checkIsAuthorized';
 
 export const metadata: Metadata = {
@@ -17,14 +17,14 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang='en'>
       <body className='w-full'>
-        <ClientProvider>
+        <ClientStateProvider>
           <div className='responsiveContainer'>
             <Header isAuthorized={isAuthorized} />
             {children}
           </div>
           <div id='modal' className='absolute top-0 w-full'></div>
           <Snackbar />
-        </ClientProvider>
+        </ClientStateProvider>
       </body>
     </html>
   );

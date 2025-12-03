@@ -1,5 +1,5 @@
 import Guide from '@/app/(home)/_components/GuideContainer';
-import StaticDataProvider from '@/providers/data/StaticDataProvider';
+import StaticDataProvider from '@/app/_providers/StaticDataProvider';
 import { checkIsAuthorized } from '@/lib/checkIsAuthorized';
 import MainBoard from '@/app/(home)/_components/MainBoard';
 

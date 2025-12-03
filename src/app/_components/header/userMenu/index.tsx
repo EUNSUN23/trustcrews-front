@@ -12,7 +12,7 @@ import {
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useResetRecoilState } from 'recoil';
-import { activeMainBoardTabStore } from '@/store/ActiveMainBoardTabStateStore';
+import { activeMainBoardTabStore } from '@/app/(home)/_store/ActiveMainBoardTabStateStore';
 import useSnackbar from '@/shared/hooks/useSnackbar';
 import { clsx } from 'clsx';
 import { useLogout } from '@/features/core/auth/logout/api/logout';
