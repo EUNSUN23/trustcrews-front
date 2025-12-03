@@ -1,4 +1,4 @@
-import AvatarSkeleton from '@/features/core/user/ui/AvatarSkeleton';
+import AvatarSkeleton from '@/shared/ui/avatar/AvatarSkeleton';
 import BadgeStyleSkeleton from '@/shared/ui/skeleton/BadgeStyleSkeleton';
 import ButtonSkeleton from '@/shared/ui/skeleton/ButtonSkeleton';
 import Skeleton from '@/shared/ui/skeleton/Skeleton';

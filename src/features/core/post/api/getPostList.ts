@@ -1,14 +1,14 @@
 import { isEqual } from 'lodash';
 import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';
-import { ProjectInfoSummary } from '@/features/core/project/api/getProjectInfoSummary';
 import { PageResponseBody } from '@/shared/types/responseBody';
-import { TrustGrade } from '@/features/core/trustGrade/types/trustGrade';
-import { Position } from '@/features/core/position/types/position';
-import { TechStackMapping } from '@/features/core/techStack/api/getTechStackMappings';
+import { TrustGrade } from '@/shared/model/trustGrade';
+import { Position } from '@/shared/model/position';
+import { TechStackMappingData } from '@/shared/model/techStack/techStackMappingData';
+import { ProjectData } from '@/shared/model/project/projectData';
 
 export interface SearchPostParams {
-  techStacks: TechStackMapping[];
+  techStacks: TechStackMappingData[];
   position: string;
   keyword: string;
   page: number;
@@ -33,7 +33,7 @@ export const createQueryParams = (params: SearchPostParams) => {
 };
 
 export type PostInfoSummary = {
-  project: ProjectInfoSummary;
+  project: ProjectData;
   postId: bigint;
   title: string;
   recruitmentStatus: boolean;

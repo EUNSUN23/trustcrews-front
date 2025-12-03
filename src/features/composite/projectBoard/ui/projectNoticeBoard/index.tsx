@@ -6,7 +6,7 @@ import FWVoteNoticeModal from '@/features/composite/projectBoard/ui/projectNotic
 import RCVoteNoticeModal from '@/features/composite/projectBoard/ui/projectNoticeBoard/rcVoteNotice/rcVoteNoticeModal';
 import { useRecoilValue } from 'recoil';
 import { activeNoticeTabStateStore } from '@/features/composite/projectBoard/store/notice/ActiveNoticeTabStateStore';
-import { NOTICE_TABS } from '@/features/core/projectNotice/constants/noticeTabs';
+import { NOTICE_TABS } from '@/shared/model/projectNoticeTab/noticeTabs';
 import ContentsLoader from '@/shared/ui/ContentsLoader';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';
 import { ApplicationError } from '@/lib/error/ApplicationError';

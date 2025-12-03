@@ -1,5 +1,5 @@
 import Skeleton from '@/shared/ui/skeleton/Skeleton';
-import AvatarSkeleton from '@/features/core/user/ui/AvatarSkeleton';
+import AvatarSkeleton from '@/shared/ui/avatar/AvatarSkeleton';
 
 const fields = [
   '연락 방법',

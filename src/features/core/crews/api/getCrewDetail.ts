@@ -2,11 +2,10 @@ import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { bigIntToString } from '@/shared/utils/stringUtils';
 import { ResponseBody } from '@/shared/types/responseBody';
-import { Position } from '@/features/core/position/types/position';
-import { TrustGrade } from '@/features/core/trustGrade/types/trustGrade';
-import { TechStack } from '@/features/core/techStack/types/techStack';
-import { ProjectAuthMap } from '@/features/core/projectMngAuth/types/projectAuth';
-import { CrewStatusKey } from '@/features/core/crews/types/crewStatusKey';
+import { Position } from '@/shared/model/position';
+import { TrustGrade } from '@/shared/model/trustGrade';
+import { TechStackData } from '@/shared/model/techStack/techStackData';
+import { ProjectAuthMap } from '@/shared/model/projectMngAuth/projectAuth';
 
 interface ProjectCrewUserDetail {
   userId: bigint;
@@ -16,10 +15,9 @@ interface ProjectCrewUserDetail {
   position: Position;
   trustGrade: TrustGrade;
   trustScore: number;
-  role: string;
   createDate: string;
   updateDate: string;
-  technologyStacks: TechStack[];
+  technologyStacks: TechStackData[];
 }
 
 export type ProjectCrewProfileInfo = {
@@ -29,7 +27,6 @@ export type ProjectCrewProfileInfo = {
   user: ProjectCrewUserDetail;
   crewPMAuth: ProjectAuthMap;
   position: Position;
-  status: CrewStatusKey;
   isCurrentUser: boolean;
 };
 

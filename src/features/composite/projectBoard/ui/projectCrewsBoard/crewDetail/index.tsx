@@ -1,5 +1,5 @@
 import { GrScorecard } from '@react-icons/all-files/gr/GrScorecard';
-import Index from '@/features/composite/projectBoard/ui/projectCrewsBoard/crewDetail/crewTaskHistory';
+import TaskHistory from '@/features/composite/projectBoard/ui/projectCrewsBoard/crewDetail/crewTaskHistory';
 import CrewFWCreateModal from '@/features/composite/projectBoard/ui/projectCrewsBoard/crewDetail/crewProfile/CrewFWCreateModal';
 import CrewProfileSkeleton from '@/features/composite/projectBoard/ui/projectCrewsBoard/crewDetail/crewProfile/CrewProfileSkeleton';
 import CrewTaskHistorySkeleton from '@/features/composite/projectBoard/ui/projectCrewsBoard/crewDetail/crewTaskHistory/CrewTaskHistorySkeleton';
@@ -47,7 +47,7 @@ export const ProjectCrewDetailBoard = () => {
           errorFallbackSize='md'
           suspenseFallback={<CrewTaskHistorySkeleton />}
         >
-          <Index />
+          <TaskHistory />
         </FieldQueryBoundary>
       </section>
       <CrewFWCreateModal />

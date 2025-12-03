@@ -1,7 +1,7 @@
 import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';
-import { NOTICE_TYPES } from '@/features/core/projectNotice/constants/noticeTypes';
-import { VoteStatusType } from '@/features/core/projectVote/types/projectVote';
+import { NOTICE_TYPES } from '@/shared/model/projectNotice/noticeTypes';
+import { VoteStatusType } from '@/shared/model/projectVote/projectVote';
 import { bigIntToString } from '@/shared/utils/stringUtils';
 import { ITEM_COUNT_PER_PAGE } from '@/shared/constants/pagination';
 import { PageResponseBody } from '@/shared/types/responseBody';

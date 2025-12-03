@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Avatar from '@/features/core/user/ui/Avatar';
+import Avatar from '@/shared/ui/avatar';
 import Badge from '@/shared/ui/Badge';
 import Button from '@/shared/ui/Button';
 import useSnackbar from '@/shared/hooks/useSnackbar';
@@ -16,7 +16,7 @@ import {
 } from '@/features/core/projectMngAuth/api/updateProjectMngAuth';
 import PMAuthSelector from '@/features/core/projectMngAuth/ui/PMAuthSelector';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';
-import { ProjectCrew } from '@/features/core/crews/types/projectCrew';
+import { ProjectCrew } from '@/shared/model/projectCrew/projectCrew';
 
 type CrewAuthRowProps = {
   crew: ProjectCrew;

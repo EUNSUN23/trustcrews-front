@@ -3,9 +3,9 @@
 import { useRecoilState } from 'recoil';
 import Select from '@/shared/ui/Select';
 import { activeNoticeTabStateStore } from '@/features/composite/projectBoard/store/notice/ActiveNoticeTabStateStore';
-import { NOTICE_TABS } from '@/features/core/projectNotice/constants/noticeTabs';
+import { NOTICE_TABS } from '@/shared/model/projectNoticeTab/noticeTabs';
 import { clsx } from 'clsx';
-import { NoticeTab } from '@/features/core/projectNotice/types/noticeTab';
+import { NoticeTab } from '@/shared/model/projectNoticeTab/noticeTab';
 
 const noticeNavTabClass = (isActive: boolean) =>
   clsx(

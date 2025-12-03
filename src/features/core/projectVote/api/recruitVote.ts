@@ -1,8 +1,6 @@
 import { request } from '@/lib/clientApi/request';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useMutation } from '@tanstack/react-query';
 import { z } from 'zod';
-import { RC_VOTE_NOTICE_LIST_QUERY_KEY } from '@/features/core/projectNotice/api/rcVoteNotice/getRCVoteNoticeList';
-import { RCVOTE_NOTICE_QUERY_KEY } from '@/features/core/projectNotice/api/rcVoteNotice/getRCVoteNotice';
 import { ApiResult } from '@/shared/types/apiResult';
 
 export type RecruitVoteBaseParams = {
@@ -35,19 +33,11 @@ export const useRecruitVote = (
     onError?: (error: Error) => void;
   },
 ) => {
-  const queryClient = useQueryClient();
-
   return useMutation({
     mutationFn: (data: RecruitVoteAnswerInput) =>
       recruitVote({ ...baseParams, ...data }),
     onSuccess: async (res) => {
       if (res.result === 'success') {
-        await queryClient.invalidateQueries({
-          queryKey: [RC_VOTE_NOTICE_LIST_QUERY_KEY],
-        });
-        await queryClient.invalidateQueries({
-          queryKey: [RCVOTE_NOTICE_QUERY_KEY],
-        });
         onSuccess?.(res);
       } else {
         onError?.(res);

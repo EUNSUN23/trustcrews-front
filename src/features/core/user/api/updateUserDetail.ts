@@ -3,7 +3,6 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { z } from 'zod';
 import { ResponseBody } from '@/shared/types/responseBody';
 import { ApiResult } from '@/shared/types/apiResult';
-import { POST_LIST_QUERY_KEY } from '@/features/core/post/api/getPostList';
 import { NEXT_PUBLIC_URL } from '@/shared/constants/processEnv';
 
 const nicknameRegex: RegExp = /^[a-zA-Z0-9]{6,10}$/;
@@ -93,12 +92,6 @@ export const useUpdateUserDetail = ({
       image?: UserProfileImgInput;
     }) => updateUserDetail(info, image),
     onSuccess: async (res) => {
-      const invalidatePostList = queryClient.invalidateQueries({
-        queryKey: [POST_LIST_QUERY_KEY],
-      });
-
-      await Promise.all([invalidatePostList]);
-
       onSuccess?.(res);
     },
     onError: (error) => {

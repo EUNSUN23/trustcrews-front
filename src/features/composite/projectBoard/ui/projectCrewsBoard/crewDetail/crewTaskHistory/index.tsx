@@ -10,7 +10,7 @@ import { useRecoilValue } from 'recoil';
 import { crewIdState } from '@/features/composite/projectBoard/store/crew/CrewIdStateStore';
 import { ITEM_COUNT_PER_PAGE, PAGE_RANGE } from '@/shared/constants/pagination';
 
-const Index = () => {
+const TaskHistory = () => {
   const crewId = useRecoilValue(crewIdState);
   const [pageIndex, setPageIndex] = useState(0);
 
@@ -104,4 +104,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default TaskHistory;

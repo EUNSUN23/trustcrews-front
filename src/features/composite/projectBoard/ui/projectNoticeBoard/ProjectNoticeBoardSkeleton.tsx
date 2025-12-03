@@ -1,5 +1,5 @@
 import ContentsLoader from '@/shared/ui/ContentsLoader';
-import { NOTICE_TABS } from '@/features/core/projectNotice/constants/noticeTabs';
+import { NOTICE_TABS } from '@/shared/model/projectNoticeTab/noticeTabs';
 import Skeleton from '@/shared/ui/skeleton/Skeleton';
 
 export const ProjectNoticeBoardSkeleton = () => {

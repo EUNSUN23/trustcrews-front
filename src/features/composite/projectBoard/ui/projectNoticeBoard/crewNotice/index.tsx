@@ -5,7 +5,7 @@ import { useCrewNoticeList } from '@/features/core/projectNotice/api/crewNotice/
 import { useRecoilValue } from 'recoil';
 import { projectIdState } from '@/features/composite/projectBoard/store/ProjectIdStateStore';
 import NoticeBadge from '@/features/core/projectNotice/ui/NoticeBadge';
-import { NOTICE_TYPES } from '@/features/core/projectNotice/constants/noticeTypes';
+import { NOTICE_TYPES } from '@/shared/model/projectNotice/noticeTypes';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
 import { ITEM_COUNT_PER_PAGE, PAGE_RANGE } from '@/shared/constants/pagination';
 

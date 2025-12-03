@@ -1,8 +1,6 @@
 import { request } from '@/lib/clientApi/request';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { z } from 'zod';
-import { FWVOTE_NOTICE_LIST_QUERY_KEY } from '@/features/core/projectNotice/api/fwVoteNotice/getFWVoteNoticeList';
-import { FWVOTE_NOTICE_QUERY_KEY } from '@/features/core/projectNotice/api/fwVoteNotice/getFWVoteNotice';
 import { ApiResult } from '@/shared/types/apiResult';
 
 export type FWVoteBaseParams = {
@@ -43,13 +41,6 @@ export const useForceWithdrawVote = (
     mutationFn: (data: FWVoteAnswerInput) =>
       voteForProjectFWithdraw({ ...baseParams, ...data }),
     onSuccess: async (res) => {
-      await queryClient.invalidateQueries({
-        queryKey: [FWVOTE_NOTICE_LIST_QUERY_KEY],
-      });
-
-      await queryClient.invalidateQueries({
-        queryKey: [FWVOTE_NOTICE_QUERY_KEY],
-      });
       onSuccess?.(res);
     },
     onError: (error) => {

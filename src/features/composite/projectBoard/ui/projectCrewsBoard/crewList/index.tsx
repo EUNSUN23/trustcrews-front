@@ -9,11 +9,11 @@ import {
 import { crewIdState } from '@/features/composite/projectBoard/store/crew/CrewIdStateStore';
 import { projectIdState } from '@/features/composite/projectBoard/store/ProjectIdStateStore';
 import { useProjectCrewList } from '@/features/core/crews/api/getProjectCrewList';
-import Avatar from '@/features/core/user/ui/Avatar';
+import Avatar from '@/shared/ui/avatar';
 import Badge from '@/shared/ui/Badge';
 import PMAuthBadge from '@/features/core/projectMngAuth/ui/PMAuthBadge';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
-import { ProjectCrew } from '@/features/core/crews/types/projectCrew';
+import { ProjectCrew } from '@/shared/model/projectCrew/projectCrew';
 
 const {
   CREWS: {

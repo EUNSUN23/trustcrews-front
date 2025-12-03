@@ -1,6 +1,5 @@
 'use client';
 
-import { MilestoneInfo } from '@/features/core/milestone/constants/milestone';
 import { useRecoilValue } from 'recoil';
 import { activeMilestoneStateStore } from '@/features/composite/projectBoard/store/job/milestone/ActiveMilestoneStateStore';
 import { useEffect, useRef, useState } from 'react';
@@ -13,9 +12,10 @@ import 'swiper/css/scrollbar';
 import { Grid, Navigation, Pagination } from 'swiper/modules';
 import useMobileMediaQuery from '@/shared/hooks/useMobileMediaQuery';
 import MilestoneCard from '@/features/composite/projectBoard/ui/projectJobBoard/milestones/milestoneCard';
+import { MilestoneDataType } from '@/shared/model/milestone/milestoneDataType';
 
 type MilestonesProps = {
-  data: MilestoneInfo[];
+  data: MilestoneDataType[];
   totalCounts: number;
 };
 

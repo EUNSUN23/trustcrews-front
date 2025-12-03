@@ -1,8 +1,8 @@
 import { useRecoilState } from 'recoil';
 import { taskProgressModFieldSelector } from '@/features/composite/projectBoard/store/job/task/TaskModalStateStore';
-import { TASK_STATUS } from '@/features/core/task/constants/taskStatus';
+import { TASK_STATUS } from '@/shared/model/task/taskStatus';
 import { Field, Label, Switch } from '@headlessui/react';
-import { TaskStatusCode } from '@/features/core/task/types/task';
+import { TaskStatusCode } from '@/shared/model/task/task';
 import TaskStatusBadge from '@/features/core/task/ui/TaskStatusBadge';
 
 const {

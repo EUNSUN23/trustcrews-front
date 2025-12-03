@@ -1,6 +1,6 @@
 import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';
-import { NOTICE_TYPES } from '@/features/core/projectNotice/constants/noticeTypes';
+import { NOTICE_TYPES } from '@/shared/model/projectNotice/noticeTypes';
 import { bigIntToString } from '@/shared/utils/stringUtils';
 import { ITEM_COUNT_PER_PAGE } from '@/shared/constants/pagination';
 import { PageResponseBody } from '@/shared/types/responseBody';

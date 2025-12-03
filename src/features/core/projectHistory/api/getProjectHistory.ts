@@ -2,7 +2,7 @@ import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { bigIntToString } from '@/shared/utils/stringUtils';
 import { PageResponseBody } from '@/shared/types/responseBody';
-import { ProjectHistoryData } from '@/features/core/projectHistory/types/projectHistoryData';
+import { ProjectHistoryData } from '@/shared/model/projectHistory/projectHistoryData';
 
 export const getProjectHistory = async (
   userId: bigint,

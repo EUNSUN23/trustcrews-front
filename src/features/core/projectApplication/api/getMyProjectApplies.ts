@@ -2,26 +2,12 @@ import { request } from '@/lib/clientApi/request';
 import { useSuspenseInfiniteQuery } from '@tanstack/react-query';
 import { ITEM_COUNT_PER_PAGE } from '@/shared/constants/pagination';
 import { PageResponseBody } from '@/shared/types/responseBody';
-
-type ProjectApplyStatusCode = 'PAS1001' | 'PAS1002' | 'PAS1003';
-
-export type ProjectApplyStatusData = {
-  project_apply_id: bigint;
-  project_id: bigint;
-  project_name: string;
-  position_name: string;
-  status: {
-    code: ProjectApplyStatusCode;
-    name: string;
-  };
-  apply_message: string;
-  createDate: string;
-};
+import { ProjectApplyDataType } from '@/shared/model/projectApplication/projectApplyDataType';
 
 export const getMyProjectApplies = async (
   pageIndex: number,
   itemCount: number,
-): Promise<PageResponseBody<ProjectApplyStatusData[]>> => {
+): Promise<PageResponseBody<ProjectApplyDataType[]>> => {
   return await request(
     'GET',
     `/api/projectApply/auth?pageIndex=${pageIndex}&itemCount=${itemCount}`,

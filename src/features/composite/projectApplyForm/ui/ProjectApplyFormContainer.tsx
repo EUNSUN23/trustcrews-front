@@ -10,7 +10,7 @@ import { projectApplyPositionState } from '@/features/composite/projectApplyForm
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
 import { DEFAULT_POSITION_OPTION } from '@/features/core/position/constants/defaultPositionOption';
 import { useRouter } from 'next/navigation';
-import { Position } from '@/features/core/position/types/position';
+import { Position } from '@/shared/model/position';
 
 type ApplySectionProps = {
   isAuthorized: boolean;

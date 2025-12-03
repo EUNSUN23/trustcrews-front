@@ -18,7 +18,7 @@ import { clsx } from 'clsx';
 import { useLogout } from '@/features/core/auth/logout/api/logout';
 import useDesktopMediaQuery from '@/shared/hooks/useDesktopMediaQuery';
 import { useSimpleUserInfo } from '@/features/core/user/api/getSimpleUserInfo';
-import Avatar from '@/features/core/user/ui/Avatar';
+import Avatar from '@/shared/ui/avatar';
 
 const UserMenu = () => {
   const isDesktop = useDesktopMediaQuery();

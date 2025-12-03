@@ -6,7 +6,7 @@ import {
   TaskModalType,
   taskTodoSelector,
 } from '@/features/composite/projectBoard/store/job/task/TaskModalStateStore';
-import { MAX_TASK_CONTENT_DETAIL } from '@/features/core/task/constants/maxTaskContentDetail';
+import { MAX_TASK_CONTENT_DETAIL } from '@/shared/model/task/maxTaskContentDetail';
 import useSnackbar from '@/shared/hooks/useSnackbar';
 import clsx from 'clsx';
 import TaskTodoAddInput from '@/features/composite/projectBoard/ui/projectJobBoard/taskModal/taskTodoControl/TaskTodoAddInput';

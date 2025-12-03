@@ -16,7 +16,7 @@ import {
   createCrewFWVoteInputSchema,
   useCreateFWVote,
 } from '@/features/core/projectVote/api/createFWVote';
-import { FW_VOTE_REASONS } from '@/features/core/projectVote/constants/fwVoteReasons';
+import { FW_VOTE_REASONS } from '@/shared/model/projectVote/fwVoteReasons';
 
 const {
   FWR1001: REASON_CORP,

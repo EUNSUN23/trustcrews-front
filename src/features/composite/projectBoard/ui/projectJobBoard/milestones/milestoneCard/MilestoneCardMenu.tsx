@@ -20,11 +20,11 @@ import {
 import { cva } from 'class-variance-authority';
 import { projectManageAuthStateStore } from '@/features/composite/projectBoard/store/config/pmAuth/ProjectManageAuthStateStore';
 import { projectIdState } from '@/features/composite/projectBoard/store/ProjectIdStateStore';
-import { MilestoneInfo } from '@/features/core/milestone/constants/milestone';
 import { bigIntToString, numStrToBigInt } from '@/shared/utils/stringUtils';
+import { MilestoneDataType } from '@/shared/model/milestone/milestoneDataType';
 
 type MilestoneCardMenuProps = {
-  milestoneInfo: MilestoneInfo;
+  milestoneInfo: MilestoneDataType;
 };
 
 const CardMenuButtonVariants = cva(

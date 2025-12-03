@@ -11,7 +11,7 @@ import {
 import { selectItemComparator } from '@/shared/utils/selectItemComparator';
 import { AiFillCaretDown } from '@react-icons/all-files/ai/AiFillCaretDown';
 import { clsx } from 'clsx';
-import Avatar from '@/features/core/user/ui/Avatar';
+import Avatar from '@/shared/ui/avatar';
 import { DEFAULT_CREW_OPTION } from '@/features/core/crews/constants/defaultCrewOption';
 
 const selectButtonTextClass = ({

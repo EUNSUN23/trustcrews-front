@@ -1,13 +1,16 @@
-import Avatar from '@/features/core/user/ui/Avatar';
+import Avatar from '@/shared/ui/avatar';
 import Badge from '@/shared/ui/Badge';
 import PMAuthBadge from '@/features/core/projectMngAuth/ui/PMAuthBadge';
 import VoteStatusBadge from '@/features/core/projectVote/ui/VoteStatusBadge';
 import { useRecoilValue } from 'recoil';
 import FWVoteNoticeDetailSkeleton from '@/features/composite/projectBoard/ui/projectNoticeBoard/fwVoteNotice/fwVoteNoticeModal/FWVoteNoticeDetailSkeleton';
 import VoteBar from '@/features/core/projectVote/ui/VoteBar';
-import { VOTE_OPTIONS } from '@/features/core/projectVote/constants/voteOptions';
+import { VOTE_OPTIONS } from '@/shared/model/projectVote/voteOptions';
 import useSnackbar from '@/shared/hooks/useSnackbar';
-import { useFWVoteNotice } from '@/features/core/projectNotice/api/fwVoteNotice/getFWVoteNotice';
+import {
+  FWVOTE_NOTICE_QUERY_KEY,
+  useFWVoteNotice,
+} from '@/features/core/projectNotice/api/fwVoteNotice/getFWVoteNotice';
 import { fwNoticeModalState } from '@/features/composite/projectBoard/store/notice/fwVoteNotice/FWVoteNoticeModalStateStore';
 import { ZodError } from 'zod';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
@@ -15,6 +18,8 @@ import {
   fWVoteAnswerInputSchema,
   useForceWithdrawVote,
 } from '@/features/core/projectVote/api/forceWithdrawVote';
+import { FWVOTE_NOTICE_LIST_QUERY_KEY } from '@/features/core/projectNotice/api/fwVoteNotice/getFWVoteNoticeList';
+import { useQueryClient } from '@tanstack/react-query';
 
 const {
   VODA1001: { code: VOTE_AGREE },
@@ -27,6 +32,7 @@ const FWVoteNoticeDetail = () => {
   const { projectId, voteId, crewId, crewPMAuth, userPMAuth } =
     useRecoilValue(fwNoticeModalState);
 
+  const queryClient = useQueryClient();
   const { mutate: forceWithdrawVote, isPending: isUpdating } =
     useForceWithdrawVote(
       {
@@ -37,7 +43,16 @@ const FWVoteNoticeDetail = () => {
         crewPMAuth,
       },
       {
-        onSuccess: (res) => setSuccessSnackbar(res.message),
+        onSuccess: async (res) => {
+          await queryClient.invalidateQueries({
+            queryKey: [FWVOTE_NOTICE_LIST_QUERY_KEY],
+          });
+
+          await queryClient.invalidateQueries({
+            queryKey: [FWVOTE_NOTICE_QUERY_KEY],
+          });
+          setSuccessSnackbar(res.message);
+        },
         onError: (error) => setErrorSnackbar(error.message),
       },
     );

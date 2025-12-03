@@ -1,24 +1,12 @@
-import { Position } from '@/features/core/position/types/position';
 import { ResponseBody } from '@/shared/types/responseBody';
 import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { bigIntToString } from '@/shared/utils/stringUtils';
-
-export type PostConfigData = {
-  postId: bigint;
-  title: string;
-  content: string;
-  recruitmentStatus: boolean;
-  contact: string;
-  postPositions: {
-    postPositionId: bigint | number;
-    position: Position;
-  }[];
-};
+import { PostDataType } from '@/shared/model/post/postDataType';
 
 export const getPostConfig = async (
   projectId: bigint,
-): Promise<ResponseBody<PostConfigData>> => {
+): Promise<ResponseBody<PostDataType>> => {
   return await request(
     'GET',
     `/api/projectConfig/auth/post?projectId=${projectId}`,

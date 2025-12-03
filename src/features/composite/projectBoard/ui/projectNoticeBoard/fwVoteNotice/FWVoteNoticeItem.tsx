@@ -1,7 +1,7 @@
 import NoticeBadge from '@/features/core/projectNotice/ui/NoticeBadge';
 import VoteStatusBadge from '@/features/core/projectVote/ui/VoteStatusBadge';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { NOTICE_TYPES } from '@/features/core/projectNotice/constants/noticeTypes';
+import { NOTICE_TYPES } from '@/shared/model/projectNotice/noticeTypes';
 import { fwNoticeModalState } from '@/features/composite/projectBoard/store/notice/fwVoteNotice/FWVoteNoticeModalStateStore';
 import { FWVoteNoticeData } from '@/features/core/projectNotice/api/fwVoteNotice/getFWVoteNoticeList';
 import { projectIdState } from '@/features/composite/projectBoard/store/ProjectIdStateStore';

@@ -1,10 +1,10 @@
 import { ResponseBody } from '@/shared/types/responseBody';
 import { request } from '@/lib/clientApi/request';
 import { queryOptions, useSuspenseQuery } from '@tanstack/react-query';
-import { TechStack } from '@/features/core/techStack/types/techStack';
+import { TechStackData } from '@/shared/model/techStack/techStackData';
 
 export const getTechStackList = async (): Promise<
-  ResponseBody<TechStack[]>
+  ResponseBody<TechStackData[]>
 > => {
   return await request('GET', '/api/techStack');
 };

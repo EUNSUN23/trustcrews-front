@@ -2,27 +2,17 @@ import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { bigIntToString } from '@/shared/utils/stringUtils';
 import { ResponseBody } from '@/shared/types/responseBody';
-import { Position } from '@/features/core/position/types/position';
+import { PostDataType } from '@/shared/model/post/postDataType';
 
-export type PostDetailData = {
-  postId: bigint;
+export type PostDetailData = PostDataType & {
   projectId: bigint;
-  title: string;
-  content: string;
-  pageView: number;
-  recruitmentStatus: boolean;
   user: {
     userId: bigint;
     nickName: string;
     userProfileImgSrc: string | null;
   };
-  contact: string;
   createDate: string;
   updateDate: string;
-  postPositions: {
-    postPositionId: bigint | number;
-    position: Position;
-  }[];
 };
 
 export const getPostDetail = async (

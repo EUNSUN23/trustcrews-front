@@ -1,8 +1,6 @@
 import { request } from '@/lib/clientApi/request';
-import { ProjectAuthCode } from '@/features/core/projectMngAuth/types/projectAuth';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { CREW_NOTICE_LIST_QUERY_KEY } from '@/features/core/projectNotice/api/crewNotice/getCrewNoticeList';
-import { CREW_LIST_QUERY_KEY } from '@/features/core/crews/api/getProjectCrewList';
+import { ProjectAuthCode } from '@/shared/model/projectMngAuth/projectAuth';
+import { useMutation } from '@tanstack/react-query';
 import { ResponseBody } from '@/shared/types/responseBody';
 import { ApiResult } from '@/shared/types/apiResult';
 
@@ -28,17 +26,9 @@ export const useLeaveProject = ({
   onSuccess?: (res: LeaveProjectRes) => void;
   onError?: (error: Error) => void;
 }) => {
-  const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (data: LeaveProjectInput) => leaveProject(data),
     onSuccess: async (res) => {
-      await queryClient.invalidateQueries({
-        queryKey: [CREW_NOTICE_LIST_QUERY_KEY],
-      });
-      await queryClient.invalidateQueries({
-        queryKey: [CREW_LIST_QUERY_KEY],
-        refetchType: 'all',
-      });
       onSuccess?.(res);
     },
     onError: (error) => {

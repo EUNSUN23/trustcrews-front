@@ -1,27 +1,7 @@
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { ResponseBody } from '@/shared/types/responseBody';
 import { request } from '@/lib/clientApi/request';
-import { TechStack } from '@/features/core/techStack/types/techStack';
-import { TrustGradeName } from '@/features/core/trustGrade/types/trustGrade';
-import { Position } from '@/features/core/position/types/position';
-
-export type UserDetailInfo = {
-  userId: bigint | null;
-  email: string;
-  nickname: string;
-  profileImgSrc?: string | null;
-  trustScore: number;
-  trustGrade: {
-    trustGradeId: number | bigint;
-    trustGradeName: TrustGradeName;
-  };
-  position: Position;
-  techStacks: TechStack[];
-  intro?: string;
-  projectHistoryTotalCount: number;
-  createDate: string;
-  updateDate: string;
-};
+import { UserDetailInfo } from '@/shared/model/user/userDetailInfo';
 
 export const getUserDetailInfo = async (): Promise<
   ResponseBody<UserDetailInfo>

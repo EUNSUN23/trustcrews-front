@@ -1,6 +1,6 @@
 'use client';
 
-import Avatar from '@/features/core/user/ui/Avatar';
+import Avatar from '@/shared/ui/avatar';
 import Badge from '@/shared/ui/Badge';
 import TechStackImage from '@/features/core/techStack/ui/TechStackImage';
 import TrustGradeBadge from '@/features/core/trustGrade/ui/TrustGradeBadge';
@@ -9,7 +9,7 @@ import { crewIdState } from '@/features/composite/projectBoard/store/crew/CrewId
 import { useRecoilValue } from 'recoil';
 import CrewOutButton from '@/features/composite/projectBoard/ui/projectCrewsBoard/crewDetail/crewProfile/CrewOutButton';
 import CrewFwButton from '@/features/composite/projectBoard/ui/projectCrewsBoard/crewDetail/crewProfile/CrewFWButton';
-import { TechStack } from '@/features/core/techStack/types/techStack';
+import { TechStackData } from '@/shared/model/techStack/techStackData';
 import PMAuthBadge from '@/features/core/projectMngAuth/ui/PMAuthBadge';
 
 const CrewProfile = () => {
@@ -81,7 +81,7 @@ const CrewProfile = () => {
           </span>
           <div className='min-w-[100px] flex justify-center grow-0 mx-auto'>
             <ul className='flex items-center space-x-1'>
-              {crewTechnologyStacks.map((stack: TechStack) => (
+              {crewTechnologyStacks.map((stack: TechStackData) => (
                 <li key={stack.techStackId}>
                   <TechStackImage
                     stackName={stack.techStackName}

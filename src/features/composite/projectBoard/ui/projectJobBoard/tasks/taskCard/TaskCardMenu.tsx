@@ -17,7 +17,7 @@ import {
   taskModFormStateStore,
   taskModModalStateStore,
 } from '@/features/composite/projectBoard/store/job/task/TaskModalStateStore';
-import { TASK_STATUS } from '@/features/core/task/constants/taskStatus';
+import { TASK_STATUS } from '@/shared/model/task/taskStatus';
 import { projectManageAuthStateStore } from '@/features/composite/projectBoard/store/config/pmAuth/ProjectManageAuthStateStore';
 import { cva } from 'class-variance-authority';
 import { TaskItem } from '@/features/core/task/api/getTaskList';

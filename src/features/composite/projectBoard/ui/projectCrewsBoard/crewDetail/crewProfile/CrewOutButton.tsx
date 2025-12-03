@@ -8,6 +8,9 @@ import {
   useLeaveProject,
 } from '@/features/core/crews/api/leaveProject';
 import { ProjectCrewProfileInfo } from '@/features/core/crews/api/getCrewDetail';
+import { CREW_NOTICE_LIST_QUERY_KEY } from '@/features/core/projectNotice/api/crewNotice/getCrewNoticeList';
+import { CREW_LIST_QUERY_KEY } from '@/features/core/crews/api/getProjectCrewList';
+import { useQueryClient } from '@tanstack/react-query';
 
 type CrewOutButtonProps = {
   crewInfo: ProjectCrewProfileInfo;
@@ -22,8 +25,16 @@ const CrewOutButton = ({ crewInfo }: CrewOutButtonProps) => {
   } = crewInfo;
   const router = useRouter();
 
+  const queryClient = useQueryClient();
   const { mutate: leaveProject, isPending } = useLeaveProject({
-    onSuccess: (res) => {
+    onSuccess: async (res) => {
+      await queryClient.invalidateQueries({
+        queryKey: [CREW_NOTICE_LIST_QUERY_KEY],
+      });
+      await queryClient.invalidateQueries({
+        queryKey: [CREW_LIST_QUERY_KEY],
+        refetchType: 'all',
+      });
       setSuccessSnackbar(res.message);
       router.replace('/');
     },

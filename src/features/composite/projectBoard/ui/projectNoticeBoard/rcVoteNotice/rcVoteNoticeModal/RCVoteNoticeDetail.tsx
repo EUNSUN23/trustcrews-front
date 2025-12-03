@@ -1,24 +1,29 @@
-import Avatar from '@/features/core/user/ui/Avatar';
+import Avatar from '@/shared/ui/avatar';
 import TechStackImage from '@/features/core/techStack/ui/TechStackImage';
 import TrustGradeBadge from '@/features/core/trustGrade/ui/TrustGradeBadge';
 import RCVoteNoticeDetailSkeleton from '@/features/composite/projectBoard/ui/projectNoticeBoard/rcVoteNotice/rcVoteNoticeModal/RCVoteNoticeDetailSkeleton';
 import VoteStatusBadge from '@/features/core/projectVote/ui/VoteStatusBadge';
 import RCTargetProjectHistory from '@/features/composite/projectBoard/ui/projectNoticeBoard/rcVoteNotice/rcVoteNoticeModal/RCTargetProjectHistory';
 import VoteBar from '@/features/core/projectVote/ui/VoteBar';
-import { VOTE_OPTIONS } from '@/features/core/projectVote/constants/voteOptions';
+import { VOTE_OPTIONS } from '@/shared/model/projectVote/voteOptions';
 import {
   recruitVoteAnswerInputSchema,
   useRecruitVote,
 } from '@/features/core/projectVote/api/recruitVote';
 import useSnackbar from '@/shared/hooks/useSnackbar';
-import { useRecruitNotice } from '@/features/core/projectNotice/api/rcVoteNotice/getRCVoteNotice';
+import {
+  RCVOTE_NOTICE_QUERY_KEY,
+  useRecruitNotice,
+} from '@/features/core/projectNotice/api/rcVoteNotice/getRCVoteNotice';
 import { useRecoilValue } from 'recoil';
 import { rcVoteNoticeModalState } from '@/features/composite/projectBoard/store/notice/rcVoteNotice/RCVoteNoticeModalStateStore';
 import { ZodError } from 'zod';
 import Loader from '@/shared/ui/Loader';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
-import { TechStack } from '@/features/core/techStack/types/techStack';
+import { TechStackData } from '@/shared/model/techStack/techStackData';
 import FieldQueryBoundary from '@/lib/error/FieldQueryBoundary';
+import { RC_VOTE_NOTICE_LIST_QUERY_KEY } from '@/features/core/projectNotice/api/rcVoteNotice/getRCVoteNoticeList';
+import { useQueryClient } from '@tanstack/react-query';
 
 const {
   VODA1001: { code: VOTE_AGREE },
@@ -31,6 +36,7 @@ const RCVoteNoticeDetail = () => {
     rcVoteNoticeModalState,
   );
 
+  const queryClient = useQueryClient();
   const { mutate: recruitVote, isPending: isUpdating } = useRecruitVote(
     {
       voteId: numStrToBigInt(voteId),
@@ -38,7 +44,15 @@ const RCVoteNoticeDetail = () => {
       userPMAuth,
     },
     {
-      onSuccess: (res) => setSuccessSnackbar(res.message),
+      onSuccess: async (res) => {
+        await queryClient.invalidateQueries({
+          queryKey: [RC_VOTE_NOTICE_LIST_QUERY_KEY],
+        });
+        await queryClient.invalidateQueries({
+          queryKey: [RCVOTE_NOTICE_QUERY_KEY],
+        });
+        setSuccessSnackbar(res.message);
+      },
       onError: (error) => setErrorSnackbar(error.message),
     },
   );
@@ -103,7 +117,7 @@ const RCVoteNoticeDetail = () => {
         <div className='text-md text-greyBlue font-medium'>{positionName}</div>
         <div className='mt-1 text-sm text-grey700'>{intro}</div>
         <ul className='mt-2 flex items-center justify-center space-x-1'>
-          {techStacks.map(({ techStackName }: TechStack) => {
+          {techStacks.map(({ techStackName }: TechStackData) => {
             return (
               <li key={techStackName} className='relative h-10 w-10'>
                 <TechStackImage stackName={techStackName.toLowerCase()} />

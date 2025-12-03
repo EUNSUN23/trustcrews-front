@@ -10,6 +10,9 @@ import { useRecoilValue } from 'recoil';
 import { userInfoFormStateStore } from '@/features/composite/updateUserForm/store/UserInfoFormStateStore';
 import { userImageFormStateStore } from '@/features/composite/updateUserForm/store/UserImageFormStateStore';
 import { numStrToBigInt } from '@/shared/utils/stringUtils';
+import { POST_LIST_QUERY_KEY } from '@/features/core/post/api/getPostList';
+import { useQueryClient } from '@tanstack/react-query';
+import { SIMPLE_USER_INFO_QUERY_KEY } from '@/features/core/user/api/getSimpleUserInfo';
 
 const UpdateUserButton = () => {
   const { setSuccessSnackbar, setErrorSnackbar } = useSnackbar();
@@ -18,8 +21,18 @@ const UpdateUserButton = () => {
     userImageFormStateStore,
   );
 
+  const queryClient = useQueryClient();
   const { mutate: updateUser } = useUpdateUserDetail({
-    onSuccess: (res) => setSuccessSnackbar(res.message),
+    onSuccess: async (res) => {
+      const invalidateSimpleUser = queryClient.invalidateQueries({
+        queryKey: [SIMPLE_USER_INFO_QUERY_KEY],
+      });
+      const invalidatePostList = queryClient.invalidateQueries({
+        queryKey: [POST_LIST_QUERY_KEY],
+      });
+      await Promise.all([invalidateSimpleUser, invalidatePostList]);
+      setSuccessSnackbar(res.message);
+    },
     onError: (error) => setErrorSnackbar(error.message),
   });
 

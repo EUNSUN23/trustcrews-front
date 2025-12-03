@@ -1,7 +1,7 @@
 import Guide from '@/app/(home)/_components/GuideContainer';
 import StaticDataProvider from '@/providers/data/StaticDataProvider';
 import { checkIsAuthorized } from '@/lib/checkIsAuthorized';
-import MainBoard from '@/app/(home)/_components/mainBoard';
+import MainBoard from '@/app/(home)/_components/MainBoard';
 
 export const revalidate = 0;
 

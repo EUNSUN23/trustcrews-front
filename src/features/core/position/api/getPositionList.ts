@@ -1,7 +1,7 @@
 import { ResponseBody } from '@/shared/types/responseBody';
 import { request } from '@/lib/clientApi/request';
 import { queryOptions, useSuspenseQuery } from '@tanstack/react-query';
-import { Position } from '@/features/core/position/types/position';
+import { Position } from '@/shared/model/position';
 
 export const POSITION_LIST_QUERY_KEY = 'positions';
 

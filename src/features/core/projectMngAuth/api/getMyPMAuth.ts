@@ -1,6 +1,6 @@
 import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';
-import { ProjectAuthMap } from '@/features/core/projectMngAuth/types/projectAuth';
+import { ProjectAuthMap } from '@/shared/model/projectMngAuth/projectAuth';
 import { ResponseBody } from '@/shared/types/responseBody';
 
 export const getMyPMAuth = async (

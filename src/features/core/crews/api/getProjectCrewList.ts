@@ -2,7 +2,7 @@ import { request } from '@/lib/clientApi/request';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { ResponseBody } from '@/shared/types/responseBody';
 import { bigIntToString } from '@/shared/utils/stringUtils';
-import { ProjectCrew } from '@/features/core/crews/types/projectCrew';
+import { ProjectCrew } from '@/shared/model/projectCrew/projectCrew';
 
 export const getProjectCrewList = async (
   projectId: bigint,
