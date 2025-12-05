@@ -4,7 +4,7 @@ import { COOKIE } from '@/lib/cookie';
 
 const isAuthorizedRequest = (request: NextRequest) => {
   const authRouteMatcher = new RegExp(
-    /(((project|user)(\/(?!(login|signup|nickname|public))).*)|((project|user|launch)\s))/,
+    /(((project|user)(\/(?!(login|signup|nickname|public))).*)|((project|user|launch)\w*))/,
     'i',
   );
   if (!authRouteMatcher.test(request.nextUrl.pathname)) return true;

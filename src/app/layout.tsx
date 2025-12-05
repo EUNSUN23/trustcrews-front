@@ -4,7 +4,6 @@ import Snackbar from '@/shared/ui/Snackbar';
 import Header from '@/app/_components/header';
 import { ReactNode } from 'react';
 import ClientStateProvider from '@/app/_providers/ClientStateProvider';
-import { checkIsAuthorized } from '@/lib/checkIsAuthorized';
 
 export const metadata: Metadata = {
   title: 'TRUSTCREWS | 책임감 있는 사이드 프로젝트 팀, 팀원을 구하는 방법',
@@ -13,13 +12,12 @@ export const metadata: Metadata = {
 };
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
-  const isAuthorized = checkIsAuthorized();
   return (
     <html lang='en'>
       <body className='w-full'>
         <ClientStateProvider>
           <div className='responsiveContainer'>
-            <Header isAuthorized={isAuthorized} />
+            <Header />
             {children}
           </div>
           <div id='modal' className='absolute top-0 w-full'></div>

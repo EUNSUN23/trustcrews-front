@@ -19,16 +19,18 @@ import { useLogout } from '@/features/core/auth/logout/api/logout';
 import useDesktopMediaQuery from '@/shared/hooks/useDesktopMediaQuery';
 import { useSimpleUserInfo } from '@/features/core/user/api/getSimpleUserInfo';
 import Avatar from '@/shared/ui/avatar';
+import { authStateStore } from '@/shared/store/AuthStateStore';
 
 const UserMenu = () => {
-  const isDesktop = useDesktopMediaQuery();
-
   const router = useRouter();
+  const resetAuthState = useResetRecoilState(authStateStore);
   const resetActiveBoardTab = useResetRecoilState(activeMainBoardTabStore);
   const { setInfoSnackbar, setErrorSnackbar } = useSnackbar();
+  const isDesktop = useDesktopMediaQuery();
 
   const { mutate: logout } = useLogout({
     onSuccess: ({ message }) => {
+      resetAuthState();
       resetActiveBoardTab();
       router.push('/');
       router.refresh();

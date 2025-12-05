@@ -6,6 +6,7 @@ import { CgRedo } from '@react-icons/all-files/cg/CgRedo';
 import { cva, VariantProps } from 'class-variance-authority';
 import { HttpError } from '@/lib/error/HttpError';
 import { HttpStatusCode } from 'axios';
+import { FallbackProps } from 'react-error-boundary';
 
 const QueryErrorMessageVariants = cva(
   'flex flex-wrap items-center  space-x-3 text-gray-500',
@@ -23,13 +24,14 @@ const QueryErrorMessageVariants = cva(
   },
 );
 
-interface SuspenseFieldQueryBoundaryProps
+interface FieldQueryBoundaryProps
   extends VariantProps<typeof QueryErrorMessageVariants>,
     VariantProps<typeof QueryRetryIconVariants> {
   suspenseFallback: ReactNode;
   children: ReactNode;
   className?: string;
   isThrowingAllowed?: boolean;
+  errorFallback?: (props: FallbackProps) => ReactNode;
 }
 
 const QueryRetryIconVariants = cva(
@@ -54,7 +56,8 @@ const FieldQueryBoundary = ({
   className,
   errorFallbackSize,
   isThrowingAllowed = true,
-}: SuspenseFieldQueryBoundaryProps) => {
+  errorFallback,
+}: FieldQueryBoundaryProps) => {
   const { reset } = useQueryErrorResetBoundary();
 
   const isRetryableError = (error: unknown) => {
@@ -71,26 +74,30 @@ const FieldQueryBoundary = ({
       isThrowingAllowed={isThrowingAllowed}
       suspenseFallback={suspenseFallback}
       reset={reset}
-      fallbackRender={({ error, resetErrorBoundary }) => (
-        <div
-          role='alert'
-          className={cn(
-            QueryErrorMessageVariants({ errorFallbackSize }),
-            className,
-          )}
-        >
-          <p>{error.message}</p>
-          {isRetryableError(error) && (
-            <button title='재시도' onClick={resetErrorBoundary}>
-              <span className='sr-only'>재시도</span>
-              <CgRedo
-                aria-hidden={true}
-                className={QueryRetryIconVariants({ errorFallbackSize })}
-              />
-            </button>
-          )}
-        </div>
-      )}
+      fallbackRender={(props) =>
+        typeof errorFallback === 'function' ? (
+          errorFallback(props)
+        ) : (
+          <div
+            role='alert'
+            className={cn(
+              QueryErrorMessageVariants({ errorFallbackSize }),
+              className,
+            )}
+          >
+            <p>{props.error.message}</p>
+            {isRetryableError(props.error) && (
+              <button title='재시도' onClick={props.resetErrorBoundary}>
+                <span className='sr-only'>재시도</span>
+                <CgRedo
+                  aria-hidden={true}
+                  className={QueryRetryIconVariants({ errorFallbackSize })}
+                />
+              </button>
+            )}
+          </div>
+        )
+      }
     >
       {children}
     </ComposedBoundary>

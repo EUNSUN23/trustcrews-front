@@ -3,8 +3,6 @@ import { COOKIE, getCookieValue } from '@/lib/cookie';
 import { getResponseErrorMessage } from '@/lib/interceptor/getResponseErrorMessage';
 import { HttpStatusCode } from 'axios';
 import { BACKEND_URL } from '@/shared/constants/processEnv';
-import { getRefreshTokenFromHeader } from '@/lib/interceptor/getRefreshTokenFromHeader';
-import { cookies } from 'next/headers';
 
 const refreshTokenApi = async (
   userId: string | undefined,
@@ -57,26 +55,27 @@ export const refreshToken = async (): Promise<void> => {
   const res = await refreshTokenApi(userId, refreshToken);
 
   if (res.ok) {
-    const { headers } = res;
-    const accessToken = headers.get('Authorization');
-    const setCookieHeader = headers.get('Set-Cookie');
-
-    if (!accessToken || !setCookieHeader) {
-      throw new Error(
-        'Failed to refresh token: no necessary headers in response',
-      );
-    }
-
-    const { token, options } = getRefreshTokenFromHeader(setCookieHeader);
-    const cookieStore = cookies();
-    cookieStore.set(COOKIE.ACS_TOKEN, accessToken, {
-      ...options,
-      sameSite: 'strict',
-    });
-    cookieStore.set(COOKIE.REF_TOKEN, token, {
-      ...options,
-      sameSite: 'strict',
-    });
+    // const { headers } = res;
+    // const accessToken = headers.get('Authorization');
+    // const setCookieHeader = headers.get('Set-Cookie');
+    //
+    // if (!accessToken || !setCookieHeader) {
+    //   throw new Error(
+    //     'Failed to refresh token: no necessary headers in response',
+    //   );
+    // }
+    //
+    // const { token, options } = getRefreshTokenFromHeader(setCookieHeader);
+    // const cookieStore = cookies();
+    // cookieStore.set(COOKIE.ACS_TOKEN, accessToken, {
+    //   ...options,
+    //   sameSite: 'strict',
+    // });
+    // cookieStore.set(COOKIE.REF_TOKEN, token, {
+    //   ...options,
+    //   sameSite: 'strict',
+    // });
+    throw new Error('Failed to refresh token: response failed');
   } else {
     throw new Error('Failed to refresh token: response failed');
   }

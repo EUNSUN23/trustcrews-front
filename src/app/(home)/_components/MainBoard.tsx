@@ -1,6 +1,6 @@
 'use client';
 
-import { useRecoilState, useResetRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue, useResetRecoilState } from 'recoil';
 import {
   activeMainBoardTabStore,
   MAIN_BOARD_TABS,
@@ -14,17 +14,15 @@ import PostsBoardContainerSkeleton from '@/features/composite/postsBoard/ui/Post
 import { clsx } from 'clsx';
 import MyProjectsBoard from '@/features/composite/myProjectsBoard/ui/MyProjectsBoardContainer';
 import PostsBoard from '@/features/composite/postsBoard/ui/PostsBoardContainer';
+import { authStateStore } from '@/shared/store/AuthStateStore';
 
 const {
   BM_TAB001: { code: POSTS_TAB },
   BM_TAB002: { code: MANAGE_PROJECT_TAB },
 } = MAIN_BOARD_TABS;
 
-type MainBoardProps = {
-  isAuthorized: boolean;
-};
-
-const MainBoard = ({ isAuthorized }: MainBoardProps) => {
+const MainBoard = () => {
+  const { isAuthorized } = useRecoilValue(authStateStore);
   const resetActiveBoardTab = useResetRecoilState(activeMainBoardTabStore);
   const [activeMainBoardTab, setActiveMainBoardTab] = useRecoilState(
     activeMainBoardTabStore,

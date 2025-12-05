@@ -2,6 +2,24 @@ import { useRouter } from 'next/navigation';
 import Button from '@/shared/ui/Button';
 import { HttpError } from '@/lib/error/HttpError';
 import { HttpStatusCode } from 'axios';
+import { useEffect } from 'react';
+import { useResetRecoilState } from 'recoil';
+import { authStateStore } from '@/shared/store/AuthStateStore';
+
+const isRetryableError = (error: unknown) => {
+  return (
+    error instanceof HttpError &&
+    error.status !== HttpStatusCode.ServiceUnavailable &&
+    error.status !== HttpStatusCode.Unauthorized &&
+    error.status !== HttpStatusCode.Forbidden
+  );
+};
+
+const checkisAuthError = (error: unknown) => {
+  return (
+    error instanceof HttpError && error.status === HttpStatusCode.Unauthorized
+  );
+};
 
 type ErrorPageDisplayProps = {
   error: Error & { digest?: string };
@@ -10,6 +28,7 @@ type ErrorPageDisplayProps = {
 
 const ErrorPageDisplay = ({ error, reset }: ErrorPageDisplayProps) => {
   const router = useRouter();
+  const resetAuthState = useResetRecoilState(authStateStore);
 
   const handleClickGoHomeButton = () => {
     router.push('/');
@@ -23,20 +42,11 @@ const ErrorPageDisplay = ({ error, reset }: ErrorPageDisplayProps) => {
     router.push('/login');
   };
 
-  const isRetryableError = (error: unknown) => {
-    return (
-      error instanceof HttpError &&
-      error.status !== HttpStatusCode.ServiceUnavailable &&
-      error.status !== HttpStatusCode.Unauthorized &&
-      error.status !== HttpStatusCode.Forbidden
-    );
-  };
+  const isAuthError = checkisAuthError(error);
 
-  const isUnauthorizedError = (error: unknown) => {
-    return (
-      error instanceof HttpError && error.status === HttpStatusCode.Unauthorized
-    );
-  };
+  useEffect(() => {
+    resetAuthState();
+  }, [resetAuthState, isAuthError]);
 
   return (
     <div className='flex flex-col items-center space-y-5 min-h-[calc(100vh/1.5)] mt-16 mb-12'>
@@ -48,9 +58,6 @@ const ErrorPageDisplay = ({ error, reset }: ErrorPageDisplayProps) => {
           <Button onClick={handleClickRetryButton}>재시도</Button>
         )}
         <Button onClick={handleClickGoHomeButton}>홈으로</Button>
-        {isUnauthorizedError(error) && (
-          <Button onClick={handleClickLoginButton}>로그인</Button>
-        )}
       </div>
     </div>
   );

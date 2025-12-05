@@ -14,11 +14,14 @@ import useSnackbar from '@/shared/hooks/useSnackbar';
 import { MY_PROJECTS_QUERY_KEY } from '@/features/core/project/api/getMyProjects';
 import { MY_PROJECT_APPLIES_QUERY_KEY } from '@/features/core/projectApplication/api/getMyProjectApplies';
 import { SIMPLE_USER_INFO_QUERY_KEY } from '@/features/core/user/api/getSimpleUserInfo';
+import { useSetRecoilState } from 'recoil';
+import { authStateStore } from '@/shared/store/AuthStateStore';
+import { bigIntToString } from '@/shared/utils/stringUtils';
 
 const LogInFormContainer = () => {
   const { setErrorSnackbar, setInfoSnackbar } = useSnackbar();
   const router = useRouter();
-
+  const setAuthState = useSetRecoilState(authStateStore);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -41,10 +44,11 @@ const LogInFormContainer = () => {
         invalidateProjectNotice,
         invalidateUserInfo,
       ]);
+
+      setAuthState({ isAuthorized: true, userId: bigIntToString(res.data) });
+      setInfoSnackbar(message);
       router.replace('/');
       router.refresh();
-
-      setInfoSnackbar(message);
     },
     onError: (error) => {
       setErrorSnackbar(error.message);
