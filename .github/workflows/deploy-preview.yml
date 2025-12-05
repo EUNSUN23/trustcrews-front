@@ -3,7 +3,7 @@ env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-  NEXT_PUBLIC_URL: ${{ secrets.NEXT_PUBLIC_URL }}
+  NEXT_PUBLIC_URL: ${{ secrets.NEXT_PUBLIC_URL_PREVIEW }}
   BACKEND_HOST: ${{ secrets.BACKEND_HOST }}
   S3_HOST: ${{ secrets.S3_HOST }}
 on:
@@ -26,7 +26,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Vercel CLI And Build
+      - name: Install Vercel CLI
         if: ${{ success() }}
         run: npm install -g vercel@latest
       - name: Pull Vercel Environment Information
