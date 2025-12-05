@@ -26,10 +26,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build project
-        if: ${{ success() }}
-        run: npm run build --if-present
-
       - name: Install Vercel CLI
         if: ${{ success() }}
         run: npm install -g vercel@latest
