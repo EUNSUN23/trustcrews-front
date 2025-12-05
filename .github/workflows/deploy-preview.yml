@@ -3,7 +3,7 @@ env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-  NEXT_PUBLIC_URL: ${{ secrets.NEXT_PUBLIC_URL_PREVIEW }}
+  NEXT_PUBLIC_URL: ${{ secrets.NEXT_PUBLIC_URL }}
   BACKEND_HOST: ${{ secrets.BACKEND_HOST }}
   S3_HOST: ${{ secrets.S3_HOST }}
 on:
