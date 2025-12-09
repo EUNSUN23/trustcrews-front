@@ -79,27 +79,26 @@ JavaScript, TypeScript, React (Hook), Next.js 14, Tanstack-Query, Recoil, Tailwi
 
 ```text
 src
-├── app
-├── constants
+├── app                 
+├── entities            
 ├── features
-├── hooks
-├── layouts
-├── lib
-├── providers
-├── shared
-├── store
-├── types
-├── apiMiddleware.ts
-└── middleware.ts
+│   ├── composite           
+│   └── core              
+├── lib                 
+├── shared              
+├── apiMiddleware.ts    # 라우트 핸들러 middleware
+└── middleware.ts       # 페이지 middleware
 ```
-
-- **`shared`** : 프로젝트에 종속되지 않는 재사용 가능 소스 <br/>
-- **`lib`** : 프로젝트 라이브러리 소스 <br/>
-- **`constants`**, **`hooks`**, **`store`**, **`types`**, **`providers`** : 프로젝트에서 사용하는 constant, hook, store,  type, provider <br/>
-- **`features`** : 애플리케이션 핵심 기능 <br/>
-- **`apiMiddleware.ts`** : 라우트핸들러 요청을 처리하는 미들웨어
-- **`middleware.ts`** : 앱라우터 요청을 처리하는 미들웨어
-
-<br/>
+### 소스 의존 방향 (app ➡️ shared) 
 
 
+![img.png](assets/img_dependency.png)
+
+- **`app`**:  UI 페이지(View) + Route Handlers(BFF)
+- **`features/composite`**: 여러 도메인 Use case가 결합된 화면 단위
+- **`features/core`**: 도메인 Use cases - UI, fetch API, 비즈니스 규칙
+- **`entities`**: 순수 도메인 모델/타입
+- **`lib`**: 기술/환경 기반 로직 (error boundary 등)
+- **`shared`**: 도메인과 무관한 범용 UI · utils 
+
+#### 설정: .esnlintrc.josn
