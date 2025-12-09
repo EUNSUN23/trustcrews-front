@@ -70,7 +70,7 @@
           },
           {
             "from": "lib",
-            "allow": ["lib", "shared", "entities"]
+            "allow": ["lib", "shared"]
           },
           {
             "from": "entities",
