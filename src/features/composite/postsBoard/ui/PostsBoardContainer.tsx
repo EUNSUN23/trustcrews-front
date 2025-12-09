@@ -7,7 +7,7 @@ import CardListSkeleton from '@/shared/ui/skeleton/CardListSkeleton';
 import PostsTechStackFilter from '@/features/composite/postsBoard/ui/postsTechStackFilter';
 import { PostListContainer } from '@/features/composite/postsBoard/ui/postList/PostListContainer';
 
-const PostsBoard = () => {
+const PostsBoardContainer = () => {
   return (
     <section className='flex flex-col space-y-5'>
       <h2 className='sr-only'>팀 프로젝트</h2>
@@ -33,4 +33,4 @@ const PostsBoard = () => {
   );
 };
 
-export default PostsBoard;
+export default PostsBoardContainer;
