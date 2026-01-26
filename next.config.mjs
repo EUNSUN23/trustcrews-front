@@ -1,4 +1,10 @@
-export default (phase, { defaultConfig }) => {
+import bundleAnalyzer from '@next/bundle-analyzer';
+
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+export default withBundleAnalyzer((phase, { defaultConfig }) => {
   /** @type {import('next').NextConfig} */
 
   const nextConfig = {
@@ -26,4 +32,4 @@ export default (phase, { defaultConfig }) => {
   };
 
   return nextConfig;
-};
+});
