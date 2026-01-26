@@ -18,7 +18,7 @@ import { useSetRecoilState } from 'recoil';
 import { authStateStore } from '@/shared/store/AuthStateStore';
 import { bigIntToString } from '@/shared/utils/stringUtils';
 
-const LogInFormContainer = () => {
+const LoginForm = () => {
   const { setErrorSnackbar, setInfoSnackbar } = useSnackbar();
   const router = useRouter();
   const setAuthState = useSetRecoilState(authStateStore);
@@ -102,4 +102,4 @@ const LogInFormContainer = () => {
   );
 };
 
-export default LogInFormContainer;
+export default LoginForm;
